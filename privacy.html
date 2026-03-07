@@ -47,12 +47,18 @@
       text-transform: uppercase;
       margin: 36px 0 12px;
     }
+    h3 {
+      font-size: 12px;
+      color: #888;
+      font-weight: normal;
+      margin: 20px 0 8px;
+    }
     p, li {
       font-size: 13px;
       line-height: 1.8;
       color: #555;
     }
-    ul { padding-left: 20px; }
+    ul { padding-left: 20px; margin-top: 8px; }
     li { margin-bottom: 6px; }
     a { color: #00bfff; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -61,6 +67,8 @@
       border-top: 1px solid #111;
       margin: 36px 0;
     }
+    code { color: #00bfff; }
+    strong { color: #888; font-weight: normal; }
   </style>
 </head>
 <body>
@@ -75,65 +83,143 @@
     <h1>Privacy Policy</h1>
     <p class="date">// Last updated: March 7, 2026</p>
 
-    <p>stdout.chat is an anonymous chat application. This policy explains what data we collect, how we use it, and what we don't do with it.</p>
+    <p>stdout.chat is an anonymous chat application. This Privacy Policy explains what data we collect, how we use it, and what we do not do with it.</p>
+    <p style="margin-top:12px">By using stdout.chat, you agree to the practices described in this policy.</p>
 
     <hr class="divider" />
 
-    <h2>// Age requirement</h2>
-    <p>stdout.chat is intended for users <strong style="color:#888">18 years of age or older</strong>. By using this app, you confirm that you are at least 18 years old. We do not knowingly allow access to users under 18.</p>
+    <h2>// Age Requirement</h2>
+    <p>stdout.chat is intended only for users <strong>18 years of age or older</strong>.</p>
+    <p style="margin-top:12px">By using this service, you confirm that you are at least 18 years old. We do not knowingly allow access to users under 18. If we become aware that a user under 18 has accessed the service, we may restrict access.</p>
 
-    <hr class="divider" />
+    <h2>// What We Collect</h2>
+    <p>stdout.chat is designed to collect as little data as possible.</p>
 
-    <h2>// What we collect</h2>
-    <p>We collect as little as possible:</p>
+    <h3>// IP Address</h3>
+    <p>Your IP address is processed for:</p>
     <ul>
-      <li><strong style="color:#888">IP address</strong> — used for rate limiting, abuse prevention, and automated moderation. Stored only as part of ban records when necessary.</li>
-      <li><strong style="color:#888">Device ID</strong> — a randomly generated anonymous identifier stored locally on your device (Keychain). Used for the rating system and block list. It is never linked to your identity.</li>
-      <li><strong style="color:#888">Rating data</strong> — your anonymous rating score, number of conversations, and average session duration. Stored on our server linked to your Device ID only.</li>
-      <li><strong style="color:#888">Reports</strong> — if you use the <code style="color:#00bfff">/report</code> command, we log the IP address of the reported user and increment a counter. No message content is stored.</li>
-      <li><strong style="color:#888">Connection metadata</strong> — timestamps of connections and disconnections for server diagnostics.</li>
+      <li>rate limiting</li>
+      <li>abuse prevention</li>
+      <li>automated moderation</li>
+    </ul>
+    <p style="margin-top:8px">IP addresses are not permanently stored, except when necessary to enforce bans.</p>
+
+    <h3>// Device ID</h3>
+    <p>A randomly generated anonymous Device ID is stored locally on your device (in the system Keychain). This identifier:</p>
+    <ul>
+      <li>is randomly generated</li>
+      <li>is not derived from device fingerprinting</li>
+      <li>is not linked to your real identity</li>
+    </ul>
+    <p style="margin-top:8px">The Device ID is used only for:</p>
+    <ul>
+      <li>the reputation / rating system</li>
+      <li>block lists</li>
+      <li>abuse prevention</li>
     </ul>
 
-    <h2>// What we do NOT collect</h2>
+    <h3>// Rating Data</h3>
+    <p>We store limited anonymous metrics associated with your Device ID:</p>
     <ul>
-      <li>We do <strong style="color:#888">not</strong> store message content. Conversations are ephemeral — they exist only during the session.</li>
-      <li>We do <strong style="color:#888">not</strong> require registration, name, email, or phone number.</li>
-      <li>We do <strong style="color:#888">not</strong> sell or share your data with third parties.</li>
-      <li>We do <strong style="color:#888">not</strong> use tracking pixels, advertising networks, or analytics SDKs.</li>
-      <li>We do <strong style="color:#888">not</strong> link your Device ID to your real identity.</li>
+      <li>rating score</li>
+      <li>number of conversations</li>
+      <li>average session duration</li>
     </ul>
+    <p style="margin-top:8px">This information helps maintain conversation quality and prevent abuse.</p>
 
-    <h2>// Automated moderation</h2>
-    <p>stdout.chat uses an automated moderation system. Users who receive multiple reports are automatically restricted based on report thresholds. This system operates without human review of message content — no messages are ever stored or read.</p>
+    <h3>// Reports</h3>
+    <p>If you use the <code>/report</code> command:</p>
+    <ul>
+      <li>we log the IP address of the reported user</li>
+      <li>we increment a report counter used by the automated moderation system</li>
+    </ul>
+    <p style="margin-top:8px">No message content is stored.</p>
 
-    <h2>// Rating system</h2>
-    <p>Your rating is calculated based on conversation duration and reports received. It is stored anonymously on our server linked to your Device ID. You can view your rating at any time using the <code style="color:#00bfff">/score</code> command. Your rating is never shared with third parties.</p>
+    <h3>// Connection Metadata</h3>
+    <p>We store minimal connection metadata for technical diagnostics:</p>
+    <ul>
+      <li>connection timestamps</li>
+      <li>disconnection timestamps</li>
+    </ul>
+    <p style="margin-top:8px">This information is used to monitor server stability and detect abuse patterns.</p>
 
-    <h2>// Block list</h2>
-    <p>When you use the <code style="color:#00bfff">/block</code> command, the blocked user's Device ID is stored locally on your device only. We do not store your block list on our servers.</p>
+    <h2>// What We Do NOT Collect</h2>
+    <p>stdout.chat intentionally avoids collecting personal data. We do not collect or store:</p>
+    <ul>
+      <li>message content</li>
+      <li>conversation transcripts</li>
+      <li>user accounts</li>
+      <li>names, email addresses, or phone numbers</li>
+      <li>profile information</li>
+    </ul>
+    <p style="margin-top:8px">Conversations are ephemeral and exist only during the active chat session.</p>
+
+    <h2>// Automated Moderation</h2>
+    <p>stdout.chat uses an automated moderation system. If a user receives multiple reports:</p>
+    <ul>
+      <li>automated restrictions may be applied</li>
+      <li>bans may be issued automatically based on report thresholds</li>
+    </ul>
+    <p style="margin-top:8px">This system operates without human review of message content because messages are never stored.</p>
+
+    <h2>// Rating System</h2>
+    <p>Your reputation rating is calculated based on conversation duration and reports received. The rating is stored anonymously on our servers and linked only to your Device ID.</p>
+    <p style="margin-top:8px">You may view your rating at any time using the <code>/score</code> command. Your rating is never shared with third parties.</p>
+
+    <h2>// Block List</h2>
+    <p>When you use the <code>/block</code> command, the blocked user's Device ID is stored locally on your device only. stdout.chat does not store your block list on its servers.</p>
 
     <h2>// Cookies</h2>
-    <p>The app does not use cookies. The website uses no tracking cookies.</p>
+    <p>stdout.chat does not use cookies for tracking. The website does not use tracking, advertising, or analytics cookies.</p>
 
-    <h2>// Data retention</h2>
+    <h2>// Data Retention</h2>
     <ul>
-      <li>Connection logs — retained up to 7 days, then deleted.</li>
-      <li>Rating data — retained until you uninstall the app and your Device ID is no longer active.</li>
-      <li>Ban records — retained for the duration of the ban, then deleted.</li>
-      <li>Report counters — retained for moderation purposes.</li>
+      <li><strong>Connection logs</strong> — retained for up to 7 days, then automatically deleted.</li>
+      <li><strong>Rating data</strong> — retained while the Device ID remains active.</li>
+      <li><strong>Ban records</strong> — retained for the duration of the ban, then deleted.</li>
+      <li><strong>Report counters</strong> — retained only as long as necessary for moderation.</li>
     </ul>
 
-    <h2>// Third-party services</h2>
+    <h2>// Legal Basis for Processing</h2>
+    <p>Where applicable under privacy laws such as GDPR, we process limited technical data under our legitimate interest in:</p>
     <ul>
-      <li><strong style="color:#888">Vercel</strong> — hosts this website. May log standard web access logs.</li>
-      <li><strong style="color:#888">Hetzner</strong> — hosts the chat server infrastructure.</li>
+      <li>operating the service</li>
+      <li>preventing abuse</li>
+      <li>maintaining system security</li>
+      <li>ensuring service stability</li>
     </ul>
 
-    <h2>// Changes</h2>
-    <p>We may update this policy. Changes will be posted on this page with an updated date.</p>
+    <h2>// Security</h2>
+    <p>We implement reasonable technical and organizational measures to protect the limited data processed by stdout.chat. However, no online service can guarantee absolute security.</p>
+
+    <h2>// International Data Processing</h2>
+    <p>stdout.chat may process limited technical data on servers located in the European Union or other jurisdictions depending on hosting infrastructure. By using the service, you consent to such processing.</p>
+
+    <h2>// Third-Party Infrastructure</h2>
+    <ul>
+      <li><strong>Vercel</strong> — hosts the website and may process standard web access logs.</li>
+      <li><strong>Hetzner</strong> — hosts the chat server infrastructure.</li>
+    </ul>
+    <p style="margin-top:8px">These providers may process limited technical information necessary for infrastructure operation.</p>
+
+    <h2>// Law Enforcement Requests</h2>
+    <p>We may disclose limited technical data if required to do so by law or in response to valid legal requests from law enforcement authorities. Because stdout.chat does not store message content, we generally cannot provide conversation data.</p>
+
+    <h2>// Your Rights</h2>
+    <p>Depending on your jurisdiction, you may have certain privacy rights, including:</p>
+    <ul>
+      <li>the right to request access to data associated with your IP address or Device ID</li>
+      <li>the right to request deletion of data where technically possible</li>
+      <li>the right to lodge a complaint with a data protection authority</li>
+    </ul>
+    <p style="margin-top:8px">Requests can be sent to <a href="mailto:hello@stdout.chat">hello@stdout.chat</a>. Because stdout.chat does not store identifiable personal data, fulfilling some requests may not always be possible.</p>
+
+    <h2>// Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. If changes are made, the updated version will be posted on this page with a revised Last updated date. Continued use of the service indicates acceptance of the updated policy.</p>
 
     <h2>// Contact</h2>
-    <p>Questions? <a href="mailto:hello@stdout.chat">hello@stdout.chat</a></p>
+    <p>Questions about this policy may be sent to:</p>
+    <p style="margin-top:8px"><a href="mailto:hello@stdout.chat">hello@stdout.chat</a></p>
   </div>
 
 </body>
