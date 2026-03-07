@@ -73,18 +73,25 @@
 
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="date">// Last updated: March 6, 2026</p>
+    <p class="date">// Last updated: March 7, 2026</p>
 
     <p>stdout.chat is an anonymous chat application. This policy explains what data we collect, how we use it, and what we don't do with it.</p>
+
+    <hr class="divider" />
+
+    <h2>// Age requirement</h2>
+    <p>stdout.chat is intended for users <strong style="color:#888">18 years of age or older</strong>. By using this app, you confirm that you are at least 18 years old. We do not knowingly allow access to users under 18.</p>
 
     <hr class="divider" />
 
     <h2>// What we collect</h2>
     <p>We collect as little as possible:</p>
     <ul>
-      <li><strong style="color:#888">IP address</strong> — logged temporarily for security purposes (rate limiting, abuse prevention). Not stored permanently.</li>
-      <li><strong style="color:#888">Connection metadata</strong> — timestamps of connections and disconnections. No message content is stored.</li>
-      <li><strong style="color:#888">Reports</strong> — if you use the <code style="color:#00bfff">/report</code> command, we log the IP address of the reported user.</li>
+      <li><strong style="color:#888">IP address</strong> — used for rate limiting, abuse prevention, and automated moderation. Stored only as part of ban records when necessary.</li>
+      <li><strong style="color:#888">Device ID</strong> — a randomly generated anonymous identifier stored locally on your device (Keychain). Used for the rating system and block list. It is never linked to your identity.</li>
+      <li><strong style="color:#888">Rating data</strong> — your anonymous rating score, number of conversations, and average session duration. Stored on our server linked to your Device ID only.</li>
+      <li><strong style="color:#888">Reports</strong> — if you use the <code style="color:#00bfff">/report</code> command, we log the IP address of the reported user and increment a counter. No message content is stored.</li>
+      <li><strong style="color:#888">Connection metadata</strong> — timestamps of connections and disconnections for server diagnostics.</li>
     </ul>
 
     <h2>// What we do NOT collect</h2>
@@ -93,22 +100,34 @@
       <li>We do <strong style="color:#888">not</strong> require registration, name, email, or phone number.</li>
       <li>We do <strong style="color:#888">not</strong> sell or share your data with third parties.</li>
       <li>We do <strong style="color:#888">not</strong> use tracking pixels, advertising networks, or analytics SDKs.</li>
+      <li>We do <strong style="color:#888">not</strong> link your Device ID to your real identity.</li>
     </ul>
+
+    <h2>// Automated moderation</h2>
+    <p>stdout.chat uses an automated moderation system. Users who receive multiple reports are automatically restricted based on report thresholds. This system operates without human review of message content — no messages are ever stored or read.</p>
+
+    <h2>// Rating system</h2>
+    <p>Your rating is calculated based on conversation duration and reports received. It is stored anonymously on our server linked to your Device ID. You can view your rating at any time using the <code style="color:#00bfff">/score</code> command. Your rating is never shared with third parties.</p>
+
+    <h2>// Block list</h2>
+    <p>When you use the <code style="color:#00bfff">/block</code> command, the blocked user's Device ID is stored locally on your device only. We do not store your block list on our servers.</p>
 
     <h2>// Cookies</h2>
     <p>The app does not use cookies. The website uses no tracking cookies.</p>
 
     <h2>// Data retention</h2>
-    <p>Connection logs are retained for up to 7 days for security monitoring, then automatically deleted. No conversation data is ever stored.</p>
+    <ul>
+      <li>Connection logs — retained up to 7 days, then deleted.</li>
+      <li>Rating data — retained until you uninstall the app and your Device ID is no longer active.</li>
+      <li>Ban records — retained for the duration of the ban, then deleted.</li>
+      <li>Report counters — retained for moderation purposes.</li>
+    </ul>
 
     <h2>// Third-party services</h2>
     <ul>
       <li><strong style="color:#888">Vercel</strong> — hosts this website. May log standard web access logs.</li>
       <li><strong style="color:#888">Hetzner</strong> — hosts the chat server infrastructure.</li>
     </ul>
-
-    <h2>// Children</h2>
-    <p>stdout.chat is not intended for users under 17 years of age. We do not knowingly collect data from children.</p>
 
     <h2>// Changes</h2>
     <p>We may update this policy. Changes will be posted on this page with an updated date.</p>
