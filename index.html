@@ -7,12 +7,12 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="stdout.chat" />
-  <meta property="og:description" content="anonymous. ephemeral. text only. Talk to a stranger. Leave no trace." />
+  <meta property="og:description" content="anonymous. ephemeral. text only. Talk to a random stranger. No accounts, no history. /shout broadcasts your message to every user online." />
   <meta property="og:url" content="https://stdout.chat" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="stdout.chat" />
-  <meta name="twitter:description" content="anonymous. ephemeral. text only." />
+  <meta name="twitter:description" content="anonymous. ephemeral. text only. /shout broadcasts your message to every user online." />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
@@ -434,15 +434,16 @@
           <div class="tline sys">─────────────────────────────────────</div>
           <div class="tline sys tw">connecting...</div>
           <div class="tline sys tw">&gt; connected to network</div>
-          <div class="tline sys tw">&gt; searching for stranger...</div>
+          <div class="tline sys tw">&gt; scanning for signal...</div>
           <div class="tline sys tw">&gt; stranger connected.</div>
-          <div class="tline sys tw">&gt; /next  /quit  /time  /clear  /report  /block  /help</div>
           <div class="tline sys tw">─────────────────────────────────────</div>
           <div class="tline them tw">[stranger]: hey</div>
           <div class="tline you  tw">[you]: hey, who are you?</div>
           <div class="tline them tw">[stranger]: just someone in the void. you?</div>
           <div class="tline you  tw">[you]: same i guess</div>
           <div class="tline them tw">[stranger]: feels right</div>
+          <div class="tline sys tw">─────────────────────────────────────</div>
+          <div class="tline tw" style="color:#ffb000">[BROADCAST] &gt;&gt; ORACLE: the void is watching &lt;&lt;</div>
         </div>
         <div class="term-input-row">
           <span class="prompt">&gt;</span>
@@ -523,6 +524,12 @@
         <li><span class="cmd">/quit</span>  <span class="cmd-desc">leave</span></li>
         <li><span class="cmd">/score</span> <span class="cmd-desc">your rating, rank and stats</span></li>
         <li><span class="cmd">/help</span>  <span class="cmd-desc">show all commands</span></li>
+        <li>
+          <span class="cmd" style="color:var(--blue)">/shout</span>
+          <span class="cmd-desc">
+            broadcast your message to <strong style="color:var(--green)">every user online</strong> — scrolls across all screens simultaneously
+          </span>
+        </li>
       </ul>
     </div>
   </section>
