@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-03-12",
+    "type": "feat",
+    "title": "Accept repository_dispatch from iOS repo for shared updates",
+    "body": "",
+    "_sha": "f4b9ef3b92c9fdc947b54943fe850188c3fcfc7c"
+  },
+  {
+    "date": "2026-03-12",
     "type": "fix",
     "title": "Reconnect resume issue",
     "body": "session now restores automatically after short drops",
