@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-13",
+    "type": "feat",
+    "title": "Test iOS dispatch integration",
+    "body": "",
+    "_sha": "ios-test-dryrun-001"
+  },
+  {
     "date": "2026-03-12",
     "type": "feat",
     "title": "Accept repository_dispatch from iOS repo for shared updates",
