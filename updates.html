@@ -337,75 +337,9 @@
     <div class="wrap">
       <p class="section-label">// recent updates</p>
 
-      <!--
-        ═══════════════════════════════════════════════════════════
-        FEED STRUCTURE — for automation:
+      <!-- rendered by JS from updates.json -->
+      <div id="feed-root"></div>
 
-        • Group entries by month using <section class="month-group">
-        • Add new months at the TOP (newest first)
-        • Older months get class="month-group older" — hidden by default,
-          revealed by the "load older" button
-        • Tag labels: fix | feat | impr
-        • Tag classes: tag-fix | tag-feat | tag-impr
-        ═══════════════════════════════════════════════════════════
-      -->
-
-      <!-- ── march 2026 ── -->
-      <section class="month-group">
-        <h3 class="month-label">// march 2026</h3>
-
-        <article class="update-entry">
-          <div class="entry-meta">
-            <time class="entry-date">2026-03-12</time>
-            <span class="entry-tag tag-fix">fix</span>
-          </div>
-          <h2 class="entry-title">fixed reconnect issue during session resume</h2>
-          <p class="entry-body">
-            if your connection dropped mid-conversation, the app would sometimes
-            fail to reconnect silently. this is now fixed — reconnect happens
-            automatically within 3 seconds, and the session resumes cleanly.
-          </p>
-        </article>
-
-        <article class="update-entry">
-          <div class="entry-meta">
-            <time class="entry-date">2026-03-10</time>
-            <span class="entry-tag tag-feat">feat</span>
-          </div>
-          <h2 class="entry-title">added /dashboard command and credit display</h2>
-          <p class="entry-body">
-            type <span style="color:var(--blue)">/dashboard</span> to open your personal control panel.
-            shows your current credit balance, rank, session stats, and quick access
-            to themes and settings — all in the same terminal interface.
-          </p>
-        </article>
-
-        <article class="update-entry">
-          <div class="entry-meta">
-            <time class="entry-date">2026-03-08</time>
-            <span class="entry-tag tag-impr">impr</span>
-          </div>
-          <h2 class="entry-title">improved command picker behavior after selection</h2>
-          <p class="entry-body">
-            after selecting a command from the picker, the input field now clears
-            instantly and focus returns to the text area. no more extra tap needed —
-            just pick a command and keep going.
-          </p>
-        </article>
-
-      </section>
-
-      <!--
-        ── older months go here, with class="month-group older" ──
-        example:
-
-        <section class="month-group older">
-          <h3 class="month-label">// february 2026</h3>
-          <article class="update-entry"> ... </article>
-        </section>
-      -->
-
-      <!-- load older button — hide when no older groups exist -->
       <div class="load-older done" id="load-older-btn">
         <button class="btn-load" onclick="loadOlder()">▸ load older updates</button>
       </div>
@@ -426,20 +360,131 @@
   </footer>
 
   <script>
-    // reveal older month groups one batch at a time
+    // ─── config ───────────────────────────────────────────────
+    const MONTHS_INITIALLY_VISIBLE = 1; // show only the latest N month groups
+    const MONTHS_PER_LOAD          = 3; // reveal this many per "load older" click
+
+    // ─── month label helper ───────────────────────────────────
+    const MONTH_NAMES = [
+      'january','february','march','april','may','june',
+      'july','august','september','october','november','december'
+    ];
+    function monthLabel(dateStr) {
+      const [y, m] = dateStr.split('-').map(Number);
+      return `// ${MONTH_NAMES[m - 1]} ${y}`;
+    }
+
+    // ─── group entries by month key "YYYY-MM" ─────────────────
+    function groupByMonth(entries) {
+      const map = new Map();
+      for (const e of entries) {
+        const key = e.date.slice(0, 7); // "YYYY-MM"
+        if (!map.has(key)) map.set(key, []);
+        map.get(key).push(e);
+      }
+      // sort months newest-first
+      return [...map.entries()].sort((a, b) => b[0].localeCompare(a[0]));
+    }
+
+    // ─── build a single entry article ────────────────────────
+    function buildEntry(e) {
+      const article = document.createElement('article');
+      article.className = 'update-entry';
+
+      const meta = document.createElement('div');
+      meta.className = 'entry-meta';
+
+      const time = document.createElement('time');
+      time.className = 'entry-date';
+      time.dateTime  = e.date;
+      time.textContent = e.date;
+
+      const tag = document.createElement('span');
+      tag.className = `entry-tag tag-${e.type}`;
+      tag.textContent = e.type;
+
+      meta.append(time, tag);
+
+      const title = document.createElement('h2');
+      title.className = 'entry-title';
+      title.textContent = e.title;
+
+      const body = document.createElement('p');
+      body.className = 'entry-body';
+      body.textContent = e.body;
+
+      article.append(meta, title, body);
+      return article;
+    }
+
+    // ─── build a month section ────────────────────────────────
+    function buildMonth(key, entries, isOlder) {
+      const section = document.createElement('section');
+      section.className = isOlder ? 'month-group older' : 'month-group';
+      section.dataset.monthKey = key;
+
+      const h3 = document.createElement('h3');
+      h3.className = 'month-label';
+      h3.textContent = monthLabel(entries[0].date);
+
+      section.append(h3);
+      for (const e of entries) section.append(buildEntry(e));
+      return section;
+    }
+
+    // ─── load older ───────────────────────────────────────────
     function loadOlder() {
-      const groups  = Array.from(document.querySelectorAll('.month-group.older:not(.visible)'));
-      const batch   = groups.slice(0, 3); // reveal up to 3 months per click
-      batch.forEach(g => g.classList.add('visible'));
+      const hidden = Array.from(document.querySelectorAll('.month-group.older:not(.visible)'));
+      hidden.slice(0, MONTHS_PER_LOAD).forEach(g => g.classList.add('visible'));
       if (document.querySelectorAll('.month-group.older:not(.visible)').length === 0) {
         document.getElementById('load-older-btn').classList.add('done');
       }
     }
 
-    // show button only when older groups exist
-    if (document.querySelectorAll('.month-group.older').length > 0) {
-      document.getElementById('load-older-btn').classList.remove('done');
-    }
+    // ─── main: fetch + render ─────────────────────────────────
+    (async () => {
+      const root = document.getElementById('feed-root');
+      const btn  = document.getElementById('load-older-btn');
+
+      let entries;
+      try {
+        const res = await fetch('updates.json');
+        if (!res.ok) throw new Error(res.status);
+        entries = await res.json();
+      } catch (err) {
+        root.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">⚠</div>
+            <p class="empty-title">could not load updates</p>
+            <p class="empty-hint">updates.json missing or invalid.<br>${err}</p>
+          </div>`;
+        return;
+      }
+
+      if (!entries.length) {
+        root.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">_</div>
+            <p class="empty-title">nothing here yet</p>
+            <p class="empty-hint">updates will appear here as things ship.</p>
+          </div>`;
+        return;
+      }
+
+      // sort entries newest-first within each month
+      entries.sort((a, b) => b.date.localeCompare(a.date));
+
+      const groups = groupByMonth(entries);
+      groups.forEach(([key, monthEntries], i) => {
+        const isOlder = i >= MONTHS_INITIALLY_VISIBLE;
+        root.append(buildMonth(key, monthEntries, isOlder));
+      });
+
+      // show "load older" button only when there's something hidden
+      if (document.querySelectorAll('.month-group.older').length > 0) {
+        btn.classList.remove('done');
+      }
+    })();
   </script>
 
 </body>
