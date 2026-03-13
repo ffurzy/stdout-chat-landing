@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>updates — stdout.chat</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="updates — stdout.chat" />
+  <meta property="og:description" content="Product updates, fixes, and improvements to stdout.chat." />
+  <meta property="og:url" content="https://stdout.chat/updates" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="updates — stdout.chat" />
+  <meta name="twitter:description" content="Product updates, fixes, and improvements to stdout.chat." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green: #00ff41;
+      --blue:  #00bfff;
+      --red:   #ff4444;
+      --dim:   #555555;
+      --line:  #111111;
+      --bg:    #000000;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--green);
+      font-family: 'Courier New', Courier, monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── scanline overlay ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.08) 3px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ─── container ─── */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── nav ─── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-size: 14px;
+      color: var(--dim);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--green); }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    /* ─── page header ─── */
+    .page-header {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-tag {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(24px, 5vw, 42px);
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .page-header .sub {
+      font-size: 13px;
+      color: var(--dim);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    /* ─── section label ─── */
+    .section-label {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    /* ─── updates feed ─── */
+    .updates-section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ─── empty state ─── */
+    .empty-state {
+      border: 1px solid var(--line);
+      background: #050505;
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .empty-icon {
+      font-size: 28px;
+      margin-bottom: 20px;
+      opacity: 0.4;
+    }
+
+    .empty-title {
+      font-size: 13px;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .empty-hint {
+      font-size: 11px;
+      color: var(--dim);
+      opacity: 0.5;
+      line-height: 1.7;
+    }
+
+    /* ─── update entry (placeholder for future items) ─── */
+    /*
+      Future entries will be injected as <article class="update-entry"> blocks.
+      Each entry should follow this structure:
+
+      <article class="update-entry">
+        <div class="entry-meta">
+          <time class="entry-date">YYYY-MM-DD</time>
+          <span class="entry-tag tag-fix">fix</span>        <!-- or tag-feat / tag-improvement -->
+        </div>
+        <h2 class="entry-title">Short title of the update</h2>
+        <p class="entry-body">Description of what changed.</p>
+      </article>
+    */
+
+    .update-entry {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .update-entry:last-child {
+      border-bottom: none;
+    }
+
+    .entry-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .entry-date {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+    }
+
+    .entry-tag {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border: 1px solid currentColor;
+    }
+
+    .tag-fix         { color: var(--red);   }
+    .tag-feat        { color: var(--green);  }
+    .tag-improvement { color: var(--blue);   }
+
+    .entry-title {
+      font-size: 15px;
+      font-weight: normal;
+      color: var(--green);
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .entry-body {
+      font-size: 12px;
+      color: var(--dim);
+      line-height: 1.8;
+    }
+
+    /* ─── footer ─── */
+    footer {
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-left  { font-size: 11px; color: var(--dim); }
+    .footer-right { font-size: 11px; color: var(--dim); opacity: 0.5; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo"><span>stdout</span>.chat</a>
+    <div class="dot"></div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="wrap">
+      <p class="page-tag">// changelog</p>
+      <h1>updates</h1>
+      <p class="sub">
+        fixes, features, and improvements to stdout.chat.<br>
+        published here as things ship.
+      </p>
+    </div>
+  </section>
+
+  <!-- UPDATES FEED -->
+  <!-- future: inject <article class="update-entry"> blocks here -->
+  <section class="updates-section" id="updates-feed">
+    <div class="wrap">
+      <p class="section-label">// recent updates</p>
+
+      <!-- EMPTY STATE — remove when first update is added -->
+      <div class="empty-state">
+        <div class="empty-icon">▒</div>
+        <p class="empty-title">no public updates yet.</p>
+        <p class="empty-hint">
+          check back soon — this page will show<br>
+          what changed, when, and why.
+        </p>
+      </div>
+
+      <!-- UPDATE ENTRIES GO HERE -->
+      <!--
+        Example entry (uncomment to use):
+
+        <article class="update-entry">
+          <div class="entry-meta">
+            <time class="entry-date">2026-03-12</time>
+            <span class="entry-tag tag-feat">feature</span>
+          </div>
+          <h2 class="entry-title">Public updates page added</h2>
+          <p class="entry-body">
+            stdout.chat now has a changelog at /updates.
+            Future fixes, features and improvements will appear here.
+          </p>
+        </article>
+      -->
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — anonymous. ephemeral. text only.</span>
+    <span class="footer-right">
+      <a href="/privacy" style="color:var(--dim);text-decoration:none">privacy</a>
+      &nbsp;·&nbsp;
+      <a href="/terms" style="color:var(--dim);text-decoration:none">terms</a>
+      &nbsp;·&nbsp;
+      <a href="/updates" style="color:var(--green);text-decoration:none">updates</a>
+    </span>
+  </footer>
+
+</body>
+</html>
