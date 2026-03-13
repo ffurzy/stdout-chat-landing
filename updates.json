@@ -2,6 +2,13 @@
   {
     "date": "2026-03-12",
     "type": "feat",
+    "title": "Add /support page, replace 'learn more' with 'support' button",
+    "body": "",
+    "_sha": "c571914a7f457e57d4850a069cf010874a73e1bb"
+  },
+  {
+    "date": "2026-03-12",
+    "type": "feat",
     "title": "Accept repository_dispatch from iOS repo for shared updates",
     "body": "",
     "_sha": "f4b9ef3b92c9fdc947b54943fe850188c3fcfc7c"
