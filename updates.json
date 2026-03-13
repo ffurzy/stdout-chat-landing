@@ -2,6 +2,13 @@
   {
     "date": "2026-03-13",
     "type": "fix",
+    "title": "/bug case returns true; classic_green input color green not blue",
+    "body": "",
+    "_sha": "ios-2016114775627228a3abc0133622fa4f3c6fd593"
+  },
+  {
+    "date": "2026-03-13",
+    "type": "fix",
     "title": "Logo",
     "body": "",
     "_sha": "e31dbdeb5ddd4a8ae4703bac99e8c9a599f48cf6"
