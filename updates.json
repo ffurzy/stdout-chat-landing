@@ -2,6 +2,13 @@
   {
     "date": "2026-03-13",
     "type": "fix",
+    "title": "Add 18+",
+    "body": "",
+    "_sha": "ios-6e4fd7319755f61e2ffb69c48077725bedbd78b5"
+  },
+  {
+    "date": "2026-03-13",
+    "type": "fix",
     "title": "Add /support route to vercel.json rewrites",
     "body": "",
     "_sha": "9f3d8611de8cb585611d3a3280bb779ae6f282f9"
