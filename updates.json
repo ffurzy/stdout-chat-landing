@@ -2,6 +2,13 @@
   {
     "date": "2026-03-13",
     "type": "fix",
+    "title": "Correct privacy manifest — Messages type for chat, not OtherUserProfile",
+    "body": "",
+    "_sha": "ios-433ae9a8eb5286c485f1b87f34f0eea67bee3907"
+  },
+  {
+    "date": "2026-03-13",
+    "type": "fix",
     "title": "Input field text color uses theme.hi (green in classic_green), you stays blue…",
     "body": "",
     "_sha": "ios-cf3ebfd4550553792459c76a398bfd7be5badfce"
