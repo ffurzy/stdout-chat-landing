@@ -2,6 +2,13 @@
   {
     "date": "2026-03-12",
     "type": "fix",
+    "title": "Reconnect resume issue",
+    "body": "session now restores automatically after short drops",
+    "_sha": "565dc370f40b606f476e920984cf18fe5e5bff53"
+  },
+  {
+    "date": "2026-03-12",
+    "type": "fix",
     "title": "fixed reconnect issue during session resume",
     "body": "if your connection dropped mid-conversation, the app would sometimes fail to reconnect silently. this is now fixed — reconnect happens automatically within 3 seconds, and the session resumes cleanly."
   },
