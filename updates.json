@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-13",
+    "type": "fix",
+    "title": "Add /support route to vercel.json rewrites",
+    "body": "",
+    "_sha": "9f3d8611de8cb585611d3a3280bb779ae6f282f9"
+  },
+  {
     "date": "2026-03-12",
     "type": "feat",
     "title": "Add /support page, replace 'learn more' with 'support' button",
