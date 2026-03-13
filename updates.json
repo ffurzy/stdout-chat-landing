@@ -2,6 +2,13 @@
   {
     "date": "2026-03-13",
     "type": "fix",
+    "title": "Input field text color uses theme.hi (green in classic_green), you stays blue…",
+    "body": "",
+    "_sha": "ios-cf3ebfd4550553792459c76a398bfd7be5badfce"
+  },
+  {
+    "date": "2026-03-13",
+    "type": "fix",
     "title": "/bug case returns true; classic_green input color green not blue",
     "body": "",
     "_sha": "ios-2016114775627228a3abc0133622fa4f3c6fd593"
