@@ -272,32 +272,47 @@
     <div class="wrap">
       <p class="section-label">// recent updates</p>
 
-      <!-- EMPTY STATE — remove when first update is added -->
-      <div class="empty-state">
-        <div class="empty-icon">▒</div>
-        <p class="empty-title">no public updates yet.</p>
-        <p class="empty-hint">
-          check back soon — this page will show<br>
-          what changed, when, and why.
+      <!-- UPDATE ENTRIES — newest first -->
+      <!-- future: auto-inject <article class="update-entry"> blocks here -->
+
+      <article class="update-entry">
+        <div class="entry-meta">
+          <time class="entry-date">2026-03-12</time>
+          <span class="entry-tag tag-fix">fix</span>
+        </div>
+        <h2 class="entry-title">fixed reconnect issue during session resume</h2>
+        <p class="entry-body">
+          if your connection dropped mid-conversation, the app would sometimes
+          fail to reconnect silently. this is now fixed — reconnect happens
+          automatically within 3 seconds, and the session resumes cleanly.
         </p>
-      </div>
+      </article>
 
-      <!-- UPDATE ENTRIES GO HERE -->
-      <!--
-        Example entry (uncomment to use):
+      <article class="update-entry">
+        <div class="entry-meta">
+          <time class="entry-date">2026-03-10</time>
+          <span class="entry-tag tag-feat">feature</span>
+        </div>
+        <h2 class="entry-title">added /dashboard command and credit display</h2>
+        <p class="entry-body">
+          type <span style="color:var(--blue)">/dashboard</span> to open your personal control panel.
+          shows your current credit balance, rank, session stats, and quick access
+          to themes and settings — all in the same terminal interface.
+        </p>
+      </article>
 
-        <article class="update-entry">
-          <div class="entry-meta">
-            <time class="entry-date">2026-03-12</time>
-            <span class="entry-tag tag-feat">feature</span>
-          </div>
-          <h2 class="entry-title">Public updates page added</h2>
-          <p class="entry-body">
-            stdout.chat now has a changelog at /updates.
-            Future fixes, features and improvements will appear here.
-          </p>
-        </article>
-      -->
+      <article class="update-entry">
+        <div class="entry-meta">
+          <time class="entry-date">2026-03-08</time>
+          <span class="entry-tag tag-improvement">improvement</span>
+        </div>
+        <h2 class="entry-title">improved command picker behavior after selection</h2>
+        <p class="entry-body">
+          after selecting a command from the picker, the input field now clears
+          instantly and focus returns to the text area. no more extra tap needed —
+          just pick a command and keep going.
+        </p>
+      </article>
 
     </div>
   </section>
