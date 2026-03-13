@@ -1,0 +1,41 @@
+name: Append public update
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to push the updated updates.json
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run append-update script
+        env:
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_SHA:     ${{ github.event.head_commit.id }}
+          COMMIT_DATE:    ${{ github.event.head_commit.timestamp }}
+        run: |
+          # Strip to YYYY-MM-DD (timestamp is ISO 8601)
+          export COMMIT_DATE="${COMMIT_DATE:0:10}"
+          node scripts/append-update.js
+
+      - name: Commit updated updates.json (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git diff --quiet updates.json && {
+            echo "updates.json unchanged — nothing to commit."
+            exit 0
+          }
+
+          git add updates.json
+          git commit -m "chore: auto-append update entry [skip ci]"
+          git push
