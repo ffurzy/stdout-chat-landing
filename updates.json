@@ -2,6 +2,13 @@
   {
     "date": "2026-03-13",
     "type": "fix",
+    "title": "Support page logo",
+    "body": "Added a clickable logo.",
+    "_sha": "0152a59bc04eefed8c28f32fdf449240cd3a16d6"
+  },
+  {
+    "date": "2026-03-13",
+    "type": "fix",
     "title": "Add 18+",
     "body": "",
     "_sha": "ios-6e4fd7319755f61e2ffb69c48077725bedbd78b5"
