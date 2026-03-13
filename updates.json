@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-03-12",
+    "type": "fix",
+    "title": "fixed reconnect issue during session resume",
+    "body": "if your connection dropped mid-conversation, the app would sometimes fail to reconnect silently. this is now fixed — reconnect happens automatically within 3 seconds, and the session resumes cleanly."
+  },
+  {
+    "date": "2026-03-10",
+    "type": "feat",
+    "title": "added /dashboard command and credit display",
+    "body": "type /dashboard to open your personal control panel. shows your current credit balance, rank, session stats, and quick access to themes and settings — all in the same terminal interface."
+  },
+  {
+    "date": "2026-03-08",
+    "type": "impr",
+    "title": "improved command picker behavior after selection",
+    "body": "after selecting a command from the picker, the input field now clears instantly and focus returns to the text area. no more extra tap needed — just pick a command and keep going."
+  }
+]
