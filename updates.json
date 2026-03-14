@@ -2,6 +2,13 @@
   {
     "date": "2026-03-14",
     "type": "fix",
+    "title": "Note correct bundle ID chat.stdout.ios in PushManager",
+    "body": "",
+    "_sha": "ios-d641f4a577e51db1b5eb3084c48d5e6b757b49a5"
+  },
+  {
+    "date": "2026-03-14",
+    "type": "fix",
     "title": "Changed max_lines to 200",
     "body": "",
     "_sha": "ios-cf8a6c07c2daa8117e915f01a065a659f4d6a6b8"
