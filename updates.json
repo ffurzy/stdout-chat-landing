@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-14",
+    "type": "fix",
+    "title": "Changed max_lines to 200",
+    "body": "",
+    "_sha": "ios-cf8a6c07c2daa8117e915f01a065a659f4d6a6b8"
+  },
+  {
     "date": "2026-03-13",
     "type": "fix",
     "title": "Correct privacy manifest — Messages type for chat, not OtherUserProfile",
