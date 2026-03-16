@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Fixed the animation",
+    "body": "",
+    "_sha": "ios-7d3db1b86a90764673dc7db374ab9293cef9065b"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Modified OnboardingView animation logic",
     "body": "",
     "_sha": "ios-9723e00c30ba59df812b309d8c5a82dc0e5d3645"
