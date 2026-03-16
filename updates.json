@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-16",
+    "type": "fix",
+    "title": "Start screens",
+    "body": "adjusted font sizes on the start screens.",
+    "_sha": "ios-5e72cdfb13c9a7db4ce05fb12bf3014317a5d60f"
+  },
+  {
     "date": "2026-03-15",
     "type": "feat",
     "title": "Added preview screens",
