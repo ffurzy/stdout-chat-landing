@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Added tooltips to the main screen.",
+    "body": "",
+    "_sha": "ios-e512ac04b106eb8d927fee6ff03c026ff51fb51f"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Start screens",
     "body": "changed speed of the /shout string",
     "_sha": "ios-e851b38df00d9504ae8d6eb52cf59c7a51ecac02"
