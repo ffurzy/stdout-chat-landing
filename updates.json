@@ -3,6 +3,13 @@
     "date": "2026-03-16",
     "type": "fix",
     "title": "Start screens",
+    "body": "changed speed of the /shout string",
+    "_sha": "ios-e851b38df00d9504ae8d6eb52cf59c7a51ecac02"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
+    "title": "Start screens",
     "body": "some changes",
     "_sha": "ios-2d71b6c284f7dfa6be7dfa9f454f2c8432ed15c5"
   },
