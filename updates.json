@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Updated text styling in OnboardingView.swift component",
+    "body": "",
+    "_sha": "ios-e06c58c0e7e3a6b2d035f005626845f9d45d3b0f"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Adjusted the entrance screen array.",
     "body": "",
     "_sha": "ios-366f2fe721f3589b8be64b9e4682dbefd7518301"
