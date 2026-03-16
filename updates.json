@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-15",
+    "type": "feat",
+    "title": "Added preview screens",
+    "body": "",
+    "_sha": "ios-4fbca94bfd344b23723bb8d06050ffa34cecf6a4"
+  },
+  {
     "date": "2026-03-14",
     "type": "fix",
     "title": "Note correct bundle ID chat.stdout.ios in PushManager",
