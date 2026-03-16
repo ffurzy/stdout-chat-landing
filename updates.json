@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Swipe right by defoult",
+    "body": "",
+    "_sha": "ios-6fa10dc12b28500eb8c509367144fe5950ccaac2"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Remove 'stranger disconnected' line on /next entirely",
     "body": "",
     "_sha": "ios-89f8f57ca9046d1768cab8f0735eee3affcf12cd"
