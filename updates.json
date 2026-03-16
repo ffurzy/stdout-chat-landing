@@ -3,6 +3,13 @@
     "date": "2026-03-16",
     "type": "fix",
     "title": "Start screens",
+    "body": "some changes",
+    "_sha": "ios-2d71b6c284f7dfa6be7dfa9f454f2c8432ed15c5"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
+    "title": "Start screens",
     "body": "adjusted font sizes on the start screens.",
     "_sha": "ios-5e72cdfb13c9a7db4ce05fb12bf3014317a5d60f"
   },
