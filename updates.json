@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Splash screen text",
+    "body": "show bottom text instantly on return visits",
+    "_sha": "ios-2d9f6110ac7d3845b37fe56b5728ff0600392677"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Fixed the animation",
     "body": "",
     "_sha": "ios-7d3db1b86a90764673dc7db374ab9293cef9065b"
