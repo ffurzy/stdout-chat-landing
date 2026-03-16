@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Splash to chat transition",
+    "body": "fade out overlay instead of hard swap, chat renders underneath",
+    "_sha": "ios-6d20f02f7f0425d0cadb9c3a16e2b89f94673fc6"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Splash screen text",
     "body": "show bottom text instantly on return visits",
     "_sha": "ios-2d9f6110ac7d3845b37fe56b5728ff0600392677"
