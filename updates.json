@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Updated OnboardingView dots visibility logic",
+    "body": "",
+    "_sha": "ios-58bff0789d92831a628afc3fdf8350771220de30"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Updated text styling in OnboardingView.swift component",
     "body": "",
     "_sha": "ios-e06c58c0e7e3a6b2d035f005626845f9d45d3b0f"
