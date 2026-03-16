@@ -2,6 +2,13 @@
   {
     "date": "2026-03-16",
     "type": "fix",
+    "title": "Modified OnboardingView animation logic",
+    "body": "",
+    "_sha": "ios-9723e00c30ba59df812b309d8c5a82dc0e5d3645"
+  },
+  {
+    "date": "2026-03-16",
+    "type": "fix",
     "title": "Updated OnboardingView dots visibility logic",
     "body": "",
     "_sha": "ios-58bff0789d92831a628afc3fdf8350771220de30"
