@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-17",
+    "type": "fix",
+    "title": "Reset isConnected on reconnect to prevent messages sent without active partner",
+    "body": "",
+    "_sha": "ios-dc426ec55070973f4df2a2dcdf2f2bd830d6423b"
+  },
+  {
     "date": "2026-03-16",
     "type": "fix",
     "title": "Swipe right by defoult",
