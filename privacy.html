@@ -374,8 +374,8 @@
       </p>
       <div class="highlight">
         <p>
-          <strong>Core principle:</strong> We cannot identify you. Messages are never stored.
-          Your conversations vanish the moment you disconnect.
+          <strong>Core principle:</strong> We do not attempt to identify you and do not collect information that directly identifies you. Messages are not stored after a session ends.
+          In limited cases (such as abuse reports), a limited portion of recent message content may be temporarily retained for moderation purposes and then deleted when no longer needed.
         </p>
       </div>
       <p>
@@ -407,6 +407,9 @@
         <li>Moderating abuse through ban enforcement</li>
         <li>Pairing you with compatible strangers via the rating-based matchmaking system</li>
       </ul>
+      <p>
+        The Device ID is not used for tracking across apps or services and is not shared with third parties for advertising purposes.
+      </p>
 
       <h3>IP Address</h3>
       <p>
@@ -421,6 +424,9 @@
       <p>
         IP addresses are not stored permanently. Temporary records may be retained to enforce active
         bans; these are automatically deleted once the ban expires (maximum 30 days for most cases).
+      </p>
+      <p>
+        IP addresses are not used to identify individual users and are not combined with other data to build user profiles.
       </p>
 
       <h3>Anonymous Usage Metrics</h3>
@@ -475,13 +481,12 @@
       </p>
       <ul>
         <li>The Device ID of the reported user (if available)</li>
-        <li>A report counter increment (no message content is logged)</li>
+        <li>A limited portion of recent messages (for example, up to 10 messages)</li>
         <li>A timestamp of the report</li>
       </ul>
+      
       <p>
-        If AI-assisted content moderation is used to evaluate potential policy violations,
-        this analysis occurs in real time and no message content is retained after the evaluation.
-        Moderation decisions (ban/no-ban) are stored; the message content itself is not.
+        This information is used solely for moderation and abuse prevention. Reported message content is reviewed and is not retained longer than necessary for moderation purposes.
       </p>
 
       <h3>Connection Metadata</h3>
@@ -520,7 +525,7 @@
       </div>
 
       <ul>
-        <li>Message content or conversation transcripts</li>
+        <li>Message content or conversation transcripts outside of temporary storage used for moderation (e.g., reports)</li>
         <li>Your name, username, email address, or phone number</li>
         <li>Your Apple ID or any Apple account information</li>
         <li>Precise location data or GPS coordinates</li>
@@ -532,8 +537,10 @@
       </ul>
 
       <p>
-        Conversations are ephemeral by design. When your session ends, the conversation
-        ceases to exist. We cannot retrieve past conversations even if compelled to do so.
+        Conversations are ephemeral by default. Once a session ends, message content is not stored.
+  However, in cases where a report is submitted, a limited portion of the conversation may be
+  temporarily retained for moderation purposes. Outside of these limited cases, we cannot
+  retrieve past conversations.
       </p>
     </div>
 
@@ -590,7 +597,11 @@
           <tbody>
             <tr>
               <td>Message content</td>
-              <td>Never stored — exists only in memory during active session</td>
+              <td>Not stored after a session ends — exists only in memory during an active session</td>
+            </tr>
+            <tr>
+              <td>Reported message content</td>
+              <td>Retained temporarily for moderation review, then deleted</td>
             </tr>
             <tr>
               <td>Shout content</td>
@@ -651,9 +662,7 @@
 
       <h3>Legal Obligations</h3>
       <p>
-        We may disclose limited technical data (IP addresses, ban records) if required by
-        law or in response to a valid court order or legal process. Because message content
-        is never stored, we cannot disclose conversation data even if compelled to do so.
+        We may disclose limited technical data (such as IP addresses or ban records) if required by law or in response to a valid court order or legal process. Message content is not stored after ordinary sessions end; however, if a report has been submitted, a limited portion of recent messages may be temporarily available for moderation purposes and could be disclosed if legally required.
       </p>
 
       <h3>Emergency Safety</h3>
@@ -748,8 +757,7 @@
         been associated with the account.
       </p>
       <p>
-        This application complies with the Children's Online Privacy Protection Act (COPPA)
-        and applicable international regulations regarding minors' data.
+        The service is not directed to children under 18, and we do not knowingly collect personal information from minors.
       </p>
     </div>
 
@@ -869,7 +877,7 @@
   <footer>
     <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — anonymous. ephemeral. text only.</span>
     <div class="footer-right">
-      <a href="/privacy">privacy</a>
+      <a href="/privacy-policy">privacy</a>
       <a href="/terms">terms</a>
       <a href="/support">support</a>
       <a href="/updates">updates</a>
