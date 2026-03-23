@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-23",
+    "type": "fix",
+    "title": "Inline dashboard token header — attachDashboardToken is fileprivate",
+    "body": "",
+    "_sha": "ios-e167c78fd994e682c79baa8f52c4672f80c02347"
+  },
+  {
     "date": "2026-03-22",
     "type": "fix",
     "title": "Added registration page",
