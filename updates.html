@@ -18,81 +18,10 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
 
+  <link rel="stylesheet" href="/style.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --green: #00ff41;
-      --blue:  #00bfff;
-      --red:   #ff4444;
-      --dim:   #555555;
       --body:  #888888;   /* ↑ was #555 — readable on dim monitors */
-      --line:  #111111;
-      --bg:    #000000;
-    }
-
-    html, body {
-      background: var(--bg);
-      color: var(--green);
-      font-family: 'Courier New', Courier, monospace;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ─── scanline overlay ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 3px,
-        rgba(0,0,0,0.08) 3px,
-        rgba(0,0,0,0.08) 4px
-      );
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    /* ─── container ─── */
-    .wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ─── nav ─── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--line);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .nav-logo {
-      font-size: 14px;
-      color: var(--dim);
-      letter-spacing: 0.05em;
-      text-decoration: none;
-    }
-
-    .nav-logo span { color: var(--green); }
-
-    .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 6px var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.4; }
     }
 
     /* ─── page header ─── */
@@ -296,20 +225,6 @@
     /* hide button when all groups revealed */
     .load-older.done { display: none; }
 
-    /* ─── footer ─── */
-    footer {
-      padding: 32px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .footer-left  { font-size: 11px; color: var(--dim); }
-    .footer-right { font-size: 11px; color: var(--dim); opacity: 0.5; }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
