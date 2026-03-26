@@ -2,6 +2,13 @@
   {
     "date": "2026-03-25",
     "type": "fix",
+    "title": "Shout onboarding screen",
+    "body": "",
+    "_sha": "ios-0820c65611b0d8a4a4ea4ffb15d986f9f9d30f10"
+  },
+  {
+    "date": "2026-03-25",
+    "type": "fix",
     "title": "Onboarding",
     "body": "",
     "_sha": "ios-f48af9899650b142f33a42f7153eecd1d76875f3"
