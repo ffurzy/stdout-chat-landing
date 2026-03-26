@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-03-26",
+    "type": "feat",
+    "title": "Add privacy policy to onboarding screen",
+    "body": "",
+    "_sha": "ios-fa1b5a9a802cf8e92ce91d30b5b9e9004f8f4b53"
+  },
+  {
+    "date": "2026-03-26",
     "type": "fix",
     "title": "Second screen",
     "body": "",
