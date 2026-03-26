@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-25",
+    "type": "fix",
+    "title": "Show onboarding after delete the app",
+    "body": "",
+    "_sha": "ios-1aed0fbd6b02a44735f24d940a2c74583342fa2e"
+  },
+  {
     "date": "2026-03-23",
     "type": "fix",
     "title": "Inline dashboard token header — attachDashboardToken is fileprivate",
