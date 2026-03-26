@@ -2,6 +2,13 @@
   {
     "date": "2026-03-26",
     "type": "fix",
+    "title": "Remove shouts",
+    "body": "",
+    "_sha": "58b9202328620aa8934fe845a48cff604c4c2624"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "fix",
     "title": "Styles",
     "body": "",
     "_sha": "9afa5bd64037d361bdbca68a532eec335aae5a18"
