@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-03-26",
+    "type": "fix",
+    "title": "Second screen",
+    "body": "",
+    "_sha": "ios-f94e36a63f9c5cdb7f0d0a770fd2e61ae82a3f18"
+  },
+  {
     "date": "2026-03-25",
     "type": "fix",
     "title": "Shout onboarding screen",
