@@ -14,59 +14,30 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
 
+  <link rel="stylesheet" href="/style.css">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
-      --green: #00ff41;
-      --blue:  #00bfff;
-      --red:   #ff4444;
-      --dim:   #555555;
       --muted: #333333;
-      --line:  #111111;
-      --bg:    #000000;
     }
 
     html, body {
-      background: var(--bg);
       color: var(--dim);
-      font-family: 'Courier New', Courier, monospace;
-      min-height: 100vh;
       -webkit-text-size-adjust: 100%;
     }
 
-    /* scanline overlay */
+    /* scanline overlay — slightly different opacity for this page */
     body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
       background: repeating-linear-gradient(
         to bottom,
         transparent 0px, transparent 3px,
         rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
       );
-      pointer-events: none;
-      z-index: 999;
     }
 
-    /* nav */
+    /* nav override for wider max-width */
     nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--line);
       max-width: 720px;
-      margin: 0 auto;
     }
-
-    .nav-logo {
-      font-size: 14px;
-      color: var(--dim);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    .nav-logo span { color: var(--green); }
 
     .nav-back {
       font-size: 11px;
@@ -76,10 +47,9 @@
     }
     .nav-back:hover { color: var(--dim); }
 
-    /* layout */
+    /* layout override for wider max-width */
     .wrap {
       max-width: 720px;
-      margin: 0 auto;
       padding: 60px 24px 100px;
     }
 
@@ -289,23 +259,15 @@
 
     .highlight p { margin-bottom: 0; }
 
-    /* footer */
+    /* footer overrides */
     footer {
-      padding: 32px 24px;
       border-top: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
       max-width: 720px;
-      margin: 0 auto;
     }
 
-    .footer-left { font-size: 11px; color: var(--dim); }
     .footer-right {
-      font-size: 11px;
       color: var(--muted);
+      opacity: 1;
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
@@ -534,7 +496,7 @@
         <li>Device hardware identifiers (IDFA, IDFV, serial number)</li>
         <li>Contacts, photos, microphone, or camera data</li>
         <li>Browsing history or cross-app tracking data</li>
-        <li>Third-party analytics or advertising SDKs</li>
+        <li>Third-party analytics or advertising SDKs (note: the stdout.chat website uses Vercel Web Analytics for basic page view metrics — this collects no personal data, sets no cookies, and does not track individual users)</li>
         <li>Cookies for tracking or advertising purposes</li>
       </ul>
 

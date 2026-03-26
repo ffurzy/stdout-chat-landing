@@ -17,81 +17,8 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
+  <link rel="stylesheet" href="/style.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --green: #00ff41;
-      --blue:  #00bfff;
-      --red:   #ff4444;
-      --dim:   #555555;
-      --line:  #111111;
-      --bg:    #000000;
-    }
-
-    html, body {
-      background: var(--bg);
-      color: var(--green);
-      font-family: 'Courier New', Courier, monospace;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* ─── scanline overlay ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 3px,
-        rgba(0,0,0,0.08) 3px,
-        rgba(0,0,0,0.08) 4px
-      );
-      pointer-events: none;
-      z-index: 999;
-    }
-
-    /* ─── container ─── */
-    .wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ─── nav ─── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--line);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .nav-logo {
-      font-size: 14px;
-      color: var(--dim);
-      letter-spacing: 0.05em;
-    }
-
-    .nav-logo span { color: var(--green); }
-
-    .dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 6px var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.4; }
-    }
-
     /* ─── hero ─── */
     .hero {
       padding: 80px 0 60px;
@@ -133,36 +60,6 @@
       align-items: center;
       gap: 24px;
       flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1px solid var(--green);
-      color: var(--green);
-      font-family: inherit;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-decoration: none;
-      cursor: pointer;
-      background: transparent;
-      transition: background 0.15s, color 0.15s;
-      position: relative;
-    }
-
-    .btn:hover {
-      background: var(--green);
-      color: #000;
-    }
-
-    .btn-ghost {
-      border-color: var(--dim);
-      color: var(--dim);
-    }
-
-    .btn-ghost:hover {
-      background: var(--dim);
-      color: #000;
     }
 
     .btn-appstore {
@@ -354,29 +251,6 @@
 
     .cmd-desc { color: var(--dim); }
 
-    /* ─── footer ─── */
-    footer {
-      padding: 32px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .footer-left {
-      font-size: 11px;
-      color: var(--dim);
-    }
-
-    .footer-right {
-      font-size: 11px;
-      color: var(--dim);
-      opacity: 0.5;
-    }
-
     /* ─── typewriter animation ─── */
     .tw { opacity: 0; }
     .tw.visible { opacity: 1; animation: typeIn 0.4s ease forwards; }
@@ -483,26 +357,27 @@
     <div class="wrap">
       <p class="section-label">// ranking system</p>
       <p style="font-size:12px;color:var(--dim);margin-bottom:24px;line-height:1.8;">
-        every conversation shapes your rank. longer chats raise it. reports drop it.<br>
-        you'll be matched with people close to your level.
+        after each chat, you get a grade: S (amazing), A (great), B (decent), C (too short), D (spam).<br>
+        quality conversations earn more points. streaks give bonus points.<br>
+        score can go down for bad behavior. you'll be matched with people close to your level.
       </p>
       <ul class="cmd-list">
-        <li><span class="cmd" style="color:var(--dim)">&lt; 400</span>   <span class="cmd-desc">NULL — you barely exist</span></li>
-        <li><span class="cmd" style="color:var(--dim)">400–550</span>  <span class="cmd-desc">VOID — pure emptiness</span></li>
-        <li><span class="cmd" style="color:var(--dim)">550–700</span>  <span class="cmd-desc">GHOST — others avoid you</span></li>
-        <li><span class="cmd" style="color:var(--dim)">700–800</span>  <span class="cmd-desc">SHADOW — barely noticed</span></li>
-        <li><span class="cmd" style="color:#888">800–880</span>    <span class="cmd-desc">DRIFTER — wandering</span></li>
-        <li><span class="cmd" style="color:#888">880–950</span>    <span class="cmd-desc">WANDERER — searching</span></li>
-        <li><span class="cmd" style="color:var(--green)">950–1000</span>  <span class="cmd-desc">MEMBER — active and in good standing</span></li>
-        <li><span class="cmd" style="color:var(--green)">1000–1080</span> <span class="cmd-desc">KNOWN — people notice you</span></li>
-        <li><span class="cmd" style="color:var(--green)">1080–1150</span> <span class="cmd-desc">FAMILIAR — they remember you</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1150–1250</span> <span class="cmd-desc">TRUSTED — rare</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1250–1350</span> <span class="cmd-desc">CONNECTED — very rare</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1350–1500</span> <span class="cmd-desc">VOID WALKER — top tier</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1500–1650</span> <span class="cmd-desc">PHANTOM — almost mythical</span></li>
-        <li><span class="cmd" style="color:#ff8800">1650–1800</span> <span class="cmd-desc">ORACLE — you know things</span></li>
-        <li><span class="cmd" style="color:#ff8800">1800–1950</span> <span class="cmd-desc">ARCHITECT — you built this world</span></li>
-        <li><span class="cmd" style="color:var(--red)">&gt; 1950</span>  <span class="cmd-desc">LEGEND — top 1%. known by the void.</span></li>
+        <li><span class="cmd" style="color:var(--dim)">0</span>      <span class="cmd-desc">NULL — you barely exist</span></li>
+        <li><span class="cmd" style="color:var(--dim)">50</span>     <span class="cmd-desc">VOID — pure emptiness</span></li>
+        <li><span class="cmd" style="color:var(--dim)">120</span>    <span class="cmd-desc">GHOST — others avoid you</span></li>
+        <li><span class="cmd" style="color:var(--dim)">200</span>    <span class="cmd-desc">SHADOW — barely noticed</span></li>
+        <li><span class="cmd" style="color:#888">300</span>    <span class="cmd-desc">DRIFTER — wandering</span></li>
+        <li><span class="cmd" style="color:#888">450</span>    <span class="cmd-desc">WANDERER — searching</span></li>
+        <li><span class="cmd" style="color:var(--green)">650</span>   <span class="cmd-desc">STRANGER — finding your way</span></li>
+        <li><span class="cmd" style="color:var(--green)">900</span>   <span class="cmd-desc">KNOWN — people notice you</span></li>
+        <li><span class="cmd" style="color:var(--green)">1200</span>  <span class="cmd-desc">FAMILIAR — they remember you</span></li>
+        <li><span class="cmd" style="color:var(--blue)">1500</span>  <span class="cmd-desc">TRUSTED — rare</span></li>
+        <li><span class="cmd" style="color:var(--blue)">1900</span>  <span class="cmd-desc">CONNECTED — very rare</span></li>
+        <li><span class="cmd" style="color:var(--blue)">2400</span>  <span class="cmd-desc">VOID WALKER — top tier</span></li>
+        <li><span class="cmd" style="color:var(--blue)">3000</span>  <span class="cmd-desc">PHANTOM — almost mythical</span></li>
+        <li><span class="cmd" style="color:#ff8800">3600</span>  <span class="cmd-desc">ORACLE — you know things</span></li>
+        <li><span class="cmd" style="color:#ff8800">4200</span>  <span class="cmd-desc">ARCHITECT — you built this world</span></li>
+        <li><span class="cmd" style="color:var(--red)">5000</span>  <span class="cmd-desc">LEGEND — top 1%. known by the void.</span></li>
       </ul>
     </div>
   </section>
@@ -529,7 +404,7 @@
         <li>
           <span class="cmd" style="color:var(--blue)">/dashboard</span>
           <span class="cmd-desc">
-            your <strong style="color:var(--green)">credits</strong>, shout balance, themes store and settings — the terminal control panel
+            your <strong style="color:var(--green)">credits</strong>, missions, streaks, themes store and settings — the terminal control panel
           </span>
         </li>
       </ul>
