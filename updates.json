@@ -2,6 +2,13 @@
   {
     "date": "2026-03-26",
     "type": "fix",
+    "title": "Onboarding text",
+    "body": "",
+    "_sha": "ios-891433a15783759ce6bf804c420be5aa60240768"
+  },
+  {
+    "date": "2026-03-26",
+    "type": "fix",
     "title": "Remove shouts",
     "body": "",
     "_sha": "58b9202328620aa8934fe845a48cff604c4c2624"
