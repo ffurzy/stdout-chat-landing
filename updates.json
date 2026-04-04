@@ -2,6 +2,13 @@
   {
     "date": "2026-04-04",
     "type": "fix",
+    "title": "Remove '/next to find another' hint from disconnect status",
+    "body": "",
+    "_sha": "ios-0381e9bba711bf3fe08724fb6d7050126734316a"
+  },
+  {
+    "date": "2026-04-04",
+    "type": "fix",
     "title": "Escape multiline commit messages in notify-updates workflow",
     "body": "",
     "_sha": "ios-85cc3f16c792918ba03c7d8bd757fd85aa9dea7a"
