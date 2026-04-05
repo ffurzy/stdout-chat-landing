@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-04-04",
+    "type": "fix",
+    "title": "End Live Activity when search is cancelled or user quits",
+    "body": "",
+    "_sha": "ios-d9a4c5d24444a8b6abfabdfb46682dde4ad4f8ad"
+  },
+  {
+    "date": "2026-04-04",
     "type": "feat",
     "title": "Wire Widget Extension target for Live Activities",
     "body": "",
