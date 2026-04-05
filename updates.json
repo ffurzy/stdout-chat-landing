@@ -2,6 +2,13 @@
   {
     "date": "2026-04-04",
     "type": "fix",
+    "title": "Replace interpolation with local metronome to eliminate snake jitter",
+    "body": "",
+    "_sha": "ios-622cfb1c78490439cf7a48d297825833ac3d2660"
+  },
+  {
+    "date": "2026-04-04",
+    "type": "fix",
     "title": "Smooth 60fps snake rendering + narrower Dynamic Island",
     "body": "",
     "_sha": "ios-95aef357378c257305a48c2268774ce3852854c5"
