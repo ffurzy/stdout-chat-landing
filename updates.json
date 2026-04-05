@@ -2,6 +2,13 @@
   {
     "date": "2026-04-04",
     "type": "feat",
+    "title": "Wire Widget Extension target for Live Activities",
+    "body": "",
+    "_sha": "ios-ffb5157ff11b0fc63171b9ca4ad23a5e4f5fc106"
+  },
+  {
+    "date": "2026-04-04",
+    "type": "feat",
     "title": "Live Activities / Dynamic Island support (iOS 16.1+)",
     "body": "",
     "_sha": "ios-4111d8a84f0cd025c9152c74c11b5c1d3926797f"
