@@ -2,6 +2,13 @@
   {
     "date": "2026-04-04",
     "type": "fix",
+    "title": "Smooth 60fps snake rendering + narrower Dynamic Island",
+    "body": "",
+    "_sha": "ios-95aef357378c257305a48c2268774ce3852854c5"
+  },
+  {
+    "date": "2026-04-04",
+    "type": "fix",
     "title": "End Live Activity when search is cancelled or user quits",
     "body": "",
     "_sha": "ios-d9a4c5d24444a8b6abfabdfb46682dde4ad4f8ad"
