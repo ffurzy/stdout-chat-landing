@@ -1,6 +1,13 @@
 [
   {
     "date": "2026-04-04",
+    "type": "feat",
+    "title": "Client-side prediction with server reconciliation for snake",
+    "body": "",
+    "_sha": "ios-3899917634576819f01a773ba537c6fc04bb7a3c"
+  },
+  {
+    "date": "2026-04-04",
     "type": "fix",
     "title": "Eliminate snake jitter with CADisplayLink + play-latest strategy",
     "body": "",
