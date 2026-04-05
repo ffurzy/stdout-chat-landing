@@ -2,6 +2,13 @@
   {
     "date": "2026-04-04",
     "type": "fix",
+    "title": "Eliminate snake jitter with CADisplayLink + play-latest strategy",
+    "body": "",
+    "_sha": "ios-c39abee62e1e257d7ca3959f7d6c9d4901b563de"
+  },
+  {
+    "date": "2026-04-04",
+    "type": "fix",
     "title": "Replace interpolation with local metronome to eliminate snake jitter",
     "body": "",
     "_sha": "ios-622cfb1c78490439cf7a48d297825833ac3d2660"
