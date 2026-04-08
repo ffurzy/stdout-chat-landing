@@ -1,26 +1,85 @@
-    html, body {
-      color: #555;
-    }
-    .wrap {
-      padding: 60px 24px 80px;
-    }
-    h1 {
-      font-size: 20px;
-      color: #00ff41;
-      font-weight: normal;
-      margin-bottom: 48px;
-    }
-    p {
-      font-size: 13px;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 16px;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      border-top: 1px solid var(--line);
-    }
-    footer a { color: #333; }
-    footer a:hover { color: #555; }
+html, body {
+  color: #555;
+}
+.wrap {
+  padding: 60px 24px 80px;
+}
+h1 {
+  font-size: 20px;
+  color: #00ff41;
+  font-weight: normal;
+  margin-bottom: 48px;
+}
+p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ─── section labels ─── */
+.section-label {
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+/* ─── FAQ ─── */
+.faq {
+  margin-bottom: 56px;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.faq-item:first-of-type {
+  border-top: 1px solid var(--line);
+}
+.faq-q {
+  font-size: 13px;
+  font-weight: normal;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+.faq-a {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 0;
+}
+.faq-a .cmd {
+  color: var(--blue);
+}
+.faq-a a {
+  color: var(--green);
+}
+
+/* ─── contact sections ─── */
+.contact-section {
+  margin-bottom: 48px;
+}
+.contact-section a {
+  color: var(--green);
+}
+.safety-link {
+  display: inline-block;
+  padding: 8px 0;
+  font-weight: bold;
+}
+.response-time {
+  font-size: 11px;
+  color: #333;
+  margin-top: 4px;
+}
+
+/* ─── footer ─── */
+footer {
+  border-top: 1px solid var(--line);
+}
+footer a { color: #333; }
+footer a:hover { color: #555; }
