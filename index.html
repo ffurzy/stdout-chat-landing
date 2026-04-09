@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>stdout.chat — conversations that go somewhere</title>
-  <meta name="description" content="stdout.chat matches you with people based on shared interests. Safe, profile-based text conversations. Download free on iOS." />
+  <title>stdout.chat — talk to strangers. the good kind.</title>
+  <meta name="description" content="Anonymous text chat matched by interests. 16-rank system rewards real conversations. No photos, no followers — just talk. Free on iOS." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="stdout.chat" />
-  <meta property="og:description" content="A profile-based conversation platform. See who you're connecting with. Accept or decline. Safe, interest-matched, text-only conversations." />
+  <meta property="og:title" content="stdout.chat — talk to strangers. the good kind." />
+  <meta property="og:description" content="Matched by interests, ranked by conversation quality. No photos, no followers — just text. Free on iOS." />
   <meta property="og:url" content="https://stdout.chat" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="stdout.chat" />
-  <meta name="twitter:description" content="Profile-based conversations matched by shared interests. You choose who to talk to." />
+  <meta name="twitter:description" content="Talk to strangers. The good kind. Anonymous chat matched by interests." />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
@@ -33,11 +33,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <p class="hero-tag">// iOS app — 18+ — free download</p>
-      <h1>Conversations that<br><em>go somewhere.</em></h1>
+      <p class="hero-tag">// anonymous chat for people who like real conversations</p>
+      <h1>Talk to strangers.<br><em>The good kind.</em></h1>
       <p class="hero-sub">
-        stdout.chat matches you with people based on shared interests.
-        See their profile, then decide. Safe, focused, text-only conversations — no social media noise.
+        Matched by interests. Ranked by conversation quality.<br>
+        No photos. No followers. Just text.
       </p>
       <div class="cta-row">
         <a href="#" class="btn-appstore">
@@ -46,7 +46,27 @@
           </svg>
           Download on the App Store
         </a>
-        <a href="/support" class="btn btn-ghost">▸ support</a>
+        <span class="hero-note">free · iOS · 18+</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="wrap">
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-num">16</span>
+          <span class="stat-label">rank tiers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">themes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">real-time</span>
+          <span class="stat-label">matching</span>
+        </div>
       </div>
     </div>
   </section>
@@ -63,21 +83,19 @@
           <span class="term-brand">stdout.chat</span>
         </div>
         <div class="term-body" id="termBody">
-          <div class="tline sys">stdout.chat v1.0.0</div>
-          <div class="tline sys">profile-based conversations. choose who you talk to.</div>
+          <div class="tline sys">stdout.chat v2.0</div>
+          <div class="tline sys">text-only conversations. matched by interests.</div>
           <div class="tline sys">─────────────────────────────────────</div>
           <div class="tline sys tw">connecting...</div>
-          <div class="tline sys tw">&gt; connected to network</div>
-          <div class="tline sys tw">&gt; finding a conversation...</div>
-          <div class="tline sys tw">&gt; profile ready — review before connecting</div>
+          <div class="tline sys tw">&gt; matched on: music, indie</div>
           <div class="tline sys tw">─────────────────────────────────────</div>
-          <div class="tline them tw">[user]: hey, saw you're into music too</div>
-          <div class="tline you  tw">[you]: yeah, what do you listen to?</div>
-          <div class="tline them tw">[user]: mostly indie and some jazz lately</div>
-          <div class="tline you  tw">[you]: same — have you heard Arooj Aftab?</div>
-          <div class="tline them tw">[user]: yes! that album is something else</div>
+          <div class="tline them tw">[stranger]: hey! what's the last album that blew your mind?</div>
+          <div class="tline you  tw">[you]: radiohead — in rainbows. still hits different</div>
+          <div class="tline them tw">[stranger]: taste. have you heard the from the basement version?</div>
+          <div class="tline you  tw">[you]: no way, looking that up right now</div>
+          <div class="tline them tw">[stranger]: you'll thank me later haha</div>
           <div class="tline sys tw">─────────────────────────────────────</div>
-          <div class="tline tw" style="color:#ffb000">[BROADCAST] &gt;&gt; ORACLE: great conversations happening now &lt;&lt;</div>
+          <div class="tline tw" style="color:var(--green)">// session grade: A · +10 pts · solid conversation</div>
         </div>
         <div class="term-input-row">
           <span class="prompt">&gt;</span>
@@ -87,103 +105,133 @@
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features">
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
     <div class="wrap">
-      <p class="section-label">// why stdout.chat</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <div class="feature-icon">🎯</div>
-          <h3>matched by interests</h3>
-          <p>Choose up to 5 interests. We find someone who shares them — so conversations start with something real.</p>
+      <p class="section-label">// how it works</p>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>set your interests</h3>
+          <p>Pick up to 5 topics. We match you with someone who shares them.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">👤</div>
-          <h3>you decide who to talk to</h3>
-          <p>See the other person's profile before connecting — their name, interests, and rating. Accept or move on. Always your choice.</p>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>review & connect</h3>
+          <p>See their profile and rank before you chat. Accept or skip — your call.</p>
         </div>
-        <div class="feature">
-          <div class="feature-icon">🛡️</div>
-          <h3>safe and moderated</h3>
-          <p>Built-in report and block tools. A community rating system that rewards respectful conversations. Guidelines enforced.</p>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>earn your rank</h3>
+          <p>Good conversations earn points. Climb from NEW to LEGEND across 16 tiers.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RATING -->
-  <section class="commands">
+  <!-- FEATURES -->
+  <section class="features">
     <div class="wrap">
-      <p class="section-label">// ranking system</p>
-      <p style="font-size:12px;color:var(--dim);margin-bottom:24px;line-height:1.8;">
-        after each chat, you get a grade: S (amazing), A (great), B (decent), C (too short), D (spam).<br>
-        quality conversations earn more points. streaks give bonus points.<br>
-        score can go down for bad behavior. you'll be matched with people close to your level.
-      </p>
-      <ul class="cmd-list">
-        <li><span class="cmd" style="color:var(--dim)">0</span>      <span class="cmd-desc">NEW — everyone starts here</span></li>
-        <li><span class="cmd" style="color:var(--dim)">50</span>     <span class="cmd-desc">VOID — the beginning</span></li>
-        <li><span class="cmd" style="color:var(--dim)">120</span>    <span class="cmd-desc">GHOST — just passing through</span></li>
-        <li><span class="cmd" style="color:var(--dim)">200</span>    <span class="cmd-desc">SHADOW — finding your footing</span></li>
-        <li><span class="cmd" style="color:#888">300</span>    <span class="cmd-desc">DRIFTER — starting to explore</span></li>
-        <li><span class="cmd" style="color:#888">450</span>    <span class="cmd-desc">WANDERER — on the move</span></li>
-        <li><span class="cmd" style="color:var(--green)">650</span>   <span class="cmd-desc">STRANGER — making connections</span></li>
-        <li><span class="cmd" style="color:var(--green)">900</span>   <span class="cmd-desc">KNOWN — people notice you</span></li>
-        <li><span class="cmd" style="color:var(--green)">1200</span>  <span class="cmd-desc">FAMILIAR — they remember you</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1500</span>  <span class="cmd-desc">TRUSTED — respected by the community</span></li>
-        <li><span class="cmd" style="color:var(--blue)">1900</span>  <span class="cmd-desc">CONNECTED — deeply engaged</span></li>
-        <li><span class="cmd" style="color:var(--blue)">2400</span>  <span class="cmd-desc">VOID WALKER — top tier</span></li>
-        <li><span class="cmd" style="color:var(--blue)">3000</span>  <span class="cmd-desc">PHANTOM — almost mythical</span></li>
-        <li><span class="cmd" style="color:#ff8800">3600</span>  <span class="cmd-desc">ORACLE — you know things</span></li>
-        <li><span class="cmd" style="color:#ff8800">4200</span>  <span class="cmd-desc">ARCHITECT — shaping the community</span></li>
-        <li><span class="cmd" style="color:var(--red)">5000</span>  <span class="cmd-desc">LEGEND — top 1%. the best of the best.</span></li>
-      </ul>
+      <p class="section-label">// what makes it different</p>
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>interest matching</h3>
+          <p>Not random. Matched on what you actually care about.</p>
+        </div>
+        <div class="feature">
+          <h3>conversation grades</h3>
+          <p>Every chat gets a grade: S, A, B, or C. Quality matters here.</p>
+        </div>
+        <div class="feature">
+          <h3>ranking system</h3>
+          <p>16 tiers from NEW to LEGEND. Your rank reflects how you talk, not how you look.</p>
+        </div>
+        <div class="feature">
+          <h3>shout broadcast</h3>
+          <p>Spend credits to broadcast a message to everyone online. Be heard.</p>
+        </div>
+        <div class="feature">
+          <h3>themes & customization</h3>
+          <p>Classic green, amber, red alert, matrix dark — make the terminal yours.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- COMMANDS -->
-  <section class="commands">
+  <!-- RANKING -->
+  <section class="ranking">
     <div class="wrap">
-      <p class="section-label">// commands</p>
-      <ul class="cmd-list">
-        <li><span class="cmd">/next</span>      <span class="cmd-desc">end conversation and find someone new</span></li>
-        <li><span class="cmd">/time</span>      <span class="cmd-desc">see how long you've been connected</span></li>
-        <li><span class="cmd">/clear</span>     <span class="cmd-desc">wipe the conversation from your screen</span></li>
-        <li><span class="cmd">/report</span>    <span class="cmd-desc">report inappropriate behavior</span></li>
-        <li><span class="cmd">/block</span>     <span class="cmd-desc">block this user</span></li>
-        <li><span class="cmd">/quit</span>      <span class="cmd-desc">leave</span></li>
-        <li><span class="cmd">/score</span>     <span class="cmd-desc">your rating, rank and stats</span></li>
-        <li><span class="cmd">/help</span>      <span class="cmd-desc">show all commands</span></li>
-        <li>
-          <span class="cmd" style="color:var(--blue)">/dashboard</span>
-          <span class="cmd-desc">
-            your <strong style="color:var(--green)">credits</strong>, missions, streaks, themes store and settings — the terminal control panel
-          </span>
-        </li>
-      </ul>
+      <p class="section-label">// 16 ranks · climb the ladder</p>
+      <div class="rank-preview">
+        <div class="rank-row">
+          <span class="rank-score" style="color:var(--dim)">0</span>
+          <span class="rank-name" style="color:var(--dim)">NEW</span>
+          <span class="rank-bar" style="color:var(--dim)">░░░░░░░░░░</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-score" style="color:var(--green)">650</span>
+          <span class="rank-name" style="color:var(--green)">STRANGER</span>
+          <span class="rank-bar" style="color:var(--green)">████░░░░░░</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-score" style="color:var(--blue)">1500</span>
+          <span class="rank-name" style="color:var(--blue)">TRUSTED</span>
+          <span class="rank-bar" style="color:var(--blue)">██████░░░░</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-score" style="color:#ff8800">3600</span>
+          <span class="rank-name" style="color:#ff8800">ORACLE</span>
+          <span class="rank-bar" style="color:#ff8800">████████░░</span>
+        </div>
+        <div class="rank-row">
+          <span class="rank-score" style="color:var(--red)">5000</span>
+          <span class="rank-name" style="color:var(--red)">LEGEND</span>
+          <span class="rank-bar" style="color:var(--red)">██████████</span>
+        </div>
+      </div>
+      <p class="rank-note">+ 11 more tiers in between. quality conversations move you up.</p>
     </div>
   </section>
 
-  <!-- JOIN US -->
-  <section class="commands" id="join">
+  <!-- SAFETY -->
+  <section class="safety">
     <div class="wrap">
-      <ul class="cmd-list" style="margin-bottom:32px;">
-        <li><span class="cmd" style="color:var(--green)">backend</span>   <span class="cmd-desc">Node.js, Socket.IO, scaling, infra</span></li>
-        <li><span class="cmd" style="color:var(--green)">iOS / Swift</span> <span class="cmd-desc">SwiftUI, UIKit, app polish</span></li>
-        <li><span class="cmd" style="color:var(--green)">security</span>   <span class="cmd-desc">hardening, abuse prevention, audits</span></li>
-        <li><span class="cmd" style="color:var(--green)">design</span>     <span class="cmd-desc">terminal aesthetics, UX ideas</span></li>
-        <li><span class="cmd" style="color:var(--green)">anything</span>   <span class="cmd-desc">if you see something broken, fix it</span></li>
-      </ul>
-      <a href="mailto:hello@stdout.chat?subject=I want to help build stdout.chat" class="btn" style="display:inline-block;">
-        ▸ hello@stdout.chat
+      <p class="section-label">// safety first</p>
+      <div class="safety-grid">
+        <div class="safety-item">
+          <h3>report & block</h3>
+          <p>One tap to report. One tap to block. Zero tolerance for abuse.</p>
+        </div>
+        <div class="safety-item">
+          <h3>quality-based matching</h3>
+          <p>Hidden behavior score keeps toxic users away from good conversations.</p>
+        </div>
+        <div class="safety-item">
+          <h3>no personal data</h3>
+          <p>No phone number. No email. No photos. Conversations are ephemeral.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>ready to talk?</h2>
+      <p class="cta-sub">free download. no account needed. just open and go.</p>
+      <a href="#" class="btn-appstore btn-appstore-lg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        Download on the App Store
       </a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — conversations that go somewhere.</span>
-    <span class="footer-right"><a href="/privacy-policy" style="color:var(--dim);text-decoration:none">privacy policy</a> &nbsp;·&nbsp; <a href="/terms" style="color:var(--dim);text-decoration:none">terms</a> &nbsp;·&nbsp; <a href="/updates" style="color:var(--dim);text-decoration:none">updates</a> &nbsp;·&nbsp; <a href="/support" style="color:var(--dim);text-decoration:none">support</a> &nbsp;·&nbsp; // made with ☕ in nyc</span>
+    <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — talk to strangers. the good kind.</span>
+    <span class="footer-right"><a href="/privacy-policy" style="color:var(--dim);text-decoration:none">privacy policy</a> &nbsp;·&nbsp; <a href="/terms" style="color:var(--dim);text-decoration:none">terms</a> &nbsp;·&nbsp; <a href="/updates" style="color:var(--dim);text-decoration:none">updates</a> &nbsp;·&nbsp; <a href="/support" style="color:var(--dim);text-decoration:none">support</a></span>
   </footer>
 
   <script>
