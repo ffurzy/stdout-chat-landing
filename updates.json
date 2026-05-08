@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-05-07",
+    "type": "feat",
+    "title": "stdout.chat is live on the App Store",
+    "body": "Free on iOS. Set interests, start chatting.",
+    "_sha": "v1.1.5-appstore-launch"
+  },
+  {
     "date": "2026-04-04",
     "type": "feat",
     "title": "Client-side prediction with server reconciliation for snake",
