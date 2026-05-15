@@ -1,0 +1,43 @@
+# stdout.chat
+
+> Anonymous text chat for real conversations. Matched by interests, ranked by conversation quality. iOS-first, free download, no signup required.
+
+stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paired with strangers based on shared interests, not random. Every conversation receives a quality grade (S, A, B, C) that contributes to a 16-tier ranking system (NEW → LEGEND).
+
+## Core principles
+
+- **Text-only**: no photos, no video, no voice. Conversations focus on words.
+- **No accounts**: no phone number, email, or personal data collected. Just open the app and start.
+- **Interest-based matching**: users set up to 5 topics; pairing prioritizes overlap.
+- **Conversation quality**: ranking rewards meaningful exchanges, not engagement gaming.
+- **Privacy-first**: ephemeral chats, no message storage beyond session, no identity persistence.
+- **Built-in moderation**: report and block one-tap; quality matching filters toxic actors.
+- **18+ only**: adult users; in-app age gating; community moderation.
+
+## Pages
+
+- [Home](https://stdout.chat/): product overview, features, how it works, rank system, themes
+- [Updates](https://stdout.chat/updates): release notes and changelog
+- [Support](https://stdout.chat/support): help articles, FAQ, contact info
+- [Privacy](https://stdout.chat/privacy): privacy policy, data handling
+- [Terms](https://stdout.chat/terms): terms of service
+
+## App Store
+
+- [Download stdout.chat on the App Store](https://apps.apple.com/app/stdout-chat/id6760369542) — free, iOS 16+, age 18+
+
+## Notable facts
+
+- **Category**: Social Networking
+- **Platform**: iOS only (16.0+); no Android, no web client
+- **Languages**: English (only)
+- **Monetization**: free download; optional in-app purchases for cosmetic themes (no pay-to-win, no chat restrictions on free tier)
+- **Founded**: 2026
+- **Headquarters**: New York, USA
+
+## Differentiators vs competitors
+
+- vs Omegle/Emerald Chat: interest-based matching, not random; text-only; quality ranking
+- vs Discord/Telegram: no servers, no friend lists, pure pair-chat focus
+- vs WhatsApp/iMessage: anonymous, no contact discovery, no identity persistence
+- vs Tinder/Bumble: text-only, no dating intent, conversation-quality ranking
