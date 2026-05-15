@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://stdout.chat/</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://stdout.chat/og-image.png</image:loc>
+      <image:title>stdout.chat — text chat for real conversations</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stdout.chat/screenshots/02-interests.png</image:loc>
+      <image:title>stdout.chat interests selection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stdout.chat/screenshots/03-review.png</image:loc>
+      <image:title>stdout.chat profile preview before chat</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stdout.chat/screenshots/04-chat.png</image:loc>
+      <image:title>stdout.chat live conversation</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stdout.chat/screenshots/05-themes.png</image:loc>
+      <image:title>stdout.chat theme selection</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://stdout.chat/screenshots/06-profile.png</image:loc>
+      <image:title>stdout.chat profile and rank</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://stdout.chat/privacy</loc>
