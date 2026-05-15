@@ -4,90 +4,425 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — stdout.chat</title>
-  <meta name="description" content="Get help with stdout.chat. FAQ, safety reporting, and contact information." />
+  <meta name="description" content="Help, FAQs, and contact for stdout.chat." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Support — stdout.chat" />
+  <meta property="og:description" content="Help, FAQs, and contact for stdout.chat." />
+  <meta property="og:url" content="https://stdout.chat/support" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://stdout.chat/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stdout.chat/og-image.png" />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6760369542">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://stdout.chat/support">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/support.css">
+
+  <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-logo"><span>stdout</span>.chat</a>
-    <div class="dot"></div>
-  </nav>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="dot"></span>
+      <span>stdout.chat</span>
+    </a>
+    <nav class="top-nav">
+      <a href="/privacy">privacy</a>
+      <a href="/terms">terms</a>
+      <a href="/updates">updates</a>
+      <a href="/support" class="active">support</a>
+    </nav>
+    <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">↓ get the app</a>
+  </header>
 
+  <header class="page-head">
+    <div class="page-eyebrow">// HELP</div>
+    <h1 class="page-title">need a hand?<br/><span class="green">we got you.</span></h1>
+    <p class="page-sub">Quick commands, common questions, and direct lines for everything else. Most issues resolve in one tap inside the app.</p>
+    <div class="search-row">
+      <span class="prompt">›</span>
+      <input type="text" id="search" placeholder="search the docs (try: refund, block, themes...)"/>
+      <span class="hint">ctrl K</span>
+    </div>
+  </header>
+
+  <!-- Quick commands -->
+  <section class="cmds">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// QUICK COMMANDS</div>
+        <h2 class="section-title">type these <em>in any chat.</em></h2>
+      </div>
+    </div>
+    <div class="cmd-grid">
+      <div class="cmd-card">
+        <div class="cmd">/report</div>
+        <h3>Report a user</h3>
+        <p>Flags the conversation for moderation review. Acted on within 24 hours.</p>
+      </div>
+      <div class="cmd-card">
+        <div class="cmd">/block</div>
+        <h3>Block a user</h3>
+        <p>You'll never be paired with this Device ID again. Stored locally on your device.</p>
+      </div>
+      <div class="cmd-card">
+        <div class="cmd">/shout</div>
+        <h3>Broadcast</h3>
+        <p>Send one message to every online user. Costs 12 credits.</p>
+      </div>
+      <div class="cmd-card">
+        <div class="cmd">/score</div>
+        <h3>Show your rank</h3>
+        <p>Displays your current tier, points, and your Device ID.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+
+    <aside class="faq-nav">
+      <div class="lbl">// CATEGORIES</div>
+      <ul>
+        <li><a href="#start" class="active">Getting started</a></li>
+        <li><a href="#match">Matching &amp; chats</a></li>
+        <li><a href="#rank">Ranks &amp; themes</a></li>
+        <li><a href="#safety">Safety &amp; abuse</a></li>
+        <li><a href="#credits">Credits &amp; purchases</a></li>
+        <li><a href="#privacy">Privacy &amp; data</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ul>
+    </aside>
+
+    <div class="faq-list">
+
+      <section class="faq-cat" id="start">
+        <div class="cat-tag">// 01 / START</div>
+        <h2>Getting started</h2>
+        <p class="cat-desc">The first 60 seconds in stdout.chat.</p>
+
+        <details class="qa" open>
+          <summary>Do I need an account?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>No. There is no signup, no password, no email verification. The app generates a random Device ID the first time you launch it, and that's it. You're online.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What information do I have to give?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Pick a username (any string up to 20 characters), an optional short bio, and an avatar from our emoji set. That's all that's visible to the people you match with. You never give us your real name, phone, email, or Apple ID.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What happens if I delete and reinstall the app?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>A fresh Device ID is generated. Your prior rank, credits, reports, and block list are gone — there is no way to link the new install back to the old one. This is the only way to fully "reset" your stdout.chat identity.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Is this an iOS-only app?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>For now, yes. Android is on the roadmap. There is no plan for a desktop client — the app is built for fast, low-friction phone conversations.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="match">
+        <div class="cat-tag">// 02 / MATCH</div>
+        <h2>Matching &amp; chats</h2>
+        <p class="cat-desc">How pairing, profiles, and grades actually work.</p>
+
+        <details class="qa">
+          <summary>How does interest matching work?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>You select up to 5 interests from four categories: <strong>Culture &amp; Entertainment, Tech &amp; Digital, Lifestyle, Sport &amp; Outdoors</strong>. We pair you with a user who has at least one interest in common, weighted by similarity in rank tier.</p>
+            <p>You can edit your interests at any time from Settings → Profile. New interests apply on your next match.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Can I skip a match without losing points?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Yes. The profile preview screen always shows two options: <code>[connect]</code> and <code>[skip]</code>. Skipping has no rank penalty. We only deduct points if you abandon a session abruptly mid-conversation.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What is a session grade?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Every chat closes with a letter grade: <strong>S</strong> (exceptional), <strong>A</strong> (good), <strong>B</strong> (okay), <strong>C</strong> (low engagement). The grade is calculated from session length, message balance, and whether either party left abruptly.</p>
+            <p>Grades feed your rank score and your hidden behavior signal — which keeps low-grade users out of high-grade pairings.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Why are there no photos?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>By design. stdout.chat is text-first. There is no photo upload, no voice, no video. The avatar you see on a profile preview is from a fixed emoji set we provide — never a user-submitted image. This is what keeps the platform clean and lets people focus on what someone is actually saying.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Are messages saved?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>No. Conversations exist only in memory while a session is active. When either party leaves, the message history is gone from our servers. The only exception is a small recent-message buffer that may be temporarily kept if a user submits a <code>/report</code> — see the <a href="/privacy#retention">retention policy</a>.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="rank">
+        <div class="cat-tag">// 03 / RANK</div>
+        <h2>Ranks &amp; themes</h2>
+        <p class="cat-desc">Climbing the ladder and customizing your terminal.</p>
+
+        <details class="qa">
+          <summary>How do I climb tiers?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Each session ends with a grade and a point reward: <strong>S = +20</strong>, <strong>A = +12</strong>, <strong>B = +5</strong>, <strong>C = 0</strong>. Points accumulate from <code>NEW</code> (0 pts) all the way to <code>LEGEND</code> (5000 pts) across 16 tiers.</p>
+            <p>You don't lose tier on a bad session — you just don't gain. Persistent low-grade behavior, however, can demote you.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>How many themes are there?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Six: <strong>classic_green</strong> (default), <strong>amber</strong>, <strong>white_phosphor</strong>, <strong>blue_terminal</strong>, <strong>red_alert</strong>, <strong>matrix_dark</strong>. Three are free; three are unlocked via the credits store (300–800 credits each).</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Where do I switch themes?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Settings → Themes. Tap any unlocked theme to apply it instantly across the whole app. Your selection is stored locally — no server round-trip.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="safety">
+        <div class="cat-tag">// 04 / SAFETY</div>
+        <h2>Safety &amp; abuse</h2>
+        <p class="cat-desc">How to report, block, and stay safe.</p>
+
+        <details class="qa">
+          <summary>How do I report someone?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Type <code>/report</code> in the chat. The session is flagged for moderation and a small buffer of the last 10 messages is temporarily kept for review. Reports are looked at within 24 hours — confirmed violations result in immediate device-level bans.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>How does blocking work?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Type <code>/block</code> during or after a session. The blocked Device ID is stored locally on your phone — you will never be paired with that user again. Blocking is private; the other side is not notified.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What happens to reported content?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>It's reviewed by a human moderator and then deleted when no longer needed. We do not retain reported message content longer than necessary for moderation. See the <a href="/privacy#collect">Privacy Policy</a> for the full retention schedule.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>What's banned?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>The short list: illegal content, harassment, hate speech, threats, doxxing, sharing CSAM, spam, automation, and any attempt to disrupt the service. The full list lives in the <a href="/terms#conduct">Terms of Service</a>. We operate a zero-tolerance policy.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="credits">
+        <div class="cat-tag">// 05 / CREDITS</div>
+        <h2>Credits &amp; purchases</h2>
+        <p class="cat-desc">How the in-app currency works.</p>
+
+        <details class="qa">
+          <summary>What are credits?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Credits are stdout.chat's in-app currency. They let you send <code>/shout</code> broadcasts and unlock premium themes. You can earn them through high-grade sessions or purchase packs in the store.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>How do I buy credits?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Settings → Store. All purchases go through Apple's in-app payment system. We never see your card details — only an anonymized Apple transaction ID.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>How do I get a refund?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>All refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, find the purchase, and request a refund. We cannot process refunds directly.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Restore purchases after reinstall?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Open Settings → Store → "Restore Purchases". Apple will restore any prior credit purchases tied to your Apple ID. Note: themes purchased on the old Device ID need to be reapplied; credit balance carries over.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="privacy">
+        <div class="cat-tag">// 06 / PRIVACY</div>
+        <h2>Privacy &amp; data</h2>
+        <p class="cat-desc">What we collect, what we don't.</p>
+
+        <details class="qa">
+          <summary>What's a Device ID?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>A random UUID generated when you first install the app. Stored in the iOS Keychain. It's how we track your rank and credit balance — but it is <strong>not</strong> linked to your name, phone, email, or Apple ID. Delete the app and the link is severed permanently.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>How do I find my Device ID?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Settings → Profile → "Identity" card. Or type <code>/score</code> in any chat — your Device ID is shown at the bottom.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Can I delete my data?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Yes. Two options:</p>
+            <ul>
+              <li><strong>Self-serve:</strong> delete the app. Your Device ID becomes orphaned, no longer linked to a device.</li>
+              <li><strong>Email request:</strong> contact <a href="mailto:hello@stdout.chat">hello@stdout.chat</a> with your Device ID. We process deletion requests within 30 days.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Is there an analytics SDK?<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Inside the app: no third-party analytics, no advertising SDKs, no IDFA. The website uses Vercel Web Analytics for anonymous page-view counts only — no cookies, no personal data.</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="faq-cat" id="trouble">
+        <div class="cat-tag">// 07 / TROUBLESHOOTING</div>
+        <h2>Troubleshooting</h2>
+        <p class="cat-desc">Things that occasionally break.</p>
+
+        <details class="qa">
+          <summary>I keep getting "connection failed".<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>First: toggle airplane mode for 5 seconds and try again — clears most carrier-side routing issues. If it persists, you may have hit the per-IP simultaneous-connection limit (3 max). Other devices on the same network using stdout.chat may need to disconnect.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>My rank reset to NEW.<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Most common cause: the app was reinstalled (Device ID changed). If you didn't reinstall and your rank still reset, email <a href="mailto:hello@stdout.chat">hello@stdout.chat</a> with your Device ID and we'll investigate.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>I got banned but I didn't do anything.<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Email <a href="mailto:hello@stdout.chat">hello@stdout.chat</a> with your Device ID, the approximate time you were last online, and any context. Our moderators review every appeal — false-positive bans are reversed promptly.</p>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>The app crashes on launch.<span class="toggle">+</span></summary>
+          <div class="answer">
+            <p>Force-quit (swipe up from home screen, swipe the app away), then reopen. If it persists, update to the latest version from the App Store. Still broken? Send us a crash report at <a href="mailto:hello@stdout.chat">hello@stdout.chat</a> with your iOS version and device model.</p>
+          </div>
+        </details>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact">
+    <div class="contact-grid">
+      <div class="contact-intro">
+        <div class="section-tag" style="margin-bottom:18px">// CONTACT</div>
+        <h2>can't find <em>what you need?</em></h2>
+        <p>One inbox for everything. We respond to every legitimate request — most under 24 hours.</p>
+      </div>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:hello@stdout.chat">
+          <div class="ic">?</div>
+          <div class="col">
+            <h4>Get in touch</h4>
+            <p>app issues · privacy &amp; data · safety · legal · feedback</p>
+          </div>
+          <span class="em">hello@stdout.chat →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
   <div class="wrap">
-    <h1>support</h1>
-
-    <!-- FAQ -->
-    <section class="faq">
-      <p class="section-label">// frequently asked questions</p>
-
-      <div class="faq-item">
-        <h3 class="faq-q">How does matching work?</h3>
-        <p class="faq-a">You choose up to 5 interests during profile setup. When you tap "next", we find someone online who shares your interests. You see their profile — name, interests, rating — and decide whether to connect or skip.</p>
+    <div class="foot-row">
+      <div class="who">
+        <span class="dot"></span>
+        <span>stdout.chat — private. ephemeral. text only.</span>
       </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">How do I report someone?</h3>
-        <p class="faq-a">Type <span class="cmd">/report</span> during a conversation, or tap the report button on the other user's profile card. Choose a reason and submit. Reports are reviewed and acted upon within 24 hours. You can submit up to 5 reports per day.</p>
+      <div class="links">
+        <a href="/privacy">privacy</a>
+        <a href="/terms">terms</a>
+        <a href="/updates">updates</a>
+        <a href="/support">support</a>
       </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">How do I block a user?</h3>
-        <p class="faq-a">Type <span class="cmd">/block</span> during a conversation. Blocked users will never be matched with you again. You can manage your block list from the dashboard settings.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">How do I delete my account?</h3>
-        <p class="faq-a">Open the dashboard, go to Settings, and tap "Delete Account" at the bottom. This permanently removes your profile, score, credits, and all associated data. This action cannot be undone.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">What is the ranking system?</h3>
-        <p class="faq-a">After each conversation, both users receive a grade based on conversation quality and duration. Quality conversations earn more points. Your rank (from NEW to LEGEND) reflects your overall standing and affects who you're matched with.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">Is my data private?</h3>
-        <p class="faq-a">Yes. We don't store chat messages after your session ends. We don't collect your name, email, phone number, or location. Your device is identified by a random ID stored only on your device. Read our full <a href="/privacy">privacy policy</a> for details.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">How do I appeal a ban?</h3>
-        <p class="faq-a">Open the app, go to the dashboard, tap <strong>Settings</strong>, and select <strong>"appeal a ban"</strong> under Support. Describe your situation — your device ID is attached automatically. We review all appeals and respond within 48 hours. You can submit one appeal at a time; if it is dismissed, you may resubmit after 7 days.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3 class="faq-q">What are credits?</h3>
-        <p class="faq-a">Credits are the in-app currency used to purchase themes and broadcast shouts. You earn credits passively through regular use, or purchase them via the in-app store.</p>
-      </div>
-    </section>
-
-    <!-- SAFETY -->
-    <section class="contact-section">
-      <p class="section-label">// report a safety concern</p>
-      <p>If you encounter illegal content, threats, or any behavior that puts someone at risk, contact us immediately:</p>
-      <p><a href="mailto:hello@stdout.chat?subject=Safety concern" class="safety-link">hello@stdout.chat — urgent safety report</a></p>
-      <p class="response-time">We prioritize safety reports and aim to respond within 24 hours.</p>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact-section">
-      <p class="section-label">// contact</p>
-      <p>For general questions, feedback, or anything else:</p>
-      <p><a href="mailto:hello@stdout.chat">hello@stdout.chat</a></p>
-      <p class="response-time">We typically respond within 48 hours.</p>
-    </section>
+    </div>
   </div>
+</footer>
 
-  <footer>
-    <a href="/privacy">privacy</a>
-    <a href="/terms">terms</a>
-    <a href="/support">support</a>
-  </footer>
+<script>
+  // FAQ nav active state on scroll
+  const cats = document.querySelectorAll('.faq-cat');
+  const navLinks = document.querySelectorAll('.faq-nav a');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  cats.forEach(c => obs.observe(c));
 
-  <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+  // Simple search filter
+  const search = document.getElementById('search');
+  const qaItems = document.querySelectorAll('details.qa');
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    qaItems.forEach(qa => {
+      const txt = qa.textContent.toLowerCase();
+      const match = q === '' || txt.includes(q);
+      qa.style.display = match ? '' : 'none';
+      if (match && q !== '') qa.open = true;
+    });
+    // Hide categories with no visible items
+    cats.forEach(c => {
+      const visible = [...c.querySelectorAll('details.qa')].some(qa => qa.style.display !== 'none');
+      c.style.display = visible ? '' : 'none';
+    });
+  });
+
+  // Cmd+K / Ctrl+K to focus search
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); search.focus(); }
+  });
+</script>
+
 </body>
 </html>

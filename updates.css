@@ -1,204 +1,210 @@
-    :root {
-      --body:  #888888;   /* ↑ was #555 — readable on dim monitors */
-    }
+/* =========================================================
+   stdout.chat — Updates / Changelog page styles
+   Depends on: style.css (shared base)
+   ========================================================= */
 
-    /* ─── page header ─── */
-    .page-header {
-      padding: 64px 0 48px;
-      border-bottom: 1px solid var(--line);
-    }
+.feed-wrap{ padding: 64px 0 80px; }
 
-    .page-tag {
-      font-size: 11px;
-      color: var(--dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+/* =========================================================
+   Filter chips
+   ========================================================= */
+.filters{
+  display:flex; gap:10px; flex-wrap:wrap;
+  font-family:var(--mono); font-size:13px;
+  margin-bottom: 48px;
+}
+.chip{
+  padding: 7px 14px; border-radius:999px;
+  border:1px solid var(--line-2);
+  color:var(--text-dim);
+  cursor:pointer; user-select:none;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.chip:hover{ color:var(--text); border-color: var(--accent); }
+.chip.on{ background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.chip .ct{ opacity:.6; margin-left:6px; }
 
-    .page-header h1 {
-      font-size: clamp(24px, 5vw, 42px);
-      font-weight: normal;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--green);
-      margin-bottom: 16px;
-    }
+/* =========================================================
+   Timeline
+   ========================================================= */
+.feed{
+  position:relative;
+  display:flex; flex-direction:column; gap: 24px;
+}
+.feed::before{
+  content:""; position:absolute;
+  top: 0; bottom: 80px; left: 140px;
+  width:1px; background:
+    repeating-linear-gradient(180deg, var(--line-2) 0 6px, transparent 6px 12px);
+}
 
-    .page-header .sub {
-      font-size: 13px;
-      color: var(--body);
-      line-height: 1.8;
-      max-width: 480px;
-    }
+.release{
+  position:relative;
+  display:grid; grid-template-columns: 140px 1fr; gap: 40px;
+  padding: 8px 0;
+  align-items:start;
+}
+.release-meta{
+  font-family:var(--mono); font-size:13px;
+  text-align:right; padding-right:16px;
+  color:var(--text-dim);
+  line-height:1.5;
+}
+.release-meta .v{
+  display:block; font-weight:700; color:var(--accent); font-size:15px;
+  letter-spacing:.04em;
+  margin-bottom: 4px;
+}
+.release-meta .d{ display:block; font-size:11px; opacity:.8; }
 
-    /* ─── section label ─── */
-    .section-label {
-      font-size: 11px;
-      color: var(--dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-    }
+.release-card{
+  background: var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding: 28px 32px 32px;
+  position:relative;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.release-card:hover{ border-color: var(--line-2); }
+.release-card::before{
+  content:""; position:absolute;
+  left: -41px; top: 32px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 16px var(--accent-glow);
+}
 
-    /* ─── updates feed ─── */
-    .updates-section {
-      padding: 60px 0;
-      border-bottom: 1px solid var(--line);
-    }
+.release-head{
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:20px; flex-wrap:wrap;
+  margin-bottom: 20px;
+}
+.release-head h2{
+  font-family: var(--sans); font-weight: 700;
+  font-size: 28px; letter-spacing:-.02em; line-height:1.15;
+  margin: 0;
+  color: var(--text);
+}
+.release-tags{ display:flex; gap:6px; flex-wrap:wrap; }
+.rt{
+  font-family:var(--mono); font-size:10px;
+  padding: 4px 9px; border-radius:5px;
+  letter-spacing:.08em; font-weight:600;
+}
+.rt-new{ background: rgba(0,255,122,.12); color: var(--accent); }
+.rt-fix{ background: rgba(74,214,255,.12); color: #4ad6ff; }
+.rt-imp{ background: rgba(255,180,84,.12); color: var(--amber); }
+.rt-sec{ background: rgba(255,90,90,.12); color: var(--red); }
 
-    /* ─── empty state ─── */
-    .empty-state {
-      border: 1px solid var(--line);
-      background: #050505;
-      padding: 48px 32px;
-      text-align: center;
-    }
+.release-body{ font-size:16px; line-height: 1.6; color: var(--text-2); }
+.release-body p{ margin: 0 0 16px; }
+.release-body p:last-child{ margin-bottom: 0; }
+.release-body strong{ color: var(--text); font-weight:600; }
 
-    .empty-icon {
-      font-size: 28px;
-      margin-bottom: 20px;
-      opacity: 0.4;
-    }
+.change-list{
+  list-style:none; padding:0; margin: 0;
+  display: flex; flex-direction:column; gap: 12px;
+}
+.change-list li{
+  display:grid; grid-template-columns: 60px 1fr; gap: 16px;
+  align-items:start;
+}
+.change-list li .tag{
+  font-family:var(--mono); font-size:10px; font-weight:700;
+  letter-spacing:.08em; padding: 4px 0; text-align:left;
+  color: var(--accent); opacity:.9;
+}
+.change-list li .tag.fix{ color: #4ad6ff; }
+.change-list li .tag.imp{ color: var(--amber); }
+.change-list li .tag.sec{ color: var(--red); }
+.change-list code{
+  font-family: var(--mono); background: var(--accent-soft); color: var(--accent);
+  padding: 1px 7px; border-radius: 4px; font-size: 13px;
+}
 
-    .empty-title {
-      font-size: 13px;
-      color: var(--body);
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
+/* Latest highlight */
+.release.latest .release-card{
+  border-color: var(--accent);
+  box-shadow: 0 0 50px -20px var(--accent-glow);
+}
+.release.latest .release-meta .v::after{
+  content: "LATEST";
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px; border-radius:4px;
+  background: var(--accent); color: var(--bg);
+  font-size: 9px; font-weight: 700; letter-spacing: .12em;
+  vertical-align: middle;
+}
 
-    .empty-hint {
-      font-size: 11px;
-      color: var(--dim);
-      line-height: 1.7;
-    }
+/* End-of-feed marker */
+.feed-end{
+  position:relative;
+  text-align:center;
+  padding: 40px 0 20px;
+  font-family:var(--mono); font-size:12px;
+  color: var(--text-dim);
+  margin-top: 20px;
+  margin-left: 180px;
+}
+.feed-end::before{
+  content: "▮"; display:block; color:var(--accent); margin-bottom: 8px;
+  animation: blink 1.2s steps(1) infinite;
+}
 
-    /* ─── month group ─── */
-    /*
-      Entries are grouped by month using <section class="month-group"> wrappers.
-      Structure:
+/* =========================================================
+   Subscribe card
+   ========================================================= */
+.subscribe{
+  margin-top: 80px;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-3));
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 48px 52px;
+  display:grid; grid-template-columns: 1.5fr 1fr; gap:48px;
+  align-items:center;
+}
+.subscribe h3{
+  font-family:var(--sans); font-weight:700;
+  font-size: 36px; letter-spacing:-.02em; line-height:1.05;
+  margin: 0 0 14px;
+}
+.subscribe h3 em{ font-style: italic; font-weight:500; color: var(--text-dim); }
+.subscribe p{ color: var(--text-2); margin: 0; font-size:16px; line-height:1.55; }
+.subscribe-form{
+  display:flex; gap:8px;
+  background: var(--bg);
+  border: 1px solid var(--line-2);
+  border-radius: 12px;
+  padding: 4px;
+}
+.subscribe-form input{
+  flex:1; background:transparent; border:0; outline:none;
+  color: var(--text); padding: 12px 16px;
+  font-family: var(--mono); font-size: 14px;
+}
+.subscribe-form input::placeholder{ color: var(--text-dim); }
+.subscribe-form button{
+  background: var(--accent); color: var(--bg);
+  border:0; padding: 10px 20px; border-radius: 8px;
+  font-family: var(--mono); font-size: 13px; font-weight: 700;
+  cursor:pointer; transition: opacity .15s;
+  letter-spacing: .05em;
+}
+.subscribe-form button:hover{ opacity: .85; }
+.sub-foot{
+  margin-top: 12px;
+  font-family: var(--mono); font-size: 11px; color: var(--text-dim);
+}
 
-        <section class="month-group">
-          <h3 class="month-label">// march 2026</h3>
-          <article class="update-entry"> ... </article>
-          <article class="update-entry"> ... </article>
-        </section>
-    */
-
-    .month-group {
-      margin-bottom: 8px;
-    }
-
-    .month-label {
-      font-size: 11px;
-      font-weight: normal;
-      color: var(--dim);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 20px 0 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    /* ─── update entry ─── */
-    /*
-      Each entry:
-
-        <article class="update-entry">
-          <div class="entry-meta">
-            <time class="entry-date">YYYY-MM-DD</time>
-            <span class="entry-tag tag-fix">fix</span>   ← or tag-feat / tag-impr
-          </div>
-          <h2 class="entry-title">Short title</h2>
-          <p class="entry-body">Description.</p>
-        </article>
-
-      Tag classes and labels:
-        tag-fix  → "fix"
-        tag-feat → "feat"
-        tag-impr → "impr"
-    */
-
-    .update-entry {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .update-entry:last-child {
-      border-bottom: none;
-    }
-
-    .entry-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .entry-date {
-      font-size: 11px;
-      color: var(--dim);
-      letter-spacing: 0.08em;
-    }
-
-    /* ─── tags: fixed 4-char width so all align ─── */
-    .entry-tag {
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 2px 0;
-      width: 36px;          /* fits "feat" / "fix " / "impr" uniformly */
-      text-align: center;
-      border: 1px solid currentColor;
-      flex-shrink: 0;
-    }
-
-    .tag-fix  { color: var(--red);   }
-    .tag-feat { color: var(--green); }
-    .tag-impr { color: var(--blue);  }
-
-    .entry-title {
-      font-size: 15px;
-      font-weight: normal;
-      color: var(--green);
-      letter-spacing: 0.02em;
-      margin-bottom: 10px;
-    }
-
-    .entry-body {
-      font-size: 12px;
-      color: var(--body);   /* #888 — higher contrast than old #555 */
-      line-height: 1.85;
-    }
-
-    /* ─── load older button ─── */
-    .load-older {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .btn-load {
-      display: inline-block;
-      padding: 10px 28px;
-      border: 1px solid var(--dim);
-      color: var(--dim);
-      font-family: inherit;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      background: transparent;
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-    }
-
-    .btn-load:hover {
-      border-color: var(--green);
-      color: var(--green);
-    }
-
-    /* hidden older groups */
-    .month-group.older { display: none; }
-    .month-group.older.visible { display: block; }
-
-    /* hide button when all groups revealed */
-    .load-older.done { display: none; }
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px){
+  .feed::before{ left: 14px; }
+  .release{ grid-template-columns: 1fr; gap: 12px; padding-left: 36px; }
+  .release-meta{ text-align:left; padding-right:0; }
+  .release-card::before{ left: -32px; top: 22px; }
+  .subscribe{ grid-template-columns: 1fr; gap:24px; padding:32px; }
+}

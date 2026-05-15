@@ -3,201 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>updates — stdout.chat</title>
+  <title>Updates — stdout.chat</title>
+  <meta name="description" content="Product updates, fixes, and improvements to stdout.chat." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="updates — stdout.chat" />
+  <meta property="og:title" content="Updates — stdout.chat" />
   <meta property="og:description" content="Product updates, fixes, and improvements to stdout.chat." />
   <meta property="og:url" content="https://stdout.chat/updates" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="updates — stdout.chat" />
-  <meta name="twitter:description" content="Product updates, fixes, and improvements to stdout.chat." />
+  <meta property="og:image" content="https://stdout.chat/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stdout.chat/og-image.png" />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6760369542">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://stdout.chat/updates">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='3' y='24' font-family='monospace' font-size='20' font-weight='bold' fill='%2300ff41'>%3E_</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/updates.css">
+
+  <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="/" class="nav-logo"><span>stdout</span>.chat</a>
-    <div class="dot"></div>
-  </nav>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="dot"></span>
+      <span>stdout.chat</span>
+    </a>
+    <nav class="top-nav">
+      <a href="/privacy">privacy</a>
+      <a href="/terms">terms</a>
+      <a href="/updates" class="active">updates</a>
+      <a href="/support">support</a>
+    </nav>
+    <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">↓ get the app</a>
+  </header>
 
-  <!-- PAGE HEADER -->
-  <section class="page-header">
-    <div class="wrap">
-      <p class="page-tag">// changelog</p>
-      <h1>updates</h1>
-      <p class="sub">
-        fixes, features, and improvements to stdout.chat.<br>
-        published here as things ship.
-      </p>
+  <header class="page-head">
+    <div class="page-eyebrow">// CHANGELOG</div>
+    <h1 class="page-title">what's <span class="green">new.</span><br/><em>what's fixed.</em></h1>
+    <p class="page-sub">Fixes, features, and improvements to stdout.chat. Published here as things ship.</p>
+    <div class="page-meta">
+      <span>currently on <code>v1.2.0</code></span>
+      <span>last shipped <b>April 28, 2026</b></span>
+      <span>commits this month <b>34</b></span>
     </div>
-  </section>
+  </header>
 
-  <!-- UPDATES FEED -->
-  <section class="updates-section" id="updates-feed">
-    <div class="wrap">
-      <p class="section-label">// recent updates</p>
+  <div class="wrap-narrow feed-wrap" style="padding-left:0;padding-right:0;">
 
-      <!-- rendered by JS from updates.json -->
-      <div id="feed-root"></div>
+    <div class="filters">
+      <span class="chip on" data-filter="all">all <span class="ct">5</span></span>
+      <span class="chip" data-filter="new">new <span class="ct">7</span></span>
+      <span class="chip" data-filter="fix">fixed <span class="ct">11</span></span>
+      <span class="chip" data-filter="imp">improved <span class="ct">9</span></span>
+      <span class="chip" data-filter="sec">security <span class="ct">2</span></span>
+    </div>
 
-      <div class="load-older done" id="load-older-btn">
-        <button class="btn-load" onclick="loadOlder()">▸ load older updates</button>
+    <div class="feed">
+
+      <div class="release latest">
+        <div class="release-meta">
+          <span class="v">v1.2.0</span>
+          <span class="d">Apr 28, 2026</span>
+        </div>
+        <div class="release-card">
+          <div class="release-head">
+            <h2>Shout broadcasts &amp; the new credits store.</h2>
+            <div class="release-tags">
+              <span class="rt rt-new">NEW</span>
+              <span class="rt rt-imp">IMPROVED</span>
+            </div>
+          </div>
+          <div class="release-body">
+            <p>You can now spend credits to <code>/shout</code> a message to everyone currently online. We've also rebuilt the store with cleaner pricing, restored purchases, and theme unlocks.</p>
+            <ul class="change-list">
+              <li><span class="tag">NEW</span><span>Shout broadcast — <code>/shout your message</code> sends to every online user. Costs 12 credits.</span></li>
+              <li><span class="tag">NEW</span><span>Themes store with <strong>blue_terminal</strong> and <strong>red_alert</strong> unlocks.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Store UI: clearer pricing, instant unlock animation, "restore purchases" works from any tab.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Credit balance now visible in the top bar across all screens.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-meta">
+          <span class="v">v1.1.2</span>
+          <span class="d">Apr 14, 2026</span>
+        </div>
+        <div class="release-card">
+          <div class="release-head">
+            <h2>Match flow polish &amp; report fixes.</h2>
+            <div class="release-tags">
+              <span class="rt rt-fix">FIXED</span>
+              <span class="rt rt-imp">IMPROVED</span>
+            </div>
+          </div>
+          <div class="release-body">
+            <ul class="change-list">
+              <li><span class="tag fix">FIXED</span><span>Profile preview occasionally showed the wrong avatar after a skip. Cache invalidation is correct now.</span></li>
+              <li><span class="tag fix">FIXED</span><span><code>/report</code> would silently fail if the session ended mid-tap. Reports now queue and submit on next connection.</span></li>
+              <li><span class="tag fix">FIXED</span><span>Connecting&hellip; spinner could stick after backgrounding. Added a 30s timeout with retry.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Faster pairing for users with 4 or more interests selected.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Smoother keyboard-show animation; input bar no longer jumps on first focus.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-meta">
+          <span class="v">v1.1.0</span>
+          <span class="d">Mar 31, 2026</span>
+        </div>
+        <div class="release-card">
+          <div class="release-head">
+            <h2>Themes, ranks, and a real profile.</h2>
+            <div class="release-tags">
+              <span class="rt rt-new">NEW</span>
+            </div>
+          </div>
+          <div class="release-body">
+            <p>The biggest update since launch. Six terminal themes, a 16-tier rank system, and an editable profile with username, bio, and avatar.</p>
+            <ul class="change-list">
+              <li><span class="tag">NEW</span><span>16-tier rank system — climb from NEW to LEGEND based on session grades.</span></li>
+              <li><span class="tag">NEW</span><span>Themes: <strong>classic_green, amber, white_phosphor, matrix_dark</strong> available at launch. Two more unlockable.</span></li>
+              <li><span class="tag">NEW</span><span>Profile tab with username, bio, avatar picker, interest list, and identity card.</span></li>
+              <li><span class="tag">NEW</span><span>Dashboard with conversation count, average session length, and time online.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Interest picker reorganized into Culture &amp; Entertainment, Tech &amp; Digital, Lifestyle, Sport &amp; Outdoors.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-meta">
+          <span class="v">v1.0.3</span>
+          <span class="d">Mar 18, 2026</span>
+        </div>
+        <div class="release-card">
+          <div class="release-head">
+            <h2>Connection stability + abuse hardening.</h2>
+            <div class="release-tags">
+              <span class="rt rt-sec">SECURITY</span>
+              <span class="rt rt-fix">FIXED</span>
+            </div>
+          </div>
+          <div class="release-body">
+            <ul class="change-list">
+              <li><span class="tag sec">SECURITY</span><span>Certificate pinning enforced on all WebSocket connections.</span></li>
+              <li><span class="tag sec">SECURITY</span><span>Tightened rate limits on <code>/report</code> and <code>/block</code> commands.</span></li>
+              <li><span class="tag fix">FIXED</span><span>Edge case where the same Device ID could open more than 3 simultaneous connections.</span></li>
+              <li><span class="tag fix">FIXED</span><span>Long messages (&gt;500 chars) were being truncated server-side without warning.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="release">
+        <div class="release-meta">
+          <span class="v">v1.0.0</span>
+          <span class="d">Mar 5, 2026</span>
+        </div>
+        <div class="release-card">
+          <div class="release-head">
+            <h2>Initial release.</h2>
+            <div class="release-tags">
+              <span class="rt rt-new">NEW</span>
+            </div>
+          </div>
+          <div class="release-body">
+            <p>stdout.chat is live on the App Store. Text-only conversations, paired by shared interests, with a quality-based moderation system from day one.</p>
+            <ul class="change-list">
+              <li><span class="tag">NEW</span><span>Interest-based matching across 50+ topics in 4 categories.</span></li>
+              <li><span class="tag">NEW</span><span>Profile preview before every connection — skip without penalty.</span></li>
+              <li><span class="tag">NEW</span><span>Session grading system: every chat closes with S, A, B, or C.</span></li>
+              <li><span class="tag">NEW</span><span>Ephemeral conversations — messages not stored after session ends.</span></li>
+              <li><span class="tag">NEW</span><span>One-tap <code>/report</code> and <code>/block</code>.</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — private. ephemeral. text only.</span>
-    <span class="footer-right">
-      <a href="/privacy" style="color:var(--dim);text-decoration:none">privacy</a>
-      &nbsp;·&nbsp;
-      <a href="/terms" style="color:var(--dim);text-decoration:none">terms</a>
-      &nbsp;·&nbsp;
-      <a href="/updates" style="color:var(--green);text-decoration:none">updates</a>
-    </span>
-  </footer>
+    <div class="feed-end">
+      // beginning of changelog
+    </div>
 
-  <script>
-    // ─── config ───────────────────────────────────────────────
-    const MONTHS_INITIALLY_VISIBLE = 1; // show only the latest N month groups
-    const MONTHS_PER_LOAD          = 3; // reveal this many per "load older" click
+    <section class="subscribe">
+      <div>
+        <h3>get notified <em>when things ship.</em></h3>
+        <p>One short email per release. No marketing. No data collected beyond what you give us. Unsubscribe in one tap.</p>
+        <div class="sub-foot">// alternatively: follow updates inside the app · settings → notifications</div>
+      </div>
+      <form class="subscribe-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ subscribed';">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit">subscribe →</button>
+      </form>
+    </section>
 
-    // ─── month label helper ───────────────────────────────────
-    const MONTH_NAMES = [
-      'january','february','march','april','may','june',
-      'july','august','september','october','november','december'
-    ];
-    function monthLabel(dateStr) {
-      const [y, m] = dateStr.split('-').map(Number);
-      return `// ${MONTH_NAMES[m - 1]} ${y}`;
-    }
+  </div>
+</div>
 
-    // ─── group entries by month key "YYYY-MM" ─────────────────
-    function groupByMonth(entries) {
-      const map = new Map();
-      for (const e of entries) {
-        const key = e.date.slice(0, 7); // "YYYY-MM"
-        if (!map.has(key)) map.set(key, []);
-        map.get(key).push(e);
-      }
-      // sort months newest-first
-      return [...map.entries()].sort((a, b) => b[0].localeCompare(a[0]));
-    }
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="who">
+        <span class="dot"></span>
+        <span>stdout.chat — private. ephemeral. text only.</span>
+      </div>
+      <div class="links">
+        <a href="/privacy">privacy</a>
+        <a href="/terms">terms</a>
+        <a href="/updates">updates</a>
+        <a href="/support">support</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    // ─── build a single entry article ────────────────────────
-    function buildEntry(e) {
-      const article = document.createElement('article');
-      article.className = 'update-entry';
+<script>
+  // Filter chips
+  const chips = document.querySelectorAll('.chip');
+  const releases = document.querySelectorAll('.release');
+  chips.forEach(c => c.addEventListener('click', () => {
+    chips.forEach(x => x.classList.remove('on'));
+    c.classList.add('on');
+    const f = c.dataset.filter;
+    releases.forEach(r => {
+      if (f === 'all') { r.style.display = ''; return; }
+      const tag = { new: 'rt-new', fix: 'rt-fix', imp: 'rt-imp', sec: 'rt-sec' }[f];
+      r.style.display = r.querySelector('.' + tag) ? '' : 'none';
+    });
+  }));
+</script>
 
-      const meta = document.createElement('div');
-      meta.className = 'entry-meta';
-
-      const time = document.createElement('time');
-      time.className = 'entry-date';
-      time.dateTime  = e.date;
-      time.textContent = e.date;
-
-      const tag = document.createElement('span');
-      tag.className = `entry-tag tag-${e.type}`;
-      tag.textContent = e.type;
-
-      meta.append(time, tag);
-
-      const title = document.createElement('h2');
-      title.className = 'entry-title';
-      title.textContent = e.title;
-
-      const body = document.createElement('p');
-      body.className = 'entry-body';
-      body.textContent = e.body;
-
-      article.append(meta, title, body);
-      return article;
-    }
-
-    // ─── build a month section ────────────────────────────────
-    function buildMonth(key, entries, isOlder) {
-      const section = document.createElement('section');
-      section.className = isOlder ? 'month-group older' : 'month-group';
-      section.dataset.monthKey = key;
-
-      const h3 = document.createElement('h3');
-      h3.className = 'month-label';
-      h3.textContent = monthLabel(entries[0].date);
-
-      section.append(h3);
-      for (const e of entries) section.append(buildEntry(e));
-      return section;
-    }
-
-    // ─── load older ───────────────────────────────────────────
-    function loadOlder() {
-      const hidden = Array.from(document.querySelectorAll('.month-group.older:not(.visible)'));
-      hidden.slice(0, MONTHS_PER_LOAD).forEach(g => g.classList.add('visible'));
-      if (document.querySelectorAll('.month-group.older:not(.visible)').length === 0) {
-        document.getElementById('load-older-btn').classList.add('done');
-      }
-    }
-
-    // ─── main: fetch + render ─────────────────────────────────
-    (async () => {
-      const root = document.getElementById('feed-root');
-      const btn  = document.getElementById('load-older-btn');
-
-      let entries;
-      try {
-        const res = await fetch('updates.json');
-        if (!res.ok) throw new Error(res.status);
-        entries = await res.json();
-      } catch (err) {
-        root.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">⚠</div>
-            <p class="empty-title">could not load updates</p>
-            <p class="empty-hint">updates.json missing or invalid.<br>${err}</p>
-          </div>`;
-        return;
-      }
-
-      if (!entries.length) {
-        root.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">_</div>
-            <p class="empty-title">nothing here yet</p>
-            <p class="empty-hint">updates will appear here as things ship.</p>
-          </div>`;
-        return;
-      }
-
-      // sort entries newest-first within each month
-      entries.sort((a, b) => b.date.localeCompare(a.date));
-
-      const groups = groupByMonth(entries);
-      groups.forEach(([key, monthEntries], i) => {
-        const isOlder = i >= MONTHS_INITIALLY_VISIBLE;
-        root.append(buildMonth(key, monthEntries, isOlder));
-      });
-
-      // show "load older" button only when there's something hidden
-      if (document.querySelectorAll('.month-group.older').length > 0) {
-        btn.classList.remove('done');
-      }
-    })();
-  </script>
-
-  <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
