@@ -42,6 +42,108 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/support.css">
 
+  <!-- Structured data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "stdout.chat", "item": "https://stdout.chat/"},
+      {"@type": "ListItem", "position": 2, "name": "Support", "item": "https://stdout.chat/support"}
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no signup, no password, no email verification. The app generates a random Device ID the first time you launch it, and that's it. You're online."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information do I have to give?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pick a username (any string up to 20 characters), an optional short bio, and an avatar from our emoji set. That's all that's visible to the people you match with. You never give us your real name, phone, email, or Apple ID."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I delete and reinstall the app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A fresh Device ID is generated. Your prior rank, credits, reports, and block list are gone — there is no way to link the new install back to the old one. This is the only way to fully reset your stdout.chat identity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does interest matching work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You select up to 5 interests from four categories: Culture & Entertainment, Tech & Digital, Lifestyle, Sport & Outdoors. We pair you with a user who has at least one interest in common, weighted by similarity in rank tier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a session grade?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every chat closes with a letter grade: S (exceptional), A (good), B (okay), C (low engagement). The grade is calculated from session length, message balance, and whether either party left abruptly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are messages saved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Conversations exist only in memory while a session is active. When either party leaves, the message history is gone from our servers. The only exception is a small recent-message buffer that may be temporarily kept if a user submits a /report."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I climb tiers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each session ends with a grade and a point reward: S = +20, A = +12, B = +5, C = 0. Points accumulate from NEW (0 pts) all the way to LEGEND (5000 pts) across 16 tiers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report someone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Type /report in the chat. The session is flagged for moderation and a small buffer of the last 10 messages is temporarily kept for review. Reports are looked at within 24 hours — confirmed violations result in immediate device-level bans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does blocking work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Type /block during or after a session. The blocked Device ID is stored locally on your phone — you will never be paired with that user again. Blocking is private; the other side is not notified."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get a refund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All refunds are handled by Apple. Visit reportaproblem.apple.com, find the purchase, and request a refund. We cannot process refunds directly."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
