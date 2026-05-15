@@ -320,41 +320,41 @@
     </div>
     <div class="themes-wrap">
       <div class="themes-row">
-        <div class="theme-card tc-green active">
+        <div class="theme-card tc-green active" data-theme="">
           <div class="name"><span>classic_green</span></div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-amber">
+        <div class="theme-card tc-amber" data-theme="amber">
           <div class="name"><span>amber</span></div>
           <div class="price">300 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-white">
+        <div class="theme-card tc-white" data-theme="white">
           <div class="name"><span>white_phosphor</span></div>
           <div class="price">300 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-blue">
+        <div class="theme-card tc-blue" data-theme="blue">
           <div class="name"><span>blue_terminal</span></div>
           <div class="price">500 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-red">
+        <div class="theme-card tc-red" data-theme="red">
           <div class="name"><span>red_alert</span></div>
           <div class="price">500 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-matrix">
+        <div class="theme-card tc-matrix" data-theme="matrix">
           <div class="name"><span>matrix_dark</span></div>
           <div class="price">800 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
@@ -434,6 +434,38 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  const root = document.documentElement;
+  const cards = Array.from(document.querySelectorAll('.theme-card[data-theme]'));
+  if (!cards.length) return;
+
+  function apply(theme, card) {
+    cards.forEach(c => c.classList.remove('active'));
+    if (card) card.classList.add('active');
+    if (theme) {
+      root.setAttribute('data-theme', theme);
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    try { localStorage.setItem('stdout-theme', theme); } catch (e) {}
+  }
+
+  cards.forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => apply(card.dataset.theme, card));
+  });
+
+  try {
+    const saved = localStorage.getItem('stdout-theme');
+    if (saved !== null) {
+      const card = cards.find(c => c.dataset.theme === saved);
+      if (card) apply(saved, card);
+    }
+  } catch (e) {}
+})();
+</script>
 
 </body>
 </html>
