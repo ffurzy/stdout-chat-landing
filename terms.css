@@ -1,51 +1,116 @@
-    html, body {
-      color: #555;
-    }
-    .wrap {
-      padding: 60px 24px 80px;
-    }
-    h1 {
-      font-size: 20px;
-      color: #00ff41;
-      font-weight: normal;
-      margin-bottom: 8px;
-    }
-    .date {
-      font-size: 11px;
-      color: #333;
-      margin-bottom: 48px;
-    }
-    h2 {
-      font-size: 12px;
-      color: #00ff41;
-      font-weight: normal;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin: 36px 0 12px;
-    }
-    h3 {
-      font-size: 12px;
-      color: #888;
-      font-weight: normal;
-      margin: 20px 0 8px;
-    }
-    p, li {
-      font-size: 13px;
-      line-height: 1.8;
-      color: #555;
-    }
-    ul { padding-left: 20px; margin-top: 8px; }
-    li { margin-bottom: 6px; }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .divider {
-      border: none;
-      border-top: 1px solid #111;
-      margin: 36px 0;
-    }
-    code { color: #00bfff; }
-    strong { color: #888; font-weight: normal; }
-    .section-num {
-      color: #333;
-      margin-right: 8px;
-    }
+/* =========================================================
+   stdout.chat — Terms of Service page styles
+   Depends on: style.css (shared base)
+   ========================================================= */
+
+.legal{
+  display:grid; grid-template-columns: 280px 1fr;
+  gap: 80px; padding: 64px 0 80px;
+  align-items:start;
+}
+
+/* =========================================================
+   Sticky TOC sidebar
+   ========================================================= */
+.toc{
+  position: sticky; top: 32px;
+  font-family: var(--mono); font-size: 13px;
+  max-height: calc(100vh - 64px); overflow-y:auto;
+  padding-right: 8px;
+}
+.toc-label{
+  color: var(--accent); letter-spacing:.06em;
+  margin-bottom: 18px; font-weight: 600;
+}
+.toc ol{
+  margin:0; padding:0; list-style:none;
+  counter-reset: tocn;
+}
+.toc li{
+  counter-increment: tocn;
+  margin: 0;
+}
+.toc a{
+  display: flex; gap: 12px; padding: 8px 0;
+  color: var(--text-dim); border-bottom: 1px dashed var(--line);
+  font-size: 13px; line-height:1.4;
+}
+.toc a::before{
+  content: counter(tocn, decimal-leading-zero);
+  color: var(--accent); opacity:.6; flex-shrink:0;
+}
+.toc a:hover, .toc a.active{ color: var(--text); opacity:1; }
+.toc a:hover{ background: var(--accent-soft); padding-left: 8px; margin-left:-8px; }
+
+/* =========================================================
+   Document body (prose)
+   ========================================================= */
+.doc{ font-size: 17px; line-height: 1.65; max-width: 780px; }
+.doc > p:first-of-type{ font-size: 19px; color: var(--text); }
+.doc p{ color: var(--text-2); margin: 0 0 22px; }
+.doc h2{
+  font-family: var(--sans); font-weight: 700;
+  font-size: 40px; letter-spacing:-.025em; line-height:1.1;
+  margin: 80px 0 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  color: var(--text);
+  scroll-margin-top: 24px;
+}
+.doc h2 .n{
+  font-family: var(--mono);
+  font-size: 13px; color: var(--accent);
+  display: block;
+  font-weight: 600; letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+.doc h3{
+  font-family: var(--sans); font-weight: 600;
+  font-size: 22px; letter-spacing: -.015em;
+  margin: 36px 0 14px;
+  color: var(--text);
+}
+.doc h3::before{
+  content: "// ";
+  font-family: var(--mono);
+  color: var(--accent); opacity:.7;
+  font-weight: 500;
+}
+.doc ul{ margin: 0 0 24px; padding-left: 20px; color: var(--text-2); }
+.doc li{ margin: 8px 0; }
+.doc li::marker{ color: var(--accent); }
+.doc strong, .doc b{ color: var(--text); font-weight:600; }
+.doc code{
+  font-family: var(--mono);
+  background: var(--accent-soft); color: var(--accent);
+  padding: 2px 8px; border-radius: 4px;
+  font-size: 14px;
+}
+.doc a{ border-bottom: 1px dashed currentColor; padding-bottom:1px; }
+.doc a:hover{ opacity: 0.8; }
+
+/* =========================================================
+   Callout box (with warn variant)
+   ========================================================= */
+.doc .callout{
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 16px;
+}
+.doc .callout strong{ color: var(--accent); }
+.doc .callout.warn{ border-left-color: var(--red); }
+.doc .callout.warn strong{ color: var(--red); }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px){
+  .legal{ grid-template-columns: 1fr; gap: 32px; padding: 40px 0 60px; }
+  .toc{ position: static; max-height: none; padding-right:0; }
+  .toc ol{ columns: 2; column-gap: 16px; }
+  .doc h2{ font-size: 32px; margin: 56px 0 24px; }
+}

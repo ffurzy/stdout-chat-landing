@@ -49,231 +49,391 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/index.css">
+
+  <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-logo"><span>stdout</span>.chat</span>
-    <div class="dot"></div>
-  </nav>
+<div class="wrap">
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>stdout.chat</span>
+    </div>
+    <nav class="top-nav">
+      <a href="#how">how it works</a>
+      <a href="#features">features</a>
+      <a href="#ranks">ranks</a>
+      <a href="#themes">themes</a>
+    </nav>
+    <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">
+      <span>↓</span> get the app
+    </a>
+  </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <p class="hero-tag">// text chat for people who like real conversations</p>
-      <h1>Meet new people.<br><em>The good kind.</em></h1>
+  <section class="hero" style="padding-top:90px; padding-bottom:60px;">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="pulse"></span> 2,431 people online right now</span>
+      <h1 class="hero-title">
+        meet people<br/>
+        who share<br/>
+        <span class="green">your world.</span>
+      </h1>
       <p class="hero-sub">
-        Matched by interests. Ranked by conversation quality.<br>
-        No photos. No followers. Just text.
+        Text-only conversations, paired by shared interests. Earn rank with every good talk. <strong>No photos. No followers. No noise.</strong>
       </p>
       <div class="cta-row">
-        <a href="https://apps.apple.com/app/stdout-chat/id6760369542" class="btn-appstore">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          Download on the App Store
+        <a class="btn-app" href="https://apps.apple.com/app/stdout-chat/id6760369542">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.93 2.39-4.34 2.5-4.41-1.36-1.99-3.48-2.27-4.24-2.3-1.81-.18-3.53 1.06-4.45 1.06-.93 0-2.34-1.04-3.85-1.01-1.98.03-3.81 1.15-4.83 2.91-2.06 3.57-.53 8.85 1.49 11.76.99 1.42 2.16 3.01 3.7 2.96 1.49-.06 2.05-.96 3.85-.96 1.8 0 2.31.96 3.88.93 1.6-.03 2.62-1.45 3.6-2.88 1.13-1.65 1.6-3.25 1.63-3.33-.04-.02-3.12-1.2-3.15-4.73zM14.1 3.5c.83-1.01 1.39-2.41 1.24-3.81-1.2.05-2.65.8-3.5 1.8-.77.89-1.44 2.32-1.26 3.69 1.33.1 2.69-.68 3.52-1.68z"/></svg>
+          <span>
+            <span class="ap-sub">Download on the</span>
+            <span class="ap-main">App Store</span>
+          </span>
         </a>
-        <span class="hero-note">free · iOS · 18+</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <section class="stats-bar">
-    <div class="wrap">
-      <div class="stat-grid">
-        <div class="stat">
-          <span class="stat-num">16</span>
-          <span class="stat-label">rank tiers</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">5</span>
-          <span class="stat-label">themes</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">real-time</span>
-          <span class="stat-label">matching</span>
+        <div class="cta-meta">
+          <div><span class="ok">✓</span> free · no account required</div>
+          <div><span class="ok">✓</span> moderated · report &amp; block in one tap</div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- TERMINAL MOCK -->
-  <section class="terminal-section">
-    <div class="wrap">
-      <div class="terminal">
-        <div class="term-header">
-          <div class="term-status">
-            <div class="dot"></div>
-            CONNECTED
-          </div>
-          <span class="term-brand">stdout.chat</span>
-        </div>
-        <div class="term-body" id="termBody">
-          <div class="tline sys">stdout.chat // live</div>
-          <div class="tline sys">text-only conversations. matched by interests.</div>
-          <div class="tline sys">─────────────────────────────────────</div>
-          <div class="tline sys tw">connecting...</div>
-          <div class="tline sys tw">&gt; matched on: music, indie</div>
-          <div class="tline sys tw">─────────────────────────────────────</div>
-          <div class="tline them tw">[them]: hey! what's the last album that blew your mind?</div>
-          <div class="tline you  tw">[you]: radiohead — in rainbows. still hits different</div>
-          <div class="tline them tw">[them]: taste. have you heard the from the basement version?</div>
-          <div class="tline you  tw">[you]: no way, looking that up right now</div>
-          <div class="tline them tw">[them]: you'll thank me later haha</div>
-          <div class="tline sys tw">─────────────────────────────────────</div>
-          <div class="tline tw" style="color:var(--green)">// session grade: A · +10 pts · solid conversation</div>
-        </div>
-        <div class="term-input-row">
-          <span class="prompt">&gt;</span>
-          <span class="fake-input">type a message...<span class="cursor"></span></span>
+      <div class="hero-stats">
+        <div class="stat"><span class="n">16</span><span class="l">RANK TIERS</span></div>
+        <div class="stat"><span class="n">6</span><span class="l">THEMES</span></div>
+        <div class="stat"><span class="n">0</span><span class="l">PHOTOS REQUIRED</span></div>
+      </div>
+    </div>
+
+    <!-- PHONE -->
+    <div class="phone-wrap">
+      <div class="sticker s1">
+        <span class="sk-label">MATCHED ON</span>
+        <span class="sk-val">music · indie · late nights</span>
+      </div>
+      <div class="sticker s2">
+        <span class="sk-label">SESSION GRADE</span>
+        <span class="sk-val">A · +12 pts</span>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <img class="shot" src="screenshots/04-chat.png" alt="stdout.chat — a live conversation"/>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how-it-works">
-    <div class="wrap">
-      <p class="section-label">// how it works</p>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h3>set your interests</h3>
-          <p>Pick up to 5 topics. We match you with someone who shares them.</p>
+  <section id="how">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// HOW IT WORKS</div>
+        <h2 class="section-title">three taps, <em>one real conversation</em></h2>
+      </div>
+      <p class="section-desc">No setup theater. Pick what you like, see who you've matched with, talk.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01 / SET</div>
+        <h3>Pick what you<br/>actually care about.</h3>
+        <p>Up to 5 interests across culture, tech, lifestyle, sport. We match you with someone who shares at least one.</p>
+        <div class="mini">
+          <div class="mini-screen">
+            <img src="screenshots/02-interests.png" alt="Interests selection screen"/>
+          </div>
         </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h3>review & connect</h3>
-          <p>See their profile and rank before you chat. Accept or skip — your call.</p>
+      </div>
+      <div class="step">
+        <div class="num">02 / REVIEW</div>
+        <h3>See who you matched —<br/>before you talk.</h3>
+        <p>Handle, avatar, bio, shared interests. Tap [connect] or [skip] — your call, no penalty.</p>
+        <div class="mini">
+          <div class="mini-screen">
+            <img src="screenshots/03-review.png" alt="Profile preview screen"/>
+          </div>
         </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h3>earn your rank</h3>
-          <p>Good conversations earn points. Climb from NEW to LEGEND across 16 tiers.</p>
+      </div>
+      <div class="step">
+        <div class="num">03 / TALK</div>
+        <h3>Just text.<br/>Just talk.</h3>
+        <p>No photos. No voice. No video. Every chat earns a grade — quality moves you up the rank ladder.</p>
+        <div class="mini">
+          <div class="mini-screen">
+            <img src="screenshots/04-chat.png" alt="Live chat screen"/>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURES -->
-  <section class="features">
-    <div class="wrap">
-      <p class="section-label">// what makes it different</p>
-      <div class="feature-grid">
-        <div class="feature">
-          <h3>interest matching</h3>
-          <p>Not random. Matched on what you actually care about.</p>
+  <section id="features">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// WHY IT'S DIFFERENT</div>
+        <h2 class="section-title">built for the conversation, <em>not the content</em></h2>
+      </div>
+      <p class="section-desc">Every choice — from interest matching to ephemeral chats — is in service of one thing: a talk worth having.</p>
+    </div>
+    <div class="features">
+      <div class="feat feat-1">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>
         </div>
-        <div class="feature">
-          <h3>conversation grades</h3>
-          <p>Every chat gets a grade: S, A, B, or C. Quality matters here.</p>
+        <h3>Interest matching</h3>
+        <p>Topic-based pairing on the interests you opted into. You always know why you got paired.</p>
+        <div class="demo">
+          // matched on<br/>
+          <span class="a">music · books · coffee</span>
         </div>
-        <div class="feature">
-          <h3>ranking system</h3>
-          <p>16 tiers from NEW to LEGEND. Your rank reflects how you talk, not how you look.</p>
+      </div>
+      <div class="feat feat-2">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5L12 2z"/></svg>
         </div>
-        <div class="feature">
-          <h3>shout broadcast</h3>
-          <p>Spend credits to broadcast a message to everyone online. Be heard.</p>
+        <h3>Session grades</h3>
+        <p>Every chat closes with a grade: S, A, B, or C. Quality matters; quantity doesn't.</p>
+        <div class="demo">
+          // last 5<br/>
+          <span class="a">A · S · A · B · A</span>
         </div>
-        <div class="feature">
-          <h3>themes & customization</h3>
-          <p>Classic green, amber, red alert, matrix dark — make the terminal yours.</p>
+      </div>
+      <div class="feat feat-3">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>16 rank tiers</h3>
+        <p>NEW to LEGEND. Climb through talk.</p>
+        <div class="demo">
+          <span class="a">▮▮▮▮▮▮▮</span>░░░<br/>
+          // 1240 / EXPLORER
+        </div>
+      </div>
+      <div class="feat feat-4">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11a9 9 0 0118 0v3a9 9 0 01-18 0v-3z"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h3>Real-time matching</h3>
+        <p>Tap, wait seconds, you're in.</p>
+        <div class="demo">
+          // avg wait<br/>
+          <span class="a">6.4s</span>
+        </div>
+      </div>
+      <div class="feat feat-5">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h3l2-8 4 16 2-8h7"/></svg>
+        </div>
+        <h3>Shout broadcast</h3>
+        <p>Spend credits to send one message to everyone online. Be heard, not scrolled past.</p>
+        <div class="demo">
+          // SHOUT (12 credits)<br/>
+          <span class="a">› looking for night-owls in tokyo</span>
+        </div>
+      </div>
+      <div class="feat feat-6">
+        <div class="ico">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13" cy="13" r="8"/><path d="M19 19l3 3"/><path d="M9 13h8M13 9v8"/></svg>
+        </div>
+        <h3>Themes &amp; customization</h3>
+        <p>Classic green, amber, white phosphor, blue terminal, red alert, matrix dark. Make the terminal yours — 6 ways.</p>
+        <div class="demo">
+          // current theme<br/>
+          <span class="a">classic_green // phosphor</span>
         </div>
       </div>
     </div>
   </section>
+</div>
 
-  <!-- RANKING -->
-  <section class="ranking">
-    <div class="wrap">
-      <p class="section-label">// 16 ranks · climb the ladder</p>
-      <div class="rank-preview">
-        <div class="rank-row">
-          <span class="rank-score" style="color:var(--dim)">0</span>
-          <span class="rank-name" style="color:var(--dim)">NEW</span>
-          <span class="rank-bar" style="color:var(--dim)">░░░░░░░░░░</span>
-        </div>
-        <div class="rank-row">
-          <span class="rank-score" style="color:var(--green)">650</span>
-          <span class="rank-name" style="color:var(--green)">EXPLORER</span>
-          <span class="rank-bar" style="color:var(--green)">████░░░░░░</span>
-        </div>
-        <div class="rank-row">
-          <span class="rank-score" style="color:var(--blue)">1500</span>
-          <span class="rank-name" style="color:var(--blue)">TRUSTED</span>
-          <span class="rank-bar" style="color:var(--blue)">██████░░░░</span>
-        </div>
-        <div class="rank-row">
-          <span class="rank-score" style="color:#ff8800">3600</span>
-          <span class="rank-name" style="color:#ff8800">ORACLE</span>
-          <span class="rank-bar" style="color:#ff8800">████████░░</span>
-        </div>
-        <div class="rank-row">
-          <span class="rank-score" style="color:var(--red)">5000</span>
-          <span class="rank-name" style="color:var(--red)">LEGEND</span>
-          <span class="rank-bar" style="color:var(--red)">██████████</span>
+<!-- RANK LADDER -->
+<section id="ranks" class="ladder-section">
+  <div class="wrap">
+    <div class="rank-top">
+      <div class="rank-copy">
+        <div class="section-tag">// THE LADDER</div>
+        <h2 class="section-title">16 tiers. <em>climb by talking well.</em></h2>
+        <p class="section-desc" style="max-width:520px; margin-top:24px;">Your rank reflects how you talk — not how you look, who follows you, or how long you've been here. Every chat earns points. Every grade is public.</p>
+        <div class="rank-stats">
+          <div class="rs"><span class="rs-n">#3</span><span class="rs-l">your global rank</span></div>
+          <div class="rs"><span class="rs-n">21%</span><span class="rs-l">top percentile</span></div>
+          <div class="rs"><span class="rs-n">50</span><span class="rs-l">pts to next tier</span></div>
         </div>
       </div>
-      <p class="rank-note">+ 11 more tiers in between. quality conversations move you up.</p>
+      <div class="rank-phone-wrap">
+        <div class="phone phone-sm">
+          <div class="phone-screen">
+            <div class="notch"></div>
+            <img class="shot" src="screenshots/06-profile.png" alt="Profile and rank screen"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ladder">
+      <div class="rung" style="height:6%"><span class="lbl">NEW</span><span class="pts">0</span></div>
+      <div class="rung" style="height:12%"><span class="lbl">VISITOR</span><span class="pts">120</span></div>
+      <div class="rung" style="height:18%"><span class="lbl">REGULAR</span><span class="pts">320</span></div>
+      <div class="rung" style="height:25%"><span class="lbl">CHATTY</span><span class="pts">510</span></div>
+      <div class="rung" style="height:32%"><span class="lbl">EXPLORER</span><span class="pts">650</span></div>
+      <div class="rung" style="height:39%"><span class="lbl">FRIEND</span><span class="pts">880</span></div>
+      <div class="rung" style="height:46%"><span class="lbl">SPEAKER</span><span class="pts">1120</span></div>
+      <div class="rung" style="height:53%"><span class="lbl">VOICE</span><span class="pts">1380</span></div>
+      <div class="rung" style="height:60%"><span class="lbl">TRUSTED</span><span class="pts">1500</span></div>
+      <div class="rung" style="height:66%"><span class="lbl">VETERAN</span><span class="pts">1820</span></div>
+      <div class="rung" style="height:72%"><span class="lbl">SAGE</span><span class="pts">2200</span></div>
+      <div class="rung" style="height:78%"><span class="lbl">MENTOR</span><span class="pts">2680</span></div>
+      <div class="rung" style="height:84%"><span class="lbl">SCHOLAR</span><span class="pts">3120</span></div>
+      <div class="rung" style="height:90%"><span class="lbl">ORACLE</span><span class="pts">3600</span></div>
+      <div class="rung" style="height:95%"><span class="lbl">ICON</span><span class="pts">4300</span></div>
+      <div class="rung featured" style="height:100%"><span class="lbl">LEGEND</span><span class="pts">5000</span></div>
+    </div>
+    <div class="ladder-foot">
+      <span>NEW · 0 pts</span>
+      <span>// every good chat is a step up</span>
+      <span>LEGEND · 5000 pts</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <!-- THEMES -->
+  <section id="themes">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// THEMES</div>
+        <h2 class="section-title">six terminals. <em>pick yours.</em></h2>
+      </div>
+      <p class="section-desc">Earn credits, unlock themes. Six terminal looks to choose from inside the app.</p>
+    </div>
+    <div class="themes-wrap">
+      <div class="themes-row">
+        <div class="theme-card tc-green active">
+          <div class="name"><span>classic_green</span></div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+        <div class="theme-card tc-amber">
+          <div class="name"><span>amber</span></div>
+          <div class="price">300 cr</div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+        <div class="theme-card tc-white">
+          <div class="name"><span>white_phosphor</span></div>
+          <div class="price">300 cr</div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+        <div class="theme-card tc-blue">
+          <div class="name"><span>blue_terminal</span></div>
+          <div class="price">500 cr</div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+        <div class="theme-card tc-red">
+          <div class="name"><span>red_alert</span></div>
+          <div class="price">500 cr</div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+        <div class="theme-card tc-matrix">
+          <div class="name"><span>matrix_dark</span></div>
+          <div class="price">800 cr</div>
+          <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
+          <div class="ln">&gt; hello, world</div>
+          <div class="ln dim">&gt; hey, what's up</div>
+        </div>
+      </div>
+      <div class="phone phone-sm" style="transform: rotateY(-6deg) rotateX(2deg);">
+        <div class="phone-screen">
+          <div class="notch"></div>
+          <img class="shot" src="screenshots/05-themes.png" alt="Theme selection in-app"/>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SAFETY -->
-  <section class="safety">
-    <div class="wrap">
-      <p class="section-label">// safety first</p>
-      <div class="safety-grid">
-        <div class="safety-item">
-          <h3>report & block</h3>
-          <p>One tap to report. One tap to block. Zero tolerance for abuse.</p>
-        </div>
-        <div class="safety-item">
-          <h3>quality-based matching</h3>
-          <p>Hidden behavior score keeps toxic users away from good conversations.</p>
-        </div>
-        <div class="safety-item">
-          <h3>no personal data</h3>
-          <p>No phone number. No email. No photos. Conversations are ephemeral.</p>
-        </div>
+  <section>
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// SAFETY</div>
+        <h2 class="section-title">quiet by design. <em>safe by default.</em></h2>
+      </div>
+      <p class="section-desc">No photos to leak. No followers to flex. Less to lose, more to say.</p>
+    </div>
+    <div class="safety">
+      <div class="safe-card">
+        <div class="lbl">REPORT &amp; BLOCK</div>
+        <h3>One tap, done.</h3>
+        <p>Report or block in a single tap. Community-moderated with strict standards.</p>
+      </div>
+      <div class="safe-card">
+        <div class="lbl">QUALITY-BASED MATCHING</div>
+        <h3>Good conversations rise.</h3>
+        <p>A behavior signal keeps low-grade talk away from people who put in the effort.</p>
+      </div>
+      <div class="safe-card">
+        <div class="lbl">NO PERSONAL DATA</div>
+        <h3>Nothing to give up.</h3>
+        <p>No phone. No email. No photos. Conversations are ephemeral by default.</p>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="wrap">
-      <h2>ready to talk?</h2>
-      <p class="cta-sub">free download. no account needed. just open and go.</p>
-      <a href="https://apps.apple.com/app/stdout-chat/id6760369542" class="btn-appstore btn-appstore-lg">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-        </svg>
-        Download on the App Store
-      </a>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="pre">// ready when you are</div>
+    <h2>just open it. <em>start talking.</em></h2>
+    <p class="sub">Free · iOS · no account required · community-moderated</p>
+    <a class="btn-app" href="https://apps.apple.com/app/stdout-chat/id6760369542">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.93 2.39-4.34 2.5-4.41-1.36-1.99-3.48-2.27-4.24-2.3-1.81-.18-3.53 1.06-4.45 1.06-.93 0-2.34-1.04-3.85-1.01-1.98.03-3.81 1.15-4.83 2.91-2.06 3.57-.53 8.85 1.49 11.76.99 1.42 2.16 3.01 3.7 2.96 1.49-.06 2.05-.96 3.85-.96 1.8 0 2.31.96 3.88.93 1.6-.03 2.62-1.45 3.6-2.88 1.13-1.65 1.6-3.25 1.63-3.33-.04-.02-3.12-1.2-3.15-4.73zM14.1 3.5c.83-1.01 1.39-2.41 1.24-3.81-1.2.05-2.65.8-3.5 1.8-.77.89-1.44 2.32-1.26 3.69 1.33.1 2.69-.68 3.52-1.68z"/></svg>
+      <span>
+        <span class="ap-sub">Download on the</span>
+        <span class="ap-main">App Store</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="who">
+        <span class="dot"></span>
+        <span>stdout.chat — text chat for real conversations</span>
+      </div>
+      <div class="links">
+        <a href="/privacy">privacy</a>
+        <a href="/terms">terms</a>
+        <a href="/updates">updates</a>
+        <a href="/support">support</a>
+      </div>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="footer-left"><span style="color:var(--green)">stdout</span>.chat — text chat for real conversations.</span>
-    <span class="footer-right"><a href="/privacy" style="color:var(--dim);text-decoration:none">privacy policy</a> &nbsp;·&nbsp; <a href="/terms" style="color:var(--dim);text-decoration:none">terms</a> &nbsp;·&nbsp; <a href="/updates" style="color:var(--dim);text-decoration:none">updates</a> &nbsp;·&nbsp; <a href="/support" style="color:var(--dim);text-decoration:none">support</a></span>
-  </footer>
-
-  <script>
-    // stagger the typewriter lines
-    const lines = document.querySelectorAll('.tw');
-    lines.forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), 800 + i * 180);
-    });
-  </script>
-
-  <script>window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
