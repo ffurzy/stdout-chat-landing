@@ -100,6 +100,11 @@ h1.hero-title .green{ color:var(--accent); }
     0 0 80px -10px var(--accent-glow);
   transform: rotateY(-8deg) rotateX(4deg) rotateZ(-1deg);
   transform-origin: center;
+  animation: phone-glow 4s ease-in-out infinite;
+}
+@keyframes phone-glow{
+  0%, 100%{ box-shadow: 0 50px 100px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(0,255,122,0.04), 0 0 80px -10px var(--accent-glow); }
+  50%{ box-shadow: 0 50px 100px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(0,255,122,0.04), 0 0 40px -10px var(--accent-glow); }
 }
 .phone-screen{
   position:relative;
