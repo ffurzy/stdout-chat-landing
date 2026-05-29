@@ -16,6 +16,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://stdout.chat/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
 
   <!-- SEO -->
   <meta name="apple-itunes-app" content="app-id=6760369542">
@@ -58,6 +59,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap">
   <header class="topbar">
@@ -66,7 +68,7 @@
       <span>stdout.chat</span>
     </a>
     <nav class="top-nav">
-      <a href="/privacy" class="active">privacy</a>
+      <a href="/privacy" class="active" aria-current="page">privacy</a>
       <a href="/terms">terms</a>
       <a href="/updates">updates</a>
       <a href="/support">support</a>
@@ -85,9 +87,9 @@
     </div>
   </header>
 
-  <div class="legal">
+  <div id="main" class="legal">
 
-    <aside class="toc">
+    <aside class="toc" role="navigation" aria-label="Table of contents">
       <div class="toc-label">// CONTENTS</div>
       <ol>
         <li><a href="#intro">Introduction</a></li>

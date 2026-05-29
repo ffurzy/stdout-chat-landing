@@ -16,6 +16,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://stdout.chat/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
 
   <!-- SEO -->
   <meta name="apple-itunes-app" content="app-id=6760369542">
@@ -148,6 +149,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap">
   <header class="topbar">
@@ -159,7 +161,7 @@
       <a href="/privacy">privacy</a>
       <a href="/terms">terms</a>
       <a href="/updates">updates</a>
-      <a href="/support" class="active">support</a>
+      <a href="/support" class="active" aria-current="page">support</a>
     </nav>
     <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">↓ get the app</a>
   </header>
@@ -170,13 +172,13 @@
     <p class="page-sub">Quick commands, common questions, and direct lines for everything else. Most issues resolve in one tap inside the app.</p>
     <div class="search-row">
       <span class="prompt">›</span>
-      <input type="text" id="search" placeholder="search the docs (try: refund, block, themes...)"/>
+      <input type="text" id="search" aria-label="Search FAQ" placeholder="search the docs (try: refund, block, themes...)"/>
       <span class="hint">ctrl K</span>
     </div>
   </header>
 
   <!-- Quick commands -->
-  <section class="cmds">
+  <section id="main" class="cmds">
     <div class="section-head">
       <div>
         <div class="section-tag">// QUICK COMMANDS</div>
@@ -210,7 +212,7 @@
   <!-- FAQ -->
   <section class="faq">
 
-    <aside class="faq-nav">
+    <aside class="faq-nav" role="navigation" aria-label="FAQ categories">
       <div class="lbl">// CATEGORIES</div>
       <ul>
         <li><a href="#start" class="active">Getting started</a></li>

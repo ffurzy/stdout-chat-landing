@@ -96,6 +96,7 @@
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap">
   <!-- TOP BAR -->
@@ -116,7 +117,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" style="padding-top:90px; padding-bottom:60px;">
+  <section id="main" class="hero" style="padding-top:90px; padding-bottom:60px;">
     <div class="hero-copy">
       <h1 class="hero-title">
         meet people<br/>
@@ -355,43 +356,43 @@
       </div>
       <p class="section-desc">Earn credits, unlock themes. Six terminal looks to choose from inside the app.</p>
     </div>
-    <div class="themes-wrap">
+    <div class="themes-wrap" role="radiogroup" aria-label="Theme selector">
       <div class="themes-row">
-        <div class="theme-card tc-green active" data-theme="">
+        <div class="theme-card tc-green active" data-theme="" role="radio" aria-checked="true" aria-label="Classic green theme">
           <div class="name"><span>classic_green</span></div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-amber" data-theme="amber">
+        <div class="theme-card tc-amber" data-theme="amber" role="radio" aria-checked="false" aria-label="Amber theme">
           <div class="name"><span>amber</span></div>
           <div class="price">300 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-white" data-theme="white">
+        <div class="theme-card tc-white" data-theme="white" role="radio" aria-checked="false" aria-label="White phosphor theme">
           <div class="name"><span>white_phosphor</span></div>
           <div class="price">300 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-blue" data-theme="blue">
+        <div class="theme-card tc-blue" data-theme="blue" role="radio" aria-checked="false" aria-label="Blue terminal theme">
           <div class="name"><span>blue_terminal</span></div>
           <div class="price">500 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-red" data-theme="red">
+        <div class="theme-card tc-red" data-theme="red" role="radio" aria-checked="false" aria-label="Red alert theme">
           <div class="name"><span>red_alert</span></div>
           <div class="price">500 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
           <div class="ln">&gt; hello, world</div>
           <div class="ln dim">&gt; hey, what's up</div>
         </div>
-        <div class="theme-card tc-matrix" data-theme="matrix">
+        <div class="theme-card tc-matrix" data-theme="matrix" role="radio" aria-checked="false" aria-label="Matrix dark theme">
           <div class="name"><span>matrix_dark</span></div>
           <div class="price">800 cr</div>
           <div class="swatch"><span class="sw-1"></span><span class="sw-2"></span><span class="sw-3"></span><span class="sw-4"></span><span class="sw-5"></span></div>
@@ -482,8 +483,8 @@
   if (!cards.length) return;
 
   function apply(theme, card) {
-    cards.forEach(c => c.classList.remove('active'));
-    if (card) card.classList.add('active');
+    cards.forEach(c => { c.classList.remove('active'); c.setAttribute('aria-checked', 'false'); });
+    if (card) { card.classList.add('active'); card.setAttribute('aria-checked', 'true'); }
     if (theme) {
       root.setAttribute('data-theme', theme);
     } else {
