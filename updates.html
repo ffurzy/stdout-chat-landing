@@ -16,6 +16,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://stdout.chat/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
 
   <!-- SEO -->
   <meta name="apple-itunes-app" content="app-id=6760369542">
@@ -58,6 +59,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div class="wrap">
   <header class="topbar">
@@ -68,7 +70,7 @@
     <nav class="top-nav">
       <a href="/privacy">privacy</a>
       <a href="/terms">terms</a>
-      <a href="/updates" class="active">updates</a>
+      <a href="/updates" class="active" aria-current="page">updates</a>
       <a href="/support">support</a>
     </nav>
     <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">↓ get the app</a>
@@ -85,7 +87,7 @@
     </div>
   </header>
 
-  <div class="wrap-narrow feed-wrap" style="padding-left:0;padding-right:0;">
+  <div id="main" class="wrap-narrow feed-wrap" style="padding-left:0;padding-right:0;">
 
     <div class="filters">
       <span class="chip on" data-filter="all">all <span class="ct">5</span></span>
@@ -234,7 +236,7 @@
         <div class="sub-foot">// alternatively: follow updates inside the app · settings → notifications</div>
       </div>
       <form class="subscribe-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ subscribed';">
-        <input type="email" placeholder="you@example.com" required />
+        <input type="email" aria-label="Email for updates" placeholder="you@example.com" required />
         <button type="submit">subscribe →</button>
       </form>
     </section>
