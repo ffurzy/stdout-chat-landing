@@ -81,44 +81,43 @@
     <h1 class="page-title">what's <span class="green">new.</span><br/><em>what's fixed.</em></h1>
     <p class="page-sub">Fixes, features, and improvements to stdout.chat. Published here as things ship.</p>
     <div class="page-meta">
-      <span>currently on <code>v1.2.0</code></span>
-      <span>last shipped <b>April 28, 2026</b></span>
-      <span>commits this month <b>34</b></span>
+      <!-- BUILD:meta -->
+      <span>currently on <code>v1.1.8</code></span>
+      <span>last shipped <b>May 17, 2026</b></span>
+      <!-- /BUILD:meta -->
     </div>
   </header>
 
   <div id="main" class="wrap-narrow feed-wrap" style="padding-left:0;padding-right:0;">
 
     <div class="filters">
-      <span class="chip on" data-filter="all">all <span class="ct">5</span></span>
-      <span class="chip" data-filter="new">new <span class="ct">7</span></span>
-      <span class="chip" data-filter="fix">fixed <span class="ct">11</span></span>
-      <span class="chip" data-filter="imp">improved <span class="ct">9</span></span>
-      <span class="chip" data-filter="sec">security <span class="ct">2</span></span>
+      <!-- BUILD:filters -->
+      <span class="chip on" data-filter="all">all <span class="ct">3</span></span>
+      <span class="chip" data-filter="new">new <span class="ct">2</span></span>
+      <span class="chip" data-filter="fix">fixed <span class="ct">1</span></span>
+      <span class="chip" data-filter="imp">improved <span class="ct">2</span></span>
+      <span class="chip" data-filter="sec">security <span class="ct">0</span></span>
+      <!-- /BUILD:filters -->
     </div>
 
     <div class="feed">
+      <!-- BUILD:feed -->
 
       <div class="release latest">
         <div class="release-meta">
-          <span class="v">v1.2.0</span>
-          <span class="d">Apr 28, 2026</span>
+          <span class="v">v1.1.8</span>
+          <span class="d">May 17, 2026</span>
         </div>
         <div class="release-card">
           <div class="release-head">
-            <h2>Shout broadcasts &amp; the new credits store.</h2>
+            <h2>Performance improvements throughout the app.</h2>
             <div class="release-tags">
-              <span class="rt rt-new">NEW</span>
               <span class="rt rt-imp">IMPROVED</span>
             </div>
           </div>
           <div class="release-body">
-            <p>You can now spend credits to <code>/shout</code> a message to everyone currently online. We've also rebuilt the store with cleaner pricing, restored purchases, and theme unlocks.</p>
             <ul class="change-list">
-              <li><span class="tag">NEW</span><span>Shout broadcast — <code>/shout your message</code> sends to every online user. Costs 12 credits.</span></li>
-              <li><span class="tag">NEW</span><span>Themes store with <strong>blue_terminal</strong> and <strong>red_alert</strong> unlocks.</span></li>
-              <li><span class="tag imp">IMPROVED</span><span>Store UI: clearer pricing, instant unlock animation, "restore purchases" works from any tab.</span></li>
-              <li><span class="tag imp">IMPROVED</span><span>Credit balance now visible in the top bar across all screens.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Performance improvements throughout the app — faster screen rendering, smoother chat flow, and better handling under load. No new features in this release — just a more refined experience.</span></li>
             </ul>
           </div>
         </div>
@@ -126,24 +125,23 @@
 
       <div class="release">
         <div class="release-meta">
-          <span class="v">v1.1.2</span>
-          <span class="d">Apr 14, 2026</span>
+          <span class="v">v1.1.6</span>
+          <span class="d">May 9, 2026</span>
         </div>
         <div class="release-card">
           <div class="release-head">
-            <h2>Match flow polish &amp; report fixes.</h2>
+            <h2>Notifications now work reliably for everyone.</h2>
             <div class="release-tags">
+              <span class="rt rt-new">NEW</span>
               <span class="rt rt-fix">FIXED</span>
               <span class="rt rt-imp">IMPROVED</span>
             </div>
           </div>
           <div class="release-body">
             <ul class="change-list">
-              <li><span class="tag fix">FIXED</span><span>Profile preview occasionally showed the wrong avatar after a skip. Cache invalidation is correct now.</span></li>
-              <li><span class="tag fix">FIXED</span><span><code>/report</code> would silently fail if the session ended mid-tap. Reports now queue and submit on next connection.</span></li>
-              <li><span class="tag fix">FIXED</span><span>Connecting&hellip; spinner could stick after backgrounding. Added a 30s timeout with retry.</span></li>
-              <li><span class="tag imp">IMPROVED</span><span>Faster pairing for users with 4 or more interests selected.</span></li>
-              <li><span class="tag imp">IMPROVED</span><span>Smoother keyboard-show animation; input bar no longer jumps on first focus.</span></li>
+              <li><span class="tag fix">FIXED</span><span>Notifications now work reliably for everyone — including users who reinstalled the app.</span></li>
+              <li><span class="tag">NEW</span><span>Get notified when a new message arrives while you're away from the app.</span></li>
+              <li><span class="tag imp">IMPROVED</span><span>Minor stability improvements.</span></li>
             </ul>
           </div>
         </div>
@@ -151,78 +149,28 @@
 
       <div class="release">
         <div class="release-meta">
-          <span class="v">v1.1.0</span>
-          <span class="d">Mar 31, 2026</span>
+          <span class="v">v1.1.5</span>
+          <span class="d">May 7, 2026</span>
         </div>
         <div class="release-card">
           <div class="release-head">
-            <h2>Themes, ranks, and a real profile.</h2>
+            <h2>First release.</h2>
             <div class="release-tags">
               <span class="rt rt-new">NEW</span>
             </div>
           </div>
           <div class="release-body">
-            <p>The biggest update since launch. Six terminal themes, a 16-tier rank system, and an editable profile with username, bio, and avatar.</p>
             <ul class="change-list">
-              <li><span class="tag">NEW</span><span>16-tier rank system — climb from NEW to LEGEND based on session grades.</span></li>
-              <li><span class="tag">NEW</span><span>Themes: <strong>classic_green, amber, white_phosphor, matrix_dark</strong> available at launch. Two more unlockable.</span></li>
-              <li><span class="tag">NEW</span><span>Profile tab with username, bio, avatar picker, interest list, and identity card.</span></li>
-              <li><span class="tag">NEW</span><span>Dashboard with conversation count, average session length, and time online.</span></li>
-              <li><span class="tag imp">IMPROVED</span><span>Interest picker reorganized into Culture &amp; Entertainment, Tech &amp; Digital, Lifestyle, Sport &amp; Outdoors.</span></li>
+              <li><span class="tag">NEW</span><span>First release.</span></li>
+              <li><span class="tag">NEW</span><span>Anonymous text chat. Matched by interests, not by random luck. A 16-tier ranking system rewards quality conversation.</span></li>
+              <li><span class="tag">NEW</span><span>No photos, no followers, no algorithm. Just text.</span></li>
+              <li><span class="tag">NEW</span><span>Free, iOS 17.6+, 18+.</span></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="release">
-        <div class="release-meta">
-          <span class="v">v1.0.3</span>
-          <span class="d">Mar 18, 2026</span>
-        </div>
-        <div class="release-card">
-          <div class="release-head">
-            <h2>Connection stability + abuse hardening.</h2>
-            <div class="release-tags">
-              <span class="rt rt-sec">SECURITY</span>
-              <span class="rt rt-fix">FIXED</span>
-            </div>
-          </div>
-          <div class="release-body">
-            <ul class="change-list">
-              <li><span class="tag sec">SECURITY</span><span>Certificate pinning enforced on all WebSocket connections.</span></li>
-              <li><span class="tag sec">SECURITY</span><span>Tightened rate limits on <code>/report</code> and <code>/block</code> commands.</span></li>
-              <li><span class="tag fix">FIXED</span><span>Edge case where the same Device ID could open more than 3 simultaneous connections.</span></li>
-              <li><span class="tag fix">FIXED</span><span>Long messages (&gt;500 chars) were being truncated server-side without warning.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="release">
-        <div class="release-meta">
-          <span class="v">v1.0.0</span>
-          <span class="d">Mar 5, 2026</span>
-        </div>
-        <div class="release-card">
-          <div class="release-head">
-            <h2>Initial release.</h2>
-            <div class="release-tags">
-              <span class="rt rt-new">NEW</span>
-            </div>
-          </div>
-          <div class="release-body">
-            <p>stdout.chat is live on the App Store. Text-only conversations, paired by shared interests, with a quality-based moderation system from day one.</p>
-            <ul class="change-list">
-              <li><span class="tag">NEW</span><span>Interest-based matching across 50+ topics in 4 categories.</span></li>
-              <li><span class="tag">NEW</span><span>Profile preview before every connection — skip without penalty.</span></li>
-              <li><span class="tag">NEW</span><span>Session grading system: every chat closes with S, A, B, or C.</span></li>
-              <li><span class="tag">NEW</span><span>Ephemeral conversations — messages not stored after session ends.</span></li>
-              <li><span class="tag">NEW</span><span>One-tap <code>/report</code> and <code>/block</code>.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+      <!-- /BUILD:feed -->
     </div>
 
     <div class="feed-end">
