@@ -40,8 +40,8 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <link rel="stylesheet" href="/css/terms.css?v=3">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/terms.css">
 
   <!-- Structured data: Breadcrumbs -->
   <script type="application/ld+json">
@@ -61,8 +61,9 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="wrap">
-  <header class="topbar">
+<!-- TOP BAR (direct child of <body> so sticky spans the whole page) -->
+<header class="topbar">
+  <div class="topbar-inner">
     <a class="brand" href="/">
       <span class="dot"></span>
       <span>stdout.chat</span>
@@ -74,8 +75,10 @@
       <a href="/support">support</a>
     </nav>
     <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">↓ get the app</a>
-  </header>
+  </div>
+</header>
 
+<div class="wrap">
   <header class="page-head">
     <div class="page-eyebrow">// TERMS OF SERVICE</div>
     <h1 class="page-title">the rules.<br/><span class="green">short version:</span><br/><em>don't be terrible.</em></h1>

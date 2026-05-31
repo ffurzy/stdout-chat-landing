@@ -88,8 +88,8 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <link rel="stylesheet" href="/css/index.css?v=3">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/index.css">
 
   <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
@@ -98,9 +98,9 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="wrap">
-  <!-- TOP BAR -->
-  <header class="topbar">
+<!-- TOP BAR (direct child of <body> so sticky spans the whole page) -->
+<header class="topbar">
+  <div class="topbar-inner">
     <div class="brand">
       <span class="dot"></span>
       <span>stdout.chat</span>
@@ -115,8 +115,10 @@
     <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542">
       <span>↓</span> get the app
     </a>
-  </header>
+  </div>
+</header>
 
+<div class="wrap">
   <!-- HERO -->
   <section id="main" class="hero" style="padding-top:90px; padding-bottom:60px;">
     <div class="hero-copy">
