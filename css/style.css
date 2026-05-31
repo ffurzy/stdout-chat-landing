@@ -40,6 +40,8 @@ html, body{
   background:var(--bg); color:var(--text);
   font-family:var(--sans); -webkit-font-smoothing:antialiased;
 }
+/* Offset anchor jumps so section tops aren't hidden under the sticky topbar */
+html{ scroll-padding-top:88px; }
 body{
   background:
     radial-gradient(1200px 600px at 80% -10%, var(--accent-soft), transparent 60%),
@@ -95,9 +97,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 /* =========================================================
    Top bar (header)
    ========================================================= */
+/* Full-width sticky bar; lives directly under <body> so its containing block
+   is the whole page (not a single .wrap) — keeps it stuck across all sections. */
 .topbar{
+  position:sticky; top:0; z-index:50;
+  border-bottom:1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+/* Inner wrapper carries the original .wrap centering + the bar's flex layout,
+   so brand/nav/cta alignment is unchanged. */
+.topbar-inner{
+  max-width:1320px; margin:0 auto; padding:22px 32px;
   display:flex; align-items:center; justify-content:space-between;
-  padding:22px 0; border-bottom:1px solid var(--line);
   font-family:var(--mono); font-size:14px;
 }
 .brand{
