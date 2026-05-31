@@ -1,48 +1,59 @@
-name: Append public update
+name: Rebuild updates page
 
+# Triggered by VoidChat when CHANGELOG.md changes (repository_dispatch: ios-update),
+# or manually. Checks out VoidChat, parses its CHANGELOG.md "What's New" sections
+# into updates.json, regenerates updates.html, commits both.
 on:
   repository_dispatch:
     types: [ios-update]
+  workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # needed to push the updated updates.json
+      contents: write   # push regenerated updates.json + updates.html
 
     steps:
-      - name: Checkout
+      - name: Checkout landing
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Resolve commit metadata
-        id: meta
-        run: |
-          echo "msg=${{ github.event.client_payload.commit_message }}"   >> $GITHUB_OUTPUT
-          echo "sha=${{ github.event.client_payload.commit_sha }}"       >> $GITHUB_OUTPUT
-          echo "date=${{ github.event.client_payload.commit_date }}"     >> $GITHUB_OUTPUT
+      - name: Checkout VoidChat (CHANGELOG source)
+        uses: actions/checkout@v4
+        with:
+          repository: ffurzy/stdout-chat-ios
+          ref: main
+          token: ${{ secrets.VOIDCHAT_READ_TOKEN }}
+          path: VoidChat
+          fetch-depth: 1
+          sparse-checkout: |
+            CHANGELOG.md
+          sparse-checkout-cone-mode: false
 
-      - name: Run append-update script
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Parse CHANGELOG -> updates.json
         env:
-          COMMIT_MESSAGE: ${{ steps.meta.outputs.msg }}
-          COMMIT_SHA:     ${{ steps.meta.outputs.sha }}
-          COMMIT_DATE:    ${{ steps.meta.outputs.date }}
-        run: |
-          # Strip to YYYY-MM-DD (timestamp is ISO 8601)
-          export COMMIT_DATE="${COMMIT_DATE:0:10}"
-          node scripts/append-update.js
+          CHANGELOG_PATH: VoidChat/CHANGELOG.md
+        run: node scripts/build-updates.js
 
-      - name: Commit updated updates.json (if changed)
+      - name: Render updates.json -> updates.html
+        run: node scripts/render-updates.js
+
+      - name: Commit regenerated files (if changed)
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git diff --quiet updates.json && {
-            echo "updates.json unchanged — nothing to commit."
+          git add updates.json updates.html
+          if git diff --cached --quiet; then
+            echo "No changes — nothing to commit."
             exit 0
-          }
-
-          git add updates.json
-          git commit -m "chore: auto-append update entry [skip ci]"
+          fi
+          git commit -m "chore: rebuild updates page from CHANGELOG [skip ci]"
           git push

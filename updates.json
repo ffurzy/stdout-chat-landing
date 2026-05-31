@@ -1,349 +1,66 @@
 [
   {
+    "version": "1.1.8",
+    "date": "2026-05-17",
+    "title": "Performance improvements throughout the app.",
+    "tags": [
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "imp",
+        "text": "Performance improvements throughout the app — faster screen rendering, smoother chat flow, and better handling under load. No new features in this release — just a more refined experience."
+      }
+    ]
+  },
+  {
+    "version": "1.1.6",
+    "date": "2026-05-09",
+    "title": "Notifications now work reliably for everyone.",
+    "tags": [
+      "new",
+      "fix",
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "fix",
+        "text": "Notifications now work reliably for everyone — including users who reinstalled the app."
+      },
+      {
+        "category": "new",
+        "text": "Get notified when a new message arrives while you're away from the app."
+      },
+      {
+        "category": "imp",
+        "text": "Minor stability improvements."
+      }
+    ]
+  },
+  {
+    "version": "1.1.5",
     "date": "2026-05-07",
-    "type": "feat",
-    "title": "stdout.chat is live on the App Store",
-    "body": "Free on iOS. Set interests, start chatting.",
-    "_sha": "v1.1.5-appstore-launch"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "feat",
-    "title": "Client-side prediction with server reconciliation for snake",
-    "body": "",
-    "_sha": "ios-3899917634576819f01a773ba537c6fc04bb7a3c"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "Eliminate snake jitter with CADisplayLink + play-latest strategy",
-    "body": "",
-    "_sha": "ios-c39abee62e1e257d7ca3959f7d6c9d4901b563de"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "Replace interpolation with local metronome to eliminate snake jitter",
-    "body": "",
-    "_sha": "ios-622cfb1c78490439cf7a48d297825833ac3d2660"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "Smooth 60fps snake rendering + narrower Dynamic Island",
-    "body": "",
-    "_sha": "ios-95aef357378c257305a48c2268774ce3852854c5"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "End Live Activity when search is cancelled or user quits",
-    "body": "",
-    "_sha": "ios-d9a4c5d24444a8b6abfabdfb46682dde4ad4f8ad"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "feat",
-    "title": "Wire Widget Extension target for Live Activities",
-    "body": "",
-    "_sha": "ios-ffb5157ff11b0fc63171b9ca4ad23a5e4f5fc106"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "feat",
-    "title": "Live Activities / Dynamic Island support (iOS 16.1+)",
-    "body": "",
-    "_sha": "ios-4111d8a84f0cd025c9152c74c11b5c1d3926797f"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "Remove '/next to find another' hint from disconnect status",
-    "body": "",
-    "_sha": "ios-0381e9bba711bf3fe08724fb6d7050126734316a"
-  },
-  {
-    "date": "2026-04-04",
-    "type": "fix",
-    "title": "Escape multiline commit messages in notify-updates workflow",
-    "body": "",
-    "_sha": "ios-85cc3f16c792918ba03c7d8bd757fd85aa9dea7a"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "fix",
-    "title": "Onboarding text",
-    "body": "",
-    "_sha": "ios-891433a15783759ce6bf804c420be5aa60240768"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "fix",
-    "title": "Remove shouts",
-    "body": "",
-    "_sha": "58b9202328620aa8934fe845a48cff604c4c2624"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "fix",
-    "title": "Styles",
-    "body": "",
-    "_sha": "9afa5bd64037d361bdbca68a532eec335aae5a18"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "feat",
-    "title": "Add privacy policy to onboarding screen",
-    "body": "",
-    "_sha": "ios-fa1b5a9a802cf8e92ce91d30b5b9e9004f8f4b53"
-  },
-  {
-    "date": "2026-03-26",
-    "type": "fix",
-    "title": "Second screen",
-    "body": "",
-    "_sha": "ios-f94e36a63f9c5cdb7f0d0a770fd2e61ae82a3f18"
-  },
-  {
-    "date": "2026-03-25",
-    "type": "fix",
-    "title": "Shout onboarding screen",
-    "body": "",
-    "_sha": "ios-0820c65611b0d8a4a4ea4ffb15d986f9f9d30f10"
-  },
-  {
-    "date": "2026-03-25",
-    "type": "fix",
-    "title": "Onboarding",
-    "body": "",
-    "_sha": "ios-f48af9899650b142f33a42f7153eecd1d76875f3"
-  },
-  {
-    "date": "2026-03-25",
-    "type": "fix",
-    "title": "Show onboarding after delete the app",
-    "body": "",
-    "_sha": "ios-1aed0fbd6b02a44735f24d940a2c74583342fa2e"
-  },
-  {
-    "date": "2026-03-23",
-    "type": "fix",
-    "title": "Inline dashboard token header — attachDashboardToken is fileprivate",
-    "body": "",
-    "_sha": "ios-e167c78fd994e682c79baa8f52c4672f80c02347"
-  },
-  {
-    "date": "2026-03-22",
-    "type": "fix",
-    "title": "Added registration page",
-    "body": "",
-    "_sha": "ios-2d9032a9f5a86c0b3049b9ddeea9f581b9006987"
-  },
-  {
-    "date": "2026-03-17",
-    "type": "fix",
-    "title": "Reset isConnected on reconnect to prevent messages sent without active partner",
-    "body": "",
-    "_sha": "ios-dc426ec55070973f4df2a2dcdf2f2bd830d6423b"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Swipe right by defoult",
-    "body": "",
-    "_sha": "ios-6fa10dc12b28500eb8c509367144fe5950ccaac2"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Remove 'stranger disconnected' line on /next entirely",
-    "body": "",
-    "_sha": "ios-89f8f57ca9046d1768cab8f0735eee3affcf12cd"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Splash to chat transition",
-    "body": "fade out overlay instead of hard swap, chat renders underneath",
-    "_sha": "ios-6d20f02f7f0425d0cadb9c3a16e2b89f94673fc6"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Splash screen text",
-    "body": "show bottom text instantly on return visits",
-    "_sha": "ios-2d9f6110ac7d3845b37fe56b5728ff0600392677"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Fixed the animation",
-    "body": "",
-    "_sha": "ios-7d3db1b86a90764673dc7db374ab9293cef9065b"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Modified OnboardingView animation logic",
-    "body": "",
-    "_sha": "ios-9723e00c30ba59df812b309d8c5a82dc0e5d3645"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Updated OnboardingView dots visibility logic",
-    "body": "",
-    "_sha": "ios-58bff0789d92831a628afc3fdf8350771220de30"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Updated text styling in OnboardingView.swift component",
-    "body": "",
-    "_sha": "ios-e06c58c0e7e3a6b2d035f005626845f9d45d3b0f"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Adjusted the entrance screen array.",
-    "body": "",
-    "_sha": "ios-366f2fe721f3589b8be64b9e4682dbefd7518301"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Added tooltips to the main screen.",
-    "body": "",
-    "_sha": "ios-e512ac04b106eb8d927fee6ff03c026ff51fb51f"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Start screens",
-    "body": "changed speed of the /shout string",
-    "_sha": "ios-e851b38df00d9504ae8d6eb52cf59c7a51ecac02"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Start screens",
-    "body": "some changes",
-    "_sha": "ios-2d71b6c284f7dfa6be7dfa9f454f2c8432ed15c5"
-  },
-  {
-    "date": "2026-03-16",
-    "type": "fix",
-    "title": "Start screens",
-    "body": "adjusted font sizes on the start screens.",
-    "_sha": "ios-5e72cdfb13c9a7db4ce05fb12bf3014317a5d60f"
-  },
-  {
-    "date": "2026-03-15",
-    "type": "feat",
-    "title": "Added preview screens",
-    "body": "",
-    "_sha": "ios-4fbca94bfd344b23723bb8d06050ffa34cecf6a4"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "fix",
-    "title": "Note correct bundle ID chat.stdout.ios in PushManager",
-    "body": "",
-    "_sha": "ios-d641f4a577e51db1b5eb3084c48d5e6b757b49a5"
-  },
-  {
-    "date": "2026-03-14",
-    "type": "fix",
-    "title": "Changed max_lines to 200",
-    "body": "",
-    "_sha": "ios-cf8a6c07c2daa8117e915f01a065a659f4d6a6b8"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Correct privacy manifest — Messages type for chat, not OtherUserProfile",
-    "body": "",
-    "_sha": "ios-433ae9a8eb5286c485f1b87f34f0eea67bee3907"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Input field text color uses theme.hi (green in classic_green), you stays blue…",
-    "body": "",
-    "_sha": "ios-cf3ebfd4550553792459c76a398bfd7be5badfce"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "/bug case returns true; classic_green input color green not blue",
-    "body": "",
-    "_sha": "ios-2016114775627228a3abc0133622fa4f3c6fd593"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Logo",
-    "body": "",
-    "_sha": "e31dbdeb5ddd4a8ae4703bac99e8c9a599f48cf6"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Support page logo",
-    "body": "Added a clickable logo.",
-    "_sha": "0152a59bc04eefed8c28f32fdf449240cd3a16d6"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Add 18+",
-    "body": "",
-    "_sha": "ios-6e4fd7319755f61e2ffb69c48077725bedbd78b5"
-  },
-  {
-    "date": "2026-03-13",
-    "type": "fix",
-    "title": "Add /support route to vercel.json rewrites",
-    "body": "",
-    "_sha": "9f3d8611de8cb585611d3a3280bb779ae6f282f9"
-  },
-  {
-    "date": "2026-03-12",
-    "type": "feat",
-    "title": "Add /support page, replace 'learn more' with 'support' button",
-    "body": "",
-    "_sha": "c571914a7f457e57d4850a069cf010874a73e1bb"
-  },
-  {
-    "date": "2026-03-12",
-    "type": "feat",
-    "title": "Accept repository_dispatch from iOS repo for shared updates",
-    "body": "",
-    "_sha": "f4b9ef3b92c9fdc947b54943fe850188c3fcfc7c"
-  },
-  {
-    "date": "2026-03-12",
-    "type": "fix",
-    "title": "Reconnect resume issue",
-    "body": "session now restores automatically after short drops",
-    "_sha": "565dc370f40b606f476e920984cf18fe5e5bff53"
-  },
-  {
-    "date": "2026-03-12",
-    "type": "fix",
-    "title": "fixed reconnect issue during session resume",
-    "body": "if your connection dropped mid-conversation, the app would sometimes fail to reconnect silently. this is now fixed — reconnect happens automatically within 3 seconds, and the session resumes cleanly."
-  },
-  {
-    "date": "2026-03-10",
-    "type": "feat",
-    "title": "added /dashboard command and credit display",
-    "body": "type /dashboard to open your personal control panel. shows your current credit balance, rank, session stats, and quick access to themes and settings — all in the same terminal interface."
-  },
-  {
-    "date": "2026-03-08",
-    "type": "impr",
-    "title": "improved command picker behavior after selection",
-    "body": "after selecting a command from the picker, the input field now clears instantly and focus returns to the text area. no more extra tap needed — just pick a command and keep going."
+    "title": "First release.",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "First release."
+      },
+      {
+        "category": "new",
+        "text": "Anonymous text chat. Matched by interests, not by random luck. A 16-tier ranking system rewards quality conversation."
+      },
+      {
+        "category": "new",
+        "text": "No photos, no followers, no algorithm. Just text."
+      },
+      {
+        "category": "new",
+        "text": "Free, iOS 17.6+, 18+."
+      }
+    ]
   }
 ]
