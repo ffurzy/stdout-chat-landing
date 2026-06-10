@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <script>try{var t=localStorage.getItem('stdout-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>stdout.chat — text chat for real conversations</title>
-  <meta name="description" content="Text chat matched by interests. 16-rank system rewards real conversations. No photos, no followers — just talk. Free on iOS." />
+  <title>stdout.chat — text-only chat app. Meet people by interests</title>
+  <meta name="description" content="Free text-only chat for iOS. Get matched by shared interests — no video, no photos, no sign-up. Every good conversation earns rank." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="stdout.chat — text chat for real conversations" />
-  <meta property="og:description" content="Matched by interests, ranked by conversation quality. No photos, no followers — just text. Free on iOS." />
+  <meta property="og:title" content="stdout.chat — text-only chat app. Meet people by interests" />
+  <meta property="og:description" content="Free text-only chat for iOS. Get matched by shared interests — no video, no photos, no sign-up. Every good conversation earns rank." />
   <meta property="og:url" content="https://stdout.chat/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="stdout.chat" />
-  <meta name="twitter:description" content="Text chat for real conversations. Matched by interests." />
+  <meta name="twitter:title" content="stdout.chat — text-only chat app" />
+  <meta name="twitter:description" content="Free text-only chat for iOS. Matched by shared interests — no video, no photos, no sign-up." />
   <meta property="og:image" content="https://stdout.chat/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -41,8 +41,9 @@
     "operatingSystem": "iOS 16.0",
     "applicationCategory": "SocialNetworkingApplication",
     "downloadUrl": "https://apps.apple.com/app/stdout-chat/id6760369542",
-    "description": "Text chat for real conversations. Matched by interests. Ranked by conversation quality. No phone, no email, no photos.",
+    "description": "Free text-only chat app for iOS that matches you with people who share your interests — no video, no camera, no sign-up, no phone number.",
     "url": "https://stdout.chat/",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
     "publisher": {"@type": "Organization", "name": "stdout.chat"}
   }
   </script>
@@ -65,13 +66,72 @@
     "@type": "WebSite",
     "name": "stdout.chat",
     "url": "https://stdout.chat/",
-    "description": "Anonymous text chat matched by interests, ranked by conversation quality. Free on iOS.",
+    "description": "stdout.chat is a free text-only chat app for iOS that matches you with people who share your interests — no video, no camera, no sign-up, no phone number.",
     "publisher": {
       "@type": "Organization",
       "name": "stdout.chat"
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is stdout.chat free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The app is free to download and free to chat — matching, messaging, and the rank system cost nothing. Optional in-app credits unlock extra themes and shout broadcasts, but you never need them to talk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account or phone number?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no sign-up at all — no phone number, no email, no password. The app creates a random device identity on first launch, you pick a username, and you are online in seconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there video chat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — and that is the point. stdout.chat is text-only by design: no video, no camera, no voice. Unlike video chat roulettes, nobody judges you by your face or your room. The conversation is the whole product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does interest matching work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You choose up to five interests across culture, tech, lifestyle, and sport. The app pairs you with someone who shares at least one of them, and the profile preview shows exactly what you matched on before you say a word."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my conversations saved?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Chats are ephemeral — once a session ends, the messages are gone from our servers. The only exception is a short buffer kept temporarily when someone files a report, so moderation actually works."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is stdout.chat available on Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not yet. stdout.chat is currently available for iPhone on the App Store. Android is on the roadmap."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- LCP: preload the hero screenshot -->
+  <link rel="preload" as="image" href="screenshots/04-chat.webp" type="image/webp" fetchpriority="high">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
@@ -86,7 +146,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css">
@@ -167,7 +227,7 @@
           <div class="notch"></div>
           <picture>
             <source type="image/webp" srcset="screenshots/04-chat.webp">
-            <img class="shot" src="screenshots/04-chat.png" alt="stdout.chat — a live conversation" width="1290" height="2796" decoding="async"/>
+            <img class="shot" src="screenshots/04-chat.png" alt="stdout.chat — a live conversation" width="1290" height="2796" fetchpriority="high" decoding="async"/>
           </picture>
         </div>
       </div>
@@ -462,6 +522,64 @@
   </div>
 </section>
 
+<!-- ABOUT + FAQ -->
+<section id="faq" class="home-faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// FAQ</div>
+        <h2 class="section-title">questions, <em>answered.</em></h2>
+      </div>
+      <p class="section-desc">The short version of everything people ask. Full docs live in <a href="/support">support</a>.</p>
+    </div>
+
+    <div class="home-about">
+      <p><strong>stdout.chat is a free text-only chat app for iOS that matches you with people who share your interests — no video, no camera, no sign-up, no phone number.</strong></p>
+      <p>You pick up to five interests, and the app pairs you with someone who shares at least one of them — so every conversation starts with common ground. There are no photos, no followers, and no feeds: just two people typing. Every chat ends with a session grade, and good conversations move you up a 16-tier rank ladder, from NEW to LEGEND.</p>
+      <p>Conversations are ephemeral — when a session ends, the messages are gone. You never hand over a phone number, an email, or a photo. If you want to know why we skipped the camera entirely, read <a href="/text-only-chat">why text-only chat works better</a>.</p>
+    </div>
+
+    <div class="faq-grid">
+      <details class="qa-item">
+        <summary>Is stdout.chat free?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>Yes. The app is free to download and free to chat — matching, messaging, and the rank system cost nothing. Optional in-app credits unlock extra themes and shout broadcasts, but you never need them to talk.</p>
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Do I need an account or phone number?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>No. There is no sign-up at all — no phone number, no email, no password. The app creates a random device identity on first launch, you pick a username, and you're online in seconds.</p>
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Is there video chat?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>No — and that's the point. stdout.chat is <a href="/text-only-chat">text-only by design</a>: no video, no camera, no voice. Unlike video chat roulettes, nobody judges you by your face or your room. The conversation is the whole product.</p>
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>How does interest matching work?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>You choose up to five interests across culture, tech, lifestyle, and sport. The app pairs you with someone who shares at least one of them, and the profile preview shows exactly what you matched on — before you say a word.</p>
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Are my conversations saved?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>No. Chats are ephemeral — once a session ends, the messages are gone from our servers. The only exception is a short buffer kept temporarily when someone files a report, so moderation actually works.</p>
+        </div>
+      </details>
+      <details class="qa-item">
+        <summary>Is stdout.chat available on Android?<span class="toggle">+</span></summary>
+        <div class="qa-answer">
+          <p>Not yet. stdout.chat is currently available for iPhone on the App Store. Android is on the roadmap.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
@@ -471,6 +589,7 @@
         <span>stdout.chat — text chat for real conversations</span>
       </div>
       <div class="links">
+        <a href="/text-only-chat">text-only chat</a>
         <a href="/privacy">privacy</a>
         <a href="/terms">terms</a>
         <a href="/updates">updates</a>

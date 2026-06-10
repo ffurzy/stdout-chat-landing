@@ -4,6 +4,7 @@
     { "source": "/privacy-policy", "destination": "/privacy.html" },
     { "source": "/terms",          "destination": "/terms.html" },
     { "source": "/updates",        "destination": "/updates.html" },
+    { "source": "/text-only-chat", "destination": "/text-only-chat.html" },
     { "source": "/support",        "destination": "/support.html" },
     { "source": "/favicon.ico",    "destination": "/icons/favicon.ico" }
   ],
