@@ -151,6 +151,30 @@ splice("filters", filtersHtml);
 
 fs.writeFileSync(HTML_FILE, html, "utf8");
 
+// ── sync <lastmod> for /updates in sitemap.xml ───────────────────────────────
+// Bumps the /updates <lastmod> to the latest release date. Never regresses:
+// if the sitemap already has a newer date (manual bump), it is kept as-is —
+// so the render stays idempotent.
+const SITEMAP_FILE = path.join(__dirname, "..", "sitemap.xml");
+try {
+  let sm = fs.readFileSync(SITEMAP_FILE, "utf8");
+  const lmRe = /(<loc>https:\/\/stdout\.chat\/updates<\/loc>\s*<lastmod>)(\d{4}-\d{2}-\d{2})(<\/lastmod>)/;
+  const m = sm.match(lmRe);
+  if (m) {
+    const current = m[2];
+    const next = latest.date > current ? latest.date : current;
+    if (next !== current) {
+      sm = sm.replace(lmRe, `$1${next}$3`);
+      fs.writeFileSync(SITEMAP_FILE, sm, "utf8");
+      console.log(`  sitemap: /updates lastmod ${current} → ${next}`);
+    }
+  } else {
+    console.warn("  sitemap: /updates <lastmod> not found — skipped.");
+  }
+} catch (e) {
+  console.warn(`  sitemap: lastmod sync failed — ${e.message}`);
+}
+
 console.log(`Rendered updates.html from ${data.length} releases.`);
 console.log(`  latest: v${latest.version} (${fmtDateLong(latest.date)})`);
 console.log(`  counts: all=${counts.all} new=${counts.new} fix=${counts.fix} imp=${counts.imp} sec=${counts.sec}`);

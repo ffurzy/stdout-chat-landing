@@ -370,6 +370,32 @@ h2.section-title em{ font-style:italic; font-weight:500; color:var(--text-dim); 
 .final-cta .btn-app{ font-size:20px; padding: 22px 32px; }
 
 /* =========================================================
+   Home FAQ (about paragraph + questions)
+   ========================================================= */
+.home-faq{ padding: 110px 0 30px; }
+.home-about{ max-width: 780px; margin: 0 0 56px; }
+.home-about p{ font-size:18px; line-height:1.65; color:var(--text-2); margin:0 0 18px; }
+.home-about p strong{ color:var(--text); font-weight:600; }
+.home-about a, .home-faq .section-desc a{ color:var(--accent); border-bottom:1px dashed currentColor; padding-bottom:1px; }
+.faq-grid{ max-width: 860px; border-top:1px dashed var(--line-2); }
+.qa-item{ border-bottom:1px dashed var(--line-2); }
+.qa-item summary{
+  cursor:pointer; list-style:none;
+  display:flex; justify-content:space-between; align-items:center; gap:24px;
+  padding:22px 0;
+  font-family:var(--sans); font-weight:600; font-size:19px; letter-spacing:-.01em;
+}
+.qa-item summary::-webkit-details-marker{ display:none; }
+.qa-item summary .toggle{
+  font-family:var(--mono); color:var(--accent); flex-shrink:0;
+  display:inline-block; transition: transform .15s ease;
+}
+.qa-item[open] summary .toggle{ transform: rotate(45deg); }
+.qa-item .qa-answer{ padding:0 0 24px; max-width:720px; }
+.qa-item .qa-answer p{ margin:0; color:var(--text-2); line-height:1.6; font-size:16px; }
+.qa-item .qa-answer a{ color:var(--accent); border-bottom:1px dashed currentColor; padding-bottom:1px; }
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 1100px){
