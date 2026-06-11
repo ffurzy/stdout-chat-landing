@@ -1,5 +1,27 @@
 [
   {
+    "version": "1.2.0",
+    "date": "2026-06-10",
+    "title": "Introducing the Leaderboard.",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "Introducing the Leaderboard — see the top 50 chatters of all time right in your Stats tab, including your own live position. Climb the ranks one good conversation at a time."
+      },
+      {
+        "category": "new",
+        "text": "Your daily streak now counts the moment you open the app — just show up to keep it alive."
+      },
+      {
+        "category": "new",
+        "text": "Also in this release: a calmer home screen with rotating tips and your recent progress, smarter reconnect after the app sits in the background, and groundwork for a new theme drop."
+      }
+    ]
+  },
+  {
     "version": "1.1.9",
     "date": "2026-05-31",
     "title": "No one around when you open the app?",
