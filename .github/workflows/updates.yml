@@ -16,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout landing
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
 
       - name: Checkout VoidChat (CHANGELOG source)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ffurzy/stdout-chat-ios
           ref: main
@@ -33,7 +33,7 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 20
 
