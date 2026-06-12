@@ -1,5 +1,28 @@
 [
   {
+    "version": "1.2.1",
+    "date": "2026-06-12",
+    "title": "Your home screen just got smarter.",
+    "tags": [
+      "new",
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "Your home screen just got smarter. A live status board shows today's session stats at a glance, plus a 24-hour activity chart so you can see when the room is busiest — with a countdown to the next peak hour."
+      },
+      {
+        "category": "imp",
+        "text": "Typing feels better too: the keyboard stays tucked away until a chat begins, and the screen adapts smoothly while you write."
+      },
+      {
+        "category": "imp",
+        "text": "New players now see a clear \"unranked\" state until their first ranked conversation. Plus layout polish throughout."
+      }
+    ]
+  },
+  {
     "version": "1.2.0",
     "date": "2026-06-10",
     "title": "Introducing the Leaderboard.",
