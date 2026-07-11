@@ -9,7 +9,7 @@
     "items": [
       {
         "category": "fix",
-        "text": "Reliability update: your profile, credits, and themes are now firmly tied to your device — an app update or restart can no longer disconnect you from your progress."
+        "text": "Reliability update: your profile, credits, and themes are now firmly tied to your device — an app update or restart can no longer disconnect you from your progress. Searching also survives brief connection drops: if the link blips, you're placed right back in line automatically."
       }
     ]
   },
