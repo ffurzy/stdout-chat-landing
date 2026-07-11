@@ -1,5 +1,19 @@
 [
   {
+    "version": "1.2.2",
+    "date": "2026-07-11",
+    "title": "Reliability update: your profile, credits, and themes are now firmly…",
+    "tags": [
+      "fix"
+    ],
+    "items": [
+      {
+        "category": "fix",
+        "text": "Reliability update: your profile, credits, and themes are now firmly tied to your device — an app update or restart can no longer disconnect you from your progress."
+      }
+    ]
+  },
+  {
     "version": "1.2.1",
     "date": "2026-06-12",
     "title": "Your home screen just got smarter.",
