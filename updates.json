@@ -9,7 +9,7 @@
     "items": [
       {
         "category": "fix",
-        "text": "Reliability update: your profile, credits, and themes are now firmly tied to your device — an app update or restart can no longer disconnect you from your progress. Searching also survives brief connection drops: if the link blips, you're placed right back in line automatically."
+        "text": "Reliability update: your profile, credits, and themes are now firmly tied to your device — an app update or restart can no longer disconnect you from your progress. Searching also survives brief connection drops: if the link blips, you're placed right back in line automatically. Notifications got smarter too: turning them off now truly stops them, turning them on works right away, and new installs see the permission prompt at the right moment instead of on first launch."
       }
     ]
   },
