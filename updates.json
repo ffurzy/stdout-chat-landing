@@ -1,5 +1,19 @@
 [
   {
+    "version": "1.3.0",
+    "date": "2026-07-21",
+    "title": "Share your rank!",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "Share your rank! Your profile now has a share card — a beautiful snapshot of your rank, rating, and streak, ready to post anywhere. Invite friends with your personal code: they get +50 credits after their first chat, and you get +100. Standout sessions deserve an audience too — S and A grades can be shared straight from the session toast. Links like stdout.chat/i/yourcode now open right in the app."
+      }
+    ]
+  },
+  {
     "version": "1.2.2",
     "date": "2026-07-11",
     "title": "Reliability update: your profile, credits, and themes are now firmly…",
