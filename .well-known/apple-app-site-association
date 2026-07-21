@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["3X39CW3B76.chat.stdout.ios"],
+        "components": [
+          { "/": "/i/*" }
+        ]
+      }
+    ]
+  }
+}

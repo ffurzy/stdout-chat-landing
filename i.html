@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{var t=localStorage.getItem('stdout-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're invited — stdout.chat</title>
+  <meta name="description" content="Join me on stdout.chat — text chat for real conversations. Enter the invite code after install and get 50 credits." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Join me on stdout.chat" />
+  <meta property="og:description" content="Text chat for real conversations. Enter my invite code after install — we both get credits." />
+  <meta property="og:url" content="https://stdout.chat/i" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://stdout.chat/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stdout.chat/img/og-image.png" />
+
+  <!-- invite pages are per-code duplicates — keep them out of the index -->
+  <meta name="robots" content="noindex,follow">
+  <meta name="apple-itunes-app" content="app-id=6760369542">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .invite-wrap{
+      min-height:100svh; display:flex; align-items:center; justify-content:center;
+      padding:24px;
+    }
+    .invite-card{
+      width:100%; max-width:480px; border:1px solid var(--line, #1d2420);
+      background:var(--bg-2); border-radius:12px; padding:32px 28px;
+      font-family:'JetBrains Mono', monospace; text-align:center;
+    }
+    .invite-tag{ color:var(--text-dim); font-size:13px; letter-spacing:.08em; }
+    .invite-title{ margin:14px 0 6px; font-size:22px; font-weight:700; color:var(--text); }
+    .invite-from{ color:var(--text-2); font-size:14px; min-height:20px; }
+    .invite-from .accent{ font-weight:600; }
+    .invite-code{
+      margin:26px auto 8px; padding:18px 12px; border:1px dashed var(--accent);
+      border-radius:10px; background:var(--accent-soft);
+      font-size:34px; font-weight:700; letter-spacing:.35em; text-indent:.35em;
+      color:var(--accent); text-shadow:0 0 18px var(--accent-glow);
+      user-select:all; -webkit-user-select:all;
+    }
+    .invite-hint{ color:var(--text-2); font-size:13px; line-height:1.6; margin:14px 0 22px; }
+    .invite-hint .accent{ font-weight:600; }
+    .invite-actions{ display:flex; flex-direction:column; gap:12px; }
+    .invite-btn{
+      display:block; width:100%; padding:14px; border-radius:8px; font-family:inherit;
+      font-size:15px; font-weight:600; cursor:pointer; text-decoration:none;
+      transition:opacity .15s;
+    }
+    .invite-btn:hover{ opacity:.85; }
+    .invite-btn.primary{ background:var(--accent); color:var(--bg); border:none; }
+    .invite-btn.ghost{ background:none; color:var(--text-2); border:1px solid var(--line, #1d2420); }
+    .invite-countdown{ color:var(--text-dim); font-size:12px; min-height:18px; margin-top:16px; }
+    .invite-countdown button{
+      background:none; border:none; color:var(--text-2); font-family:inherit; font-size:12px;
+      text-decoration:underline; cursor:pointer; padding:0; margin-left:6px;
+    }
+    .invite-footer{ margin-top:22px; font-size:12px; color:var(--text-dim); }
+    .invite-footer a{ color:var(--text-2); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <main class="invite-wrap">
+    <div class="invite-card">
+      <div class="invite-tag">// invitation</div>
+      <h1 class="invite-title">you're invited to stdout.chat</h1>
+      <p class="invite-from" id="from">&nbsp;</p>
+
+      <div class="invite-code" id="code" aria-label="invite code">······</div>
+
+      <p class="invite-hint">
+        1. copy this code (you'll need it after install)<br>
+        2. get the app → enter the code<br>
+        3. finish your first chat → <span class="accent">you get +50 credits</span>
+      </p>
+
+      <div class="invite-actions">
+        <button class="invite-btn ghost" id="copy">[ copy code ]</button>
+        <a class="invite-btn primary" id="store"
+           href="https://apps.apple.com/app/stdout-chat/id6760369542">
+          get stdout.chat on the App Store
+        </a>
+      </div>
+
+      <p class="invite-countdown" id="countdown"></p>
+
+      <p class="invite-footer"><a href="/">stdout.chat</a> — text chat for real conversations</p>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var CODE_RE = /^[2-9A-HJKMNP-TV-Z]{6}$/;
+      var m = location.pathname.match(/^\/i\/([A-Za-z0-9]{1,12})\/?$/);
+      var code = m ? m[1].toUpperCase() : null;
+      if (code && !CODE_RE.test(code)) code = null;
+
+      var codeEl = document.getElementById('code');
+      var copyBtn = document.getElementById('copy');
+      var cdEl = document.getElementById('countdown');
+      var storeUrl = document.getElementById('store').href;
+
+      if (!code) {
+        codeEl.textContent = '——————';
+        copyBtn.style.display = 'none';
+        document.querySelector('.invite-hint').textContent =
+          'this invite link is incomplete — you can still get the app below.';
+        return;
+      }
+
+      codeEl.textContent = code;
+
+      // personalize if the code resolves to a public profile
+      fetch('https://api.stdout.chat/api/public/invite/' + code)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && d.valid && d.username) {
+            var from = document.getElementById('from');
+            from.textContent = '';
+            from.appendChild(document.createTextNode((d.emoji ? d.emoji + ' ' : '') + d.username + ' · '));
+            var rank = document.createElement('span');
+            rank.className = 'accent';
+            rank.textContent = d.rank || '';
+            from.appendChild(rank);
+            from.appendChild(document.createTextNode(' invited you'));
+          }
+        })
+        .catch(function () {});
+
+      copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(code).then(function () {
+          copyBtn.textContent = '[ copied ✓ ]';
+          setTimeout(function () { copyBtn.textContent = '[ copy code ]'; }, 2000);
+        }).catch(function () {
+          // clipboard unavailable — select the code for manual copy
+          var range = document.createRange();
+          range.selectNodeContents(codeEl);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        });
+        cancelRedirect(); // user is interacting — don't yank them away
+      });
+
+      // auto-continue to the App Store, visibly and cancellably
+      var left = 6, timer = null;
+      function tick() {
+        if (left <= 0) { location.href = storeUrl; return; }
+        cdEl.textContent = 'continuing to the App Store in ' + left + 's';
+        var stay = document.createElement('button');
+        stay.textContent = 'stay here';
+        stay.addEventListener('click', cancelRedirect);
+        cdEl.appendChild(stay);
+        left--;
+        timer = setTimeout(tick, 1000);
+      }
+      function cancelRedirect() {
+        if (timer) { clearTimeout(timer); timer = null; }
+        cdEl.textContent = '';
+      }
+      tick();
+    })();
+  </script>
+</body>
+</html>

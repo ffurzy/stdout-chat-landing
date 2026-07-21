@@ -7,6 +7,7 @@
     { "source": "/text-only-chat", "destination": "/text-only-chat.html" },
     { "source": "/terminal-chat",  "destination": "/terminal-chat.html" },
     { "source": "/support",        "destination": "/support.html" },
+    { "source": "/i/:code",        "destination": "/i.html" },
     { "source": "/favicon.ico",    "destination": "/icons/favicon.ico" }
   ],
   "headers": [
@@ -18,7 +19,14 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=()" },
         { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://va.vercel-scripts.com; frame-ancestors 'none'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://va.vercel-scripts.com https://api.stdout.chat; frame-ancestors 'none'" }
+      ]
+    },
+    {
+      "source": "/.well-known/apple-app-site-association",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     },
     {
