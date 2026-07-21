@@ -189,7 +189,7 @@
         <p>For operational diagnostics, we briefly log connection and disconnection timestamps, session duration, and error events. This data is used solely to monitor server health and detect abnormal usage patterns. It is not tied to message content or personal identity.</p>
 
         <h3>Shouts</h3>
-        <p>The <code>/shout</code> command broadcasts a message to all currently connected users. Shout content is temporarily held in memory to deliver the broadcast and is not written to persistent storage. After delivery, shout content is discarded. A short-lived status record (sent/expired) is retained for moderation purposes for up to 5 minutes, after which it is automatically purged.</p>
+        <p>The <code>/shout</code> command broadcasts a message to all currently connected users. Unlike regular chat messages, shouts are <strong>public by design</strong>: shout text is stored together with your username, avatar emoji, and rank for moderation and abuse prevention, and recent shouts that pass automated moderation may be displayed publicly on the stdout.chat website (the "shout wall") with your username and rank attached. Shouts are never linked publicly to your Device ID. Stored shouts are retained for up to 12 months or until removed by moderation. To request removal of a specific shout, contact <a href="mailto:abuse@stdout.chat">abuse@stdout.chat</a>.</p>
 
         <h3>Purchase Records</h3>
         <p>When you purchase credits via in-app purchase, a transaction record is stored containing the anonymized Apple transaction ID and the credit amount credited. No payment card or billing information is ever transmitted to or stored by stdout.chat. All payment processing is handled exclusively by Apple.</p>
@@ -260,7 +260,7 @@
           <tbody>
             <tr><td>Message content</td><td>Not stored after a session ends — exists only in memory during an active session</td></tr>
             <tr><td>Reported message content</td><td>Retained temporarily for moderation review, then deleted</td></tr>
-            <tr><td>Shout content</td><td>Up to 5 minutes (in-memory only), then purged automatically</td></tr>
+            <tr><td>Shout content (public broadcasts)</td><td>Up to 12 months, or until removed by moderation / on request</td></tr>
             <tr><td>Connection logs</td><td>Up to 30 days, then deleted by automated cleanup</td></tr>
             <tr><td>IP addresses (temporary bans)</td><td>Duration of ban (maximum 30 days), then deleted</td></tr>
             <tr><td>Pseudonymous reputation score</td><td>Retained while Device ID remains active</td></tr>
@@ -309,6 +309,9 @@
 
         <h3>What We Store</h3>
         <p>Upon successful purchase, we store an anonymized Apple transaction ID (for duplicate-prevention and audit), the number of Credits added to your balance, and a timestamp of the transaction. This is linked to your Device ID (not to your Apple ID or identity). Purchase records are retained for a minimum of 7 years for financial record-keeping compliance.</p>
+
+        <h3>Invite Rewards</h3>
+        <p>Credits can also be earned by inviting friends. When you share your invite code and the invited person completes their first chat, both devices receive bonus Credits. To operate this feature we store the link between the inviting Device ID and the invited Device ID, the invite code used, and the reward status. This data is used solely for reward accounting and abuse prevention and is never displayed publicly.</p>
 
         <h3>Refunds</h3>
         <p>Refund requests are handled through Apple. Contact Apple Support or visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>. We cannot process refunds directly.</p>

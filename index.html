@@ -410,6 +410,72 @@
   </div>
 </section>
 
+<!-- SHOUT WALL — live user broadcasts; hidden until the API returns real data -->
+<section id="wall" hidden>
+  <style>
+    #wall .wall-list{ display:flex; flex-direction:column; gap:10px; margin-top:28px; }
+    #wall .wall-item{
+      display:flex; align-items:baseline; gap:12px; padding:14px 16px;
+      border:1px solid var(--line, #1d2420); border-radius:8px; background:var(--bg-2);
+      font-family:'JetBrains Mono', monospace; font-size:14px;
+    }
+    #wall .wall-rank{
+      flex:none; color:var(--accent); font-size:11px; font-weight:600; letter-spacing:.06em;
+    }
+    #wall .wall-user{ flex:none; color:var(--text-2); font-size:12px; }
+    #wall .wall-text{ flex:1; color:var(--text); overflow-wrap:anywhere; }
+    #wall .wall-ago{ flex:none; color:var(--text-dim); font-size:11px; }
+    #wall .wall-note{ margin-top:16px; font-size:12px; color:var(--text-dim); }
+    #wall .wall-note a{ color:var(--text-2); }
+    @media (max-width:560px){
+      #wall .wall-item{ flex-wrap:wrap; gap:6px 10px; }
+      #wall .wall-text{ flex-basis:100%; order:3; }
+    }
+  </style>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="section-tag">// LIVE BROADCASTS</div>
+        <h2 class="section-title" id="wall-title">shouts from inside. <em>heard out here.</em></h2>
+      </div>
+      <p class="section-desc">/shout is a paid broadcast to everyone online. The latest ones land on this wall.</p>
+    </div>
+    <div class="wall-list" id="wall-list"></div>
+    <p class="wall-note">broadcasts are AI-moderated before sending · report: <a href="mailto:abuse@stdout.chat">abuse@stdout.chat</a></p>
+  </div>
+  <script>
+    (function () {
+      fetch('https://api.stdout.chat/api/public/shout-wall')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d || !Array.isArray(d.shouts) || d.shouts.length === 0) return; // stay hidden
+          var compact = d.shouts.length < 5; // few recent shouts → quieter framing, no wall theatre
+          if (compact) {
+            document.getElementById('wall-title').textContent = 'latest broadcasts';
+          }
+          var list = document.getElementById('wall-list');
+          d.shouts.slice(0, compact ? 3 : 20).forEach(function (s) {
+            // UGC — build with textContent only, never innerHTML
+            var item = document.createElement('div');  item.className = 'wall-item';
+            var rank = document.createElement('span'); rank.className = 'wall-rank';
+            rank.textContent = String(s.rank || '');
+            var user = document.createElement('span'); user.className = 'wall-user';
+            user.textContent = '@' + String(s.username || 'anon');
+            var text = document.createElement('span'); text.className = 'wall-text';
+            text.textContent = String(s.text || '');
+            var ago = document.createElement('span');  ago.className = 'wall-ago';
+            ago.textContent = String(s.ago || '') + ' ago';
+            item.appendChild(rank); item.appendChild(user);
+            item.appendChild(text); item.appendChild(ago);
+            list.appendChild(item);
+          });
+          document.getElementById('wall').hidden = false;
+        })
+        .catch(function () {}); // API unreachable → section stays hidden
+    })();
+  </script>
+</section>
+
 <div class="wrap">
   <!-- THEMES -->
   <section id="themes">
