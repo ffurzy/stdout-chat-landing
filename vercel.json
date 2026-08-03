@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.stdout.chat" }],
+      "destination": "https://stdout.chat/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/privacy",        "destination": "/privacy.html" },
     { "source": "/privacy-policy", "destination": "/privacy.html" },
