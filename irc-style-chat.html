@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{var t=localStorage.getItem('stdout-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Apps for People Who Miss IRC | stdout.chat</title>
+  <meta name="description" content="An essay on IRC nostalgia: what the protocol actually got right, why it emptied out anyway, where the survivors went — and which parts of it you can still have in 2026." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Chat Apps for People Who Miss IRC" />
+  <meta property="og:description" content="You don't miss the protocol. You miss the room. An essay on what IRC got right and where to find it now." />
+  <meta property="og:url" content="https://stdout.chat/irc-style-chat" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://stdout.chat/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stdout.chat/img/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6760369542">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://stdout.chat/irc-style-chat">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="167x167" href="/icons/apple-touch-icon-167x167.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Structured data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "stdout.chat", "item": "https://stdout.chat/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://stdout.chat/guides"},
+      {"@type": "ListItem", "position": 3, "name": "Chat Apps for People Who Miss IRC", "item": "https://stdout.chat/irc-style-chat"}
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is IRC still alive in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Libera.Chat hosts thousands of active channels, especially around open-source projects, and services like IRCCloud remove the classic pain of persistence. IRC is smaller than it was, but it is far from dead — it just stopped being where the general public hangs out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What replaced IRC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For communities: Discord and Slack, which added history, media and identity — plus notification pressure and centralized ownership. For protocol purists: Matrix, which federates and bridges to IRC. Nothing replaced IRC's culture of ephemeral, nickname-based, text-only presence — that part simply scattered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a modern app with the feel of IRC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pieces of the feel survive in different places: Libera.Chat for the real thing, terminal clients like Senpai for the interface, and stdout.chat for the culture — a terminal-style, text-only chat with slash commands, nickname identity and ephemeral conversations, built for iOS."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Vercel insights -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- TOP BAR (direct child of <body> so sticky spans the whole page) -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">
+      <span class="dot"></span>
+      <span>stdout.chat</span>
+    </a>
+    <nav class="top-nav">
+      <a href="/#how">how it works</a>
+      <a href="/#features">features</a>
+      <a href="/guides">guides</a>
+      <a href="/support">support</a>
+    </nav>
+    <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">↓ get the app</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="page-head">
+    <div class="page-eyebrow">// GUIDES / IRC</div>
+    <h1 class="page-title">you don't miss<br/><span class="green">the protocol.</span><br/><em>you miss the room.</em></h1>
+    <p class="page-sub">An essay on IRC nostalgia: what the old text rooms actually got right, why they emptied out anyway, and which pieces of that feeling you can still have in 2026.</p>
+    <div class="page-meta">
+      <span>reading time <b>~7 min</b></span>
+      <span>format <b>essay</b></span>
+      <span>app <code>stdout.chat</code></span>
+    </div>
+  </header>
+
+  <div id="main" class="wrap-narrow" style="padding-left:0; padding-right:0;">
+    <article class="doc" style="padding: 64px 0 40px;">
+
+      <p>Every few months someone on a forum asks what happened to IRC, and the answers split the same way: half explain that it never left, half explain why it had to. Both halves are right, which is why the question keeps coming back. (Bias note: this essay ends at a chat app we built. The first six sections are honest anyway.)</p>
+
+      <section id="what">
+        <h2><span class="n">01 / THE ROOM</span>What IRC actually was</h2>
+        <p>Strip the nostalgia and the mechanics were austere: a nickname, a channel, a scrolling wall of monospace text, and slash commands for everything. No avatars. No profiles worth the name. No history — if you weren't there, you missed it, and that was fine.</p>
+        <p>The austerity was the design. A nickname instead of an identity meant you were exactly as interesting as your last message. Ephemerality meant presence — the channel was a place you <em>were</em>, not a feed you caught up on. And text-only meant the ambient hum of a hundred people typing never once asked you to look at anything. It ran for decades on hardware that would embarrass a doorbell.</p>
+      </section>
+
+      <section id="why-it-emptied">
+        <h2><span class="n">02 / THE EXODUS</span>Why it emptied out — the half the eulogies get right</h2>
+        <p>The essays arguing IRC can't come back have a point, and pretending otherwise is how you end up writing manifestos instead of software. The protocol shipped no persistent history: log off and the conversation never happened. No offline delivery. Identity was literally whoever held the nickname. Multi-device sync meant running a bouncer on a VPS — a system administration fee, paid monthly, for the privilege of chatting.</p>
+        <p>Normal people were never going to pay it. When Slack and Discord offered the same rooms with history, sync, and search included, the crowds moved for reasons that were simply correct. What the eulogies miss is what got charged on the way in.</p>
+      </section>
+
+      <section id="staying">
+        <h2><span class="n">03 / THE HOLDOUTS</span>Staying: Libera, IRCCloud, and the bouncer tax</h2>
+        <p>IRC still works, and for one demographic it works well. Libera.Chat carries thousands of channels, dense with open-source projects; the culture there is intact. IRCCloud turned the bouncer into a subscription — history and sync as a service, the single biggest usability hole patched with a credit card. Terminal clients are quietly excellent (Senpai on the desktop; Goguma even brings a real client to your phone), and web gateways like Kiwi cover the drive-by case.</p>
+        <p>If your channels still exist, this path is real. The honest catch: it solves IRC for people who already have somewhere to go. It doesn't answer where the <em>new</em> rooms are, because a protocol can't mint a crowd.</p>
+      </section>
+
+      <section id="heirs">
+        <h2><span class="n">04 / THE HEIRS</span>Discord, Slack, and the attention tax</h2>
+        <p>Discord kept the channels and fixed everything the eulogies list — then billed you in attention. Read receipts, typing indicators, reaction emoji, nitro nags, notification badges engineered to be cleared: a hundred small hooks that turn a chat room into a demand. IRC never once pinged you into anxiety. Its heirs made it the business model.</p>
+        <p>There's a second charge on the bill: ownership. You can't self-host Discord, can't fork it, can't export your community out of it in any meaningful way — the room belongs to the landlord now, and the rules change when the landlord's regulators do. The recent age-verification backlash sent a visible wave of users asking, in so many words, whether IRC was still an option. The impulse wasn't nostalgia. It was the sudden memory of what it felt like when the room was yours.</p>
+      </section>
+
+      <section id="matrix">
+        <h2><span class="n">05 / THE COMPROMISE</span>Matrix, federation, and the weight of everything</h2>
+        <p>Matrix is the serious attempt to rebuild the open version: federated servers, bridges into IRC and elsewhere, encryption, history — the whole feature matrix, as it were. For communities that need sovereignty <em>and</em> modern chat, it's the credible answer, and it deserves its steady growth.</p>
+        <p>But spend an evening in it and you notice what federation costs: the heaviness of clients, the identity ceremony, the sense of operating infrastructure rather than hanging out. Matrix solved what IRC lacked. The thing IRC <em>had</em> — the weightlessness — wasn't on the roadmap.</p>
+      </section>
+
+      <section id="wanted">
+        <h2><span class="n">06 / THE POINT</span>What we actually wanted all along</h2>
+        <p>Line the survivors up and the pattern inverts: every successor treated text as the limitation to engineer past — add voice, add video, add embeds, add presence, add everything. IRC's actual lesson was the opposite. <strong>Text was the feature.</strong> The constraint was what made a stranger's words land with full weight, made lurking comfortable, made the room accessible to a screen reader and a 2400-baud modem alike, made your identity weigh exactly as much as your last sentence.</p>
+        <p>What we wanted was never the protocol. It was: show up as a nickname, type, be judged on nothing else, leave without a trace. That's a culture, and cultures can be rebuilt anywhere.</p>
+      </section>
+
+      <section id="today">
+        <h2><span class="n">07 / TODAY</span>The parts you can still have</h2>
+        <p>This is where the disclosure cashes out. We built <a href="/">stdout.chat</a> because we wanted that culture on the device that's actually in everyone's pocket: a <a href="/terminal-chat">terminal-style</a>, text-only chat — monospace, dark, cursor blinking — where you exist as a nickname, run your life through slash commands, and every conversation is ephemeral by design. Matching is one-on-one by shared interests rather than channel topics (with one global channel, <code>#void</code>, for the ambient-hum crowd), there's no sign-up, and nothing survives the session. It is not IRC, and doesn't pretend to be: no federation, no self-hosting, iOS only. What it keeps is the part this essay is about — text as the feature, identity as a nickname, presence over permanence.</p>
+        <p>The honest routing table, then: your old channels → Libera.Chat, with IRCCloud if you value your evenings. Community infrastructure you control → Matrix. The feeling of the room, one stranger at a time, on your phone → that's ours. And if you just miss reading conversation instead of watching it, the case for <a href="/text-only-chat">text-only chat</a> stands on its own.</p>
+      </section>
+
+      <section id="try">
+        <h2><span class="n">08 / TRY IT</span>/join from your pocket</h2>
+        <p>No account, no camera, no notification hooks engineered against you — just a prompt, a stranger who shares an interest, and words on a dark screen. The room, rebuilt small.</p>
+        <div class="callout">
+          <strong>Get stdout.chat for iOS</strong> — free, terminal-style, text-only, no sign-up. <a href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">Download on the App Store →</a>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="who">
+        <span class="dot"></span>
+        <span>stdout.chat — text chat for real conversations</span>
+      </div>
+      <div class="links">
+        <a href="/text-only-chat">text-only chat</a>
+        <a href="/terminal-chat">terminal chat</a>
+        <a href="/guides">guides</a>
+        <a href="/privacy">privacy</a>
+        <a href="/terms">terms</a>
+        <a href="/updates">updates</a>
+        <a href="/support">support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

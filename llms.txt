@@ -24,6 +24,18 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 - [Privacy](https://stdout.chat/privacy): privacy policy, data handling
 - [Terms](https://stdout.chat/terms): terms of service
 
+## Guides
+
+- [All guides](https://stdout.chat/guides): index of every guide below
+- [Omegle alternatives for text chat](https://stdout.chat/omegle-alternatives-text-only): honest list of text-first alternatives now that Omegle is gone
+- [Anonymous chat apps without a phone number](https://stdout.chat/anonymous-chat-no-phone-number): which apps really need no registration, and what stdout.chat collects (nothing)
+- [Talk to strangers online without video](https://stdout.chat/talk-to-strangers-without-video): how to meet new people in text, safely
+- [Best text-only chat apps](https://stdout.chat/best-text-chat-apps): the current landscape of text-first chat apps compared
+- [Modern pen pal apps](https://stdout.chat/pen-pal-apps): slow text friendships, Slowly-style apps compared
+- [Chat apps for people who miss IRC](https://stdout.chat/irc-style-chat): IRC nostalgia essay — what replaced it and what didn't
+- [Meet people without showing your face](https://stdout.chat/chat-without-showing-face): social-anxiety-friendly ways to talk to new people
+- [Conversation starters for texting](https://stdout.chat/conversation-starters-for-texting): openers that work in interest-matched text chat
+
 ## App Store
 
 - [Download stdout.chat on the App Store](https://apps.apple.com/app/stdout-chat/id6760369542) — free, iOS 16+, age 18+
