@@ -17,6 +17,8 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 ## Pages
 
 - [Home](https://stdout.chat/): product overview, features, how it works, rank system, themes
+- [Text-only chat](https://stdout.chat/text-only-chat): what text-only chat is and why no-camera conversations work better
+- [Terminal chat](https://stdout.chat/terminal-chat): the keyboard-first, command-line angle — monospace UI, slash commands
 - [Updates](https://stdout.chat/updates): release notes and changelog
 - [Support](https://stdout.chat/support): help articles, FAQ, contact info
 - [Privacy](https://stdout.chat/privacy): privacy policy, data handling
