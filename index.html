@@ -130,9 +130,6 @@
   }
   </script>
 
-  <!-- LCP: preload the hero screenshot -->
-  <link rel="preload" as="image" href="screenshots/04-chat.webp" type="image/webp" fetchpriority="high">
-
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
@@ -147,6 +144,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/redesign.css">
 
   <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
@@ -159,7 +157,7 @@
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand">
-      <span class="dot"></span>
+      <span class="hi">hi</span>
       <span>stdout.chat</span>
     </div>
     <nav class="top-nav">
@@ -180,6 +178,7 @@
   <!-- HERO -->
   <section id="main" class="hero" style="padding-top:90px; padding-bottom:60px;">
     <div class="hero-copy">
+      <div class="hero-kicker">&gt; say hi to a stranger<span class="kcur" aria-hidden="true"></span></div>
       <h1 class="hero-title">
         meet people<br/>
         who share<br/>
@@ -222,10 +221,24 @@
       <div class="phone">
         <div class="phone-screen">
           <div class="notch"></div>
-          <picture>
-            <source type="image/webp" srcset="screenshots/04-chat.webp">
-            <img class="shot" src="screenshots/04-chat.png" alt="stdout.chat — a live conversation" width="1290" height="2796" fetchpriority="high" decoding="async"/>
-          </picture>
+          <div class="app-ui au-chat" role="img" aria-label="stdout.chat — a live conversation: terminal-style text chat that ends with a session grade">
+            <div class="au-top"><span><span class="au-acc">●</span> 🦉 <span class="au-peer">vinyl_ghost</span> <span class="au-dim">· grade A avg</span></span></div>
+            <div class="au-cmd">/topic: 3am thoughts</div>
+            <div class="au-log">
+              <div class="ln au-dim">&gt; session started</div>
+              <div class="ln au-peer">[vinyl_ghost]: ok weird question</div>
+              <div class="ln au-peer">[vinyl_ghost]: do you also rehearse conversations that never happen</div>
+              <div class="ln au-acc">[nightowl_7]: constantly. i keep winning arguments that don't exist</div>
+              <div class="ln au-peer">[vinyl_ghost]: the 3am courtroom</div>
+              <div class="ln au-acc">[nightowl_7]: exactly lol</div>
+              <div class="ln au-dim">vinyl_ghost is typing<span class="au-blink">▮</span></div>
+            </div>
+            <div class="au-inputrow">
+              <span class="au-field">&gt;<span class="au-cur"></span></span>
+              <span class="au-btn au-btn-primary">[ send ]</span>
+            </div>
+            <div class="au-gradebar">SESSION GRADE <span class="au-gr">A</span> <span class="au-acc">+12 pts</span></div>
+          </div>
         </div>
       </div>
     </div>
@@ -247,10 +260,34 @@
         <p>Up to 5 interests across culture, tech, lifestyle, sport. We match you with someone who shares at least one.</p>
         <div class="mini">
           <div class="mini-screen">
-            <picture>
-              <source type="image/webp" srcset="screenshots/02-interests.webp">
-              <img src="screenshots/02-interests.png" alt="Interests selection screen" width="1290" height="2796" loading="lazy" decoding="async"/>
-            </picture>
+            <div class="app-ui au-set" role="img" aria-label="Interests selection screen: pick up to five interests across culture, tech and lifestyle">
+              <div class="au-top"><span class="au-label">INTERESTS.CFG</span></div>
+              <div class="au-cmd">&gt; set interests --required 5</div>
+              <div class="au-h">what's your world?</div>
+              <div class="au-sec">// CULTURE &amp; ENTERTAINMENT</div>
+              <div class="au-chips">
+                <span class="au-chip on">music ✓</span>
+                <span class="au-chip">cinema</span>
+                <span class="au-chip on">anime ✓</span>
+                <span class="au-chip">books</span>
+              </div>
+              <div class="au-sec">// TECH &amp; DIGITAL</div>
+              <div class="au-chips">
+                <span class="au-chip on">coding ✓</span>
+                <span class="au-chip">ai</span>
+                <span class="au-chip">gaming</span>
+                <span class="au-chip">crypto</span>
+              </div>
+              <div class="au-sec">// LIFESTYLE</div>
+              <div class="au-chips">
+                <span class="au-chip on">coffee ✓</span>
+                <span class="au-chip">travel</span>
+                <span class="au-chip">nightowl</span>
+                <span class="au-chip">food</span>
+              </div>
+              <div class="au-progress"><span class="au-bar"><i class="au-w80"></i></span><span class="au-dim">4 of 5</span></div>
+              <div class="au-actions"><span class="au-btn au-btn-ghost au-btn-disabled">[ pick 1 more ]</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -260,10 +297,31 @@
         <p>Handle, avatar, bio, shared interests. Tap [connect] or [skip] — your call, no penalty.</p>
         <div class="mini">
           <div class="mini-screen">
-            <picture>
-              <source type="image/webp" srcset="screenshots/03-review.webp">
-              <img src="screenshots/03-review.png" alt="Profile preview screen" width="1290" height="2796" loading="lazy" decoding="async"/>
-            </picture>
+            <div class="app-ui au-review" role="img" aria-label="Profile preview screen: handle, bio and shared interests shown before you connect">
+              <div class="au-top"><span class="au-acc">● REVIEWING...</span><span class="au-dim">3 online</span></div>
+              <div class="au-sec au-sec-first">// PROFILE PREVIEW</div>
+              <div class="au-h">review before you connect</div>
+              <div class="au-card">
+                <div class="au-idrow">
+                  <span class="au-ava">🎭</span>
+                  <span><span class="au-name">taylor</span><br/><span class="au-dim">new user</span></span>
+                </div>
+                <div class="au-hr"></div>
+                <div>just here to chat</div>
+                <div class="au-chips">
+                  <span class="au-chip">cinema</span>
+                  <span class="au-chip">vr</span>
+                  <span class="au-chip shared">coding</span>
+                  <span class="au-chip">ai</span>
+                </div>
+                <div class="au-hr"></div>
+                <div class="au-joined"><span>joined</span><span>apr 2026</span></div>
+              </div>
+              <div class="au-actions">
+                <span class="au-btn au-btn-primary">[ connect ]</span>
+                <span class="au-btn au-btn-ghost">[ skip ]</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -273,10 +331,22 @@
         <p>No photos. No voice. No video. Every chat earns a grade — quality moves you up the rank ladder.</p>
         <div class="mini">
           <div class="mini-screen">
-            <picture>
-              <source type="image/webp" srcset="screenshots/04-chat.webp">
-              <img src="screenshots/04-chat.png" alt="Live chat screen" width="1290" height="2796" loading="lazy" decoding="async"/>
-            </picture>
+            <div class="app-ui au-talk" role="img" aria-label="Live chat screen: text-only conversation with a session grade at the bottom">
+              <div class="au-top"><span class="au-acc">● CONNECTED</span><span class="au-dim">3 online</span></div>
+              <div class="au-log">
+                <div class="ln au-dim">&gt; session started</div>
+                <div class="ln au-peer">[taylor]: hey</div>
+                <div class="ln au-acc">[you]: hey</div>
+                <div class="ln au-peer">[taylor]: where are you from?</div>
+                <div class="ln au-acc">[you]: california, you?</div>
+                <div class="ln au-dim">[taylor] is typing<span class="au-blink">▮</span></div>
+              </div>
+              <div class="au-inputrow">
+                <span class="au-field">&gt;<span class="au-cur"></span></span>
+                <span class="au-btn au-btn-primary">[ send ]</span>
+              </div>
+              <div class="au-gradebar">SESSION GRADE <span class="au-gr">A</span> <span class="au-acc">+12 pts</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -372,10 +442,33 @@
         <div class="phone phone-sm">
           <div class="phone-screen">
             <div class="notch"></div>
-            <picture>
-              <source type="image/webp" srcset="screenshots/06-profile.webp">
-              <img class="shot" src="screenshots/06-profile.png" alt="Profile and rank screen" width="1290" height="2796" loading="lazy" decoding="async"/>
-            </picture>
+            <div class="app-ui au-profile" role="img" aria-label="Profile and rank screen: TRUSTED tier, stats, recent sessions and the rank ladder">
+              <div class="au-sec au-sec-first">// PROFILE</div>
+              <div class="au-idrow">
+                <span class="au-ava">🦉</span>
+                <span><span class="au-name">nightowl_7</span><br/><span class="au-acc">TRUSTED</span> <span class="au-dim">· 1500 pts</span></span>
+              </div>
+              <div class="au-progress"><span class="au-bar"><i class="au-w37"></i></span><span class="au-dim">next: VETERAN 1820</span></div>
+              <div class="au-stats">
+                <div class="au-stat"><b>128</b><span>CHATS</span></div>
+                <div class="au-stat"><b>A</b><span>AVG GRADE</span></div>
+                <div class="au-stat"><b>14</b><span>DAY STREAK</span></div>
+                <div class="au-stat"><b>6</b><span>SHOUTS</span></div>
+              </div>
+              <div class="au-sec">// RECENT SESSIONS</div>
+              <div class="au-sess"><span class="nm">vinyl_ghost</span><span class="dur">18m</span><span class="au-gr">A</span><span class="pts">+12</span></div>
+              <div class="au-sess"><span class="nm">quiet_cactus</span><span class="dur">31m</span><span class="au-gr s">S</span><span class="pts">+15</span></div>
+              <div class="au-sess"><span class="nm">modem_dreams</span><span class="dur">7m</span><span class="au-gr">B</span><span class="pts">+5</span></div>
+              <div class="au-sec">// ACHIEVEMENTS</div>
+              <div class="au-chips">
+                <span class="au-chip">night owl</span>
+                <span class="au-chip">deep talker</span>
+                <span class="au-chip">14-day streak</span>
+              </div>
+              <div class="au-sec">// LADDER</div>
+              <div class="au-ladderline">VOICE <span class="au-plate">TRUSTED</span> VETERAN SAGE <span>…</span><span class="au-gold">LEGEND</span></div>
+              <div class="au-actions"><span class="au-btn au-btn-ghost au-ghost-acc">[ share card ]</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -530,10 +623,18 @@
       <div class="phone phone-sm" style="transform: rotateY(-6deg) rotateX(2deg);">
         <div class="phone-screen">
           <div class="notch"></div>
-          <picture>
-            <source type="image/webp" srcset="screenshots/05-themes.webp">
-            <img class="shot" src="screenshots/05-themes.png" alt="Theme selection in-app" width="1290" height="2796" loading="lazy" decoding="async"/>
-          </picture>
+          <div class="app-ui au-themes" role="img" aria-label="Theme selection in-app: six terminal color themes, applied instantly">
+            <div class="au-sec au-sec-first">// THEMES</div>
+            <div class="au-cmd">&gt; set theme</div>
+            <div class="au-h">terminal, your way</div>
+            <div class="au-trow"><span class="au-sw au-sw-green"></span><span>classic green</span><span class="act">[ active ✓ ]</span></div>
+            <div class="au-trow"><span class="au-sw au-sw-amber"></span><span>amber crt</span><span class="tr">select</span></div>
+            <div class="au-trow"><span class="au-sw au-sw-ice"></span><span>ice blue</span><span class="tr">select</span></div>
+            <div class="au-trow"><span class="au-sw au-sw-plasma"></span><span>plasma</span><span class="tr">select</span></div>
+            <div class="au-trow"><span class="au-sw au-sw-mono"></span><span>mono</span><span class="tr">select</span></div>
+            <div class="au-trow"><span class="au-sw au-sw-matrix"></span><span>matrix rain</span><span class="tr au-gold">LEGEND only</span></div>
+            <div class="au-foot">// theme applies instantly</div>
+          </div>
         </div>
       </div>
     </div>
@@ -648,7 +749,7 @@
   <div class="wrap">
     <div class="foot-row">
       <div class="who">
-        <span class="dot"></span>
+        <span class="hi">hi</span>
         <span>stdout.chat — text chat for real conversations</span>
       </div>
       <div class="links">
