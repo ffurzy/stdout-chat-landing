@@ -1,5 +1,19 @@
 [
   {
+    "version": "1.4.0",
+    "date": "2026-07-24",
+    "title": "A whole new look.",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "A whole new look. The dashboard got a full cyberdeck redesign — angular cards, a glitch-hologram avatar, an animated rank banner and a segmented XP bar that shows exactly how far your next rank is. Finding someone is a show now: watch candidate holograms materialize and drop until one locks in. Mission rewards are yours to claim — hit the pulsing CLAIM button and watch your points tick up. Same fast, private, terminal chat underneath."
+      }
+    ]
+  },
+  {
     "version": "1.3.0",
     "date": "2026-07-21",
     "title": "Share your rank!",
