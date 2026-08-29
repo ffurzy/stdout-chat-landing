@@ -52,6 +52,56 @@
   }
   </script>
 
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a text-only chat app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A text-only chat app connects two people in real time using typed messages and nothing else — no webcam feed, no voice notes, no photo sharing. The entire conversation happens in writing, so the only thing anyone can judge is what you actually say."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a chat app with no video or camera at all?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. stdout.chat is built camera-free by design: there is no video mode to decline and no photo sharing to worry about. You get matched by shared interests and talk in text only. Free on iOS, with no sign-up and no phone number."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is text chat better than video chat for meeting people?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For many people, yes. Text removes appearance anxiety and the two-second skip judgment of video roulettes, gives you time to think before replying, and drifts naturally toward real topics. The person who is interesting in writing is interesting, full stop."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is text-only chat safer than video chat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Structurally, yes. No camera means no screenshots of your face and no recordings. Typed messages can also be filtered and moderated in ways live video never can. On stdout.chat, sessions are ephemeral, and reporting or blocking is one command each."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an account to use stdout.chat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There is no sign-up, no email, no password, and no phone number. The app generates a random device identity on first launch, and you are matching with people who share your interests within seconds."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Vercel insights -->
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
@@ -133,12 +183,30 @@
         <p>Text-only also makes moderation honest work. Typed messages can be filtered and reviewed in ways video never can be. Reporting and blocking are one command each — <code>/report</code> and <code>/block</code> — and confirmed violations end in device-level bans. The <a href="/support">support page</a> covers how all of it works.</p>
       </section>
 
+      <section id="faq">
+        <h2><span class="n">06 / FAQ</span>Questions people actually ask</h2>
+        <p><strong>What is a text-only chat app?</strong><br/>An app that connects two people in real time using typed messages and nothing else — no webcam feed, no voice notes, no photo sharing. The whole conversation happens in writing.</p>
+        <p><strong>Is there a chat app with no video or camera at all?</strong><br/>Yes — stdout.chat is camera-free by design. There's no video mode to decline and no photo sharing to worry about; you're matched by shared interests and talk in text only.</p>
+        <p><strong>Is text chat better than video chat for meeting people?</strong><br/>For a lot of people, yes: no appearance anxiety, no two-second skip judgment, time to think before you reply. The person who's interesting in writing is interesting, full stop.</p>
+        <p><strong>Is text-only chat safer?</strong><br/>Structurally, yes. No camera means no screenshots of your face and no recordings, and typed messages can be filtered and moderated in ways live video never can. Sessions here are ephemeral on top of that.</p>
+        <p><strong>Do I need an account?</strong><br/>No. No sign-up, no email, no phone number — the app generates a random device identity and you're matching in seconds.</p>
+      </section>
+
       <section id="try">
-        <h2><span class="n">06 / TRY IT</span>Try a conversation without a camera</h2>
+        <h2><span class="n">07 / TRY IT</span>Try a conversation without a camera</h2>
         <p>If every "meet people" app you've tried put a lens between you and the other person, try the one that doesn't. stdout.chat is free on the App Store — no account, no phone number, and the first match is seconds away. Want to compare options first? See our roundup of the <a href="/best-text-chat-apps">best text-only chat apps</a>.</p>
         <div class="callout">
           <strong>Get stdout.chat for iOS</strong> — free, text-only, matched by your interests. <a href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">Download on the App Store →</a>
         </div>
+      </section>
+
+      <section id="related">
+        <h2><span class="n">// RELATED</span>Keep reading</h2>
+        <ul>
+          <li><a href="/chat-without-showing-face"><strong>Chat Without Showing Your Face</strong></a> — low-pressure apps compared.</li>
+          <li><a href="/pen-pal-apps"><strong>Best Pen Pal Apps</strong></a> — the slower, letter-paced end of text-first chat.</li>
+          <li><a href="/conversation-starters-for-texting"><strong>90 Conversation Starters for Texting</strong></a> — openers that beat "hey".</li>
+        </ul>
       </section>
 
     </article>
@@ -156,6 +224,7 @@
       <div class="links">
         <a href="/text-only-chat">text-only chat</a>
         <a href="/terminal-chat">terminal chat</a>
+        <a href="/pen-pal-apps">pen pal apps</a>
         <a href="/guides">guides</a>
         <a href="/privacy">privacy</a>
         <a href="/terms">terms</a>
