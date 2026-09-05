@@ -1,5 +1,33 @@
 [
   {
+    "version": "1.4.2",
+    "date": "2026-08-22",
+    "title": "update installed.",
+    "tags": [
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "imp",
+        "text": "update installed. small refinements across the board — a little smoother, a little sharper. keep talking."
+      }
+    ]
+  },
+  {
+    "version": "1.4.1",
+    "date": "2026-08-19",
+    "title": "#void got a voice.",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "#void got a voice. Type ping and the room answers — a dozen terminal commands are hiding in there (start with /help). Type /subscribe to get a nudge when a conversation starts, and you'll get a heads-up when someone mentions you or answers your message. The home-screen pulse now ticks the moment someone posts, and rejoining after a weak connection is smoother than ever."
+      }
+    ]
+  },
+  {
     "version": "1.4.0",
     "date": "2026-07-24",
     "title": "A whole new look.",
