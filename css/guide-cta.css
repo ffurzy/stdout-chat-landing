@@ -1,0 +1,115 @@
+/* =========================================================
+   stdout.chat — guide CTA layer
+   1. .app-card     static <aside> in guide markup (after section 01)
+   2. .guide-sticky mobile bottom bar injected by /js/guide-cta.js
+   Separate file on purpose: style.css / redesign.css sit in the CDN
+   cache for hours after a deploy; a new URL is never stale.
+   Loaded after redesign.css — same tokens (--bg-2, --line-2, --accent).
+   ========================================================= */
+
+/* ---------- 1. App card ---------- */
+.doc .app-card{
+  position:relative; isolation:isolate;
+  display:grid; grid-template-columns:auto 1fr auto; column-gap:20px; row-gap:0;
+  align-items:center;
+  margin:44px 0 12px; padding:22px 24px;
+  font-family:var(--sans); font-size:15px; line-height:1.5; color:var(--text-2);
+}
+/* two-layer bevel: ::before = 1px "border" plate, ::after = fill (same trick as .top-cta) */
+.doc .app-card::before, .doc .app-card::after{ content:""; position:absolute; z-index:-1; }
+.doc .app-card::before{
+  inset:0; background:var(--line-2);
+  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+}
+.doc .app-card::after{
+  inset:1px; background:var(--bg-2);
+  clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 0 100%, 0 11px);
+}
+.doc .app-card-icon{
+  display:block; width:56px; height:56px;
+  border-radius:12px;                  /* app icons stay rounded — that's hardware */
+  border:1px solid var(--line);
+}
+.doc .app-card-body{ min-width:0; }
+.doc .app-card-name{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px;
+  font-family:var(--mono); font-weight:700; font-size:16px; color:var(--text);
+}
+.doc .app-card-plat{
+  font-weight:400; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text-dim);
+}
+.doc .app-card-line{ margin:4px 0 8px; font-size:15px; color:var(--text-2); }
+.doc .app-card-checks{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-wrap:wrap; gap:4px 16px;
+  font-family:var(--mono); font-size:12px; color:var(--text-dim);
+}
+.doc .app-card-checks li{ margin:0; }
+.doc .app-card-checks li::before{ content:"✓ "; color:var(--accent); }
+.doc .app-card-btn{
+  position:relative; isolation:isolate;
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 18px; white-space:nowrap;
+  font-family:var(--mono); font-weight:700; font-size:13px;
+  color:#000; border-bottom:none;      /* undo .doc a dashed underline */
+  filter: drop-shadow(0 0 16px var(--accent-glow));
+  transition: transform .15s ease, filter .2s ease;
+}
+.doc .app-card-btn::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:var(--accent);
+  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+.doc .app-card-btn:hover{
+  opacity:1; transform:translateY(-1px);
+  filter: drop-shadow(0 0 24px var(--accent-glow));
+}
+@media (max-width:640px){
+  .doc .app-card{ grid-template-columns:auto 1fr; row-gap:16px; padding:18px 18px 20px; }
+  .doc .app-card-btn{ grid-column:1 / -1; }
+}
+
+/* ---------- 2. Sticky bar (mobile only) ---------- */
+.guide-sticky{ display:none; }
+@media (max-width:900px){
+  .guide-sticky{
+    position:fixed; left:0; right:0; bottom:0; z-index:45;   /* topbar 50, skip-link 100 */
+    display:flex; align-items:center; gap:12px;
+    padding:10px 12px;
+    padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+    background:var(--bg);
+    background:color-mix(in srgb, var(--bg) 90%, transparent);
+    -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:12px; line-height:1.3; color:var(--text-dim);
+    transform:translateY(110%); visibility:hidden;
+    transition: transform .28s ease, visibility 0s linear .28s;
+  }
+  .guide-sticky.is-in{
+    transform:none; visibility:visible;
+    transition: transform .28s ease, visibility 0s;
+  }
+  .guide-sticky .gs-text{ flex:1; min-width:0; }
+  .guide-sticky .gs-text b{ display:block; font-size:13px; color:var(--text); }
+  .guide-sticky .gs-btn{
+    position:relative; isolation:isolate; flex:none;
+    padding:10px 14px; color:#000; font-weight:700; font-size:13px; white-space:nowrap;
+    text-decoration:none;
+  }
+  .guide-sticky .gs-btn::before{
+    content:""; position:absolute; inset:0; z-index:-1; background:var(--accent);
+    clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  }
+  .guide-sticky .gs-close{
+    flex:none; width:36px; height:36px; margin-right:-6px;
+    background:none; border:0; padding:0; cursor:pointer;
+    color:var(--text-dim); font:inherit; font-size:22px; line-height:1;
+  }
+  .guide-sticky .gs-close:hover{ color:var(--text); }
+  /* keep footer links reachable above the bar */
+  body.has-guide-sticky{ padding-bottom:calc(64px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion:reduce){
+  .guide-sticky, .guide-sticky.is-in, .doc .app-card-btn{ transition:none; }
+}

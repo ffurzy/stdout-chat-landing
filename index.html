@@ -174,6 +174,39 @@
       .promo-line:hover .promo-qr,
       .promo-line:focus-visible .promo-qr{ opacity:1; transform:translateX(-50%) translateY(0); }
     }
+    /* App Store QR beside the CTA — pointer devices only. Inline for the same
+       reason as .promo-line (css is CDN-cached). Asset: /img/qr-appstore.svg (ct=landing_qr). */
+    .cta-qr{ display:none; }
+    .final-cta .cta-row{ justify-content:center; }
+    @media (hover:hover) and (pointer:fine) and (min-width:900px){
+      .cta-qr{
+        position:relative; isolation:isolate;
+        display:inline-flex; flex-direction:column; align-items:center; gap:7px;
+        padding:9px 9px 8px; margin-left:4px;
+        text-decoration:none; opacity:1;
+      }
+      /* two-layer bevel on pseudo-elements: element itself stays unclipped so focus outline is visible */
+      .cta-qr::before, .cta-qr::after{ content:""; position:absolute; z-index:-1; transition:background .18s ease; }
+      .cta-qr::before{
+        inset:0; background:var(--line-2);
+        clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+      }
+      .cta-qr::after{
+        inset:1px; background:var(--bg-2);
+        clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+      }
+      .cta-qr:hover{ opacity:1; }
+      .cta-qr:hover::before, .cta-qr:focus-visible::before{ background:var(--accent); }
+      .cta-qr img{ display:block; width:84px; height:84px; background:#fff; }
+      .cta-qr span{
+        font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+        color:var(--text-dim); white-space:nowrap;
+      }
+      .cta-qr:hover span{ color:var(--accent); }
+      /* hero: button + QR on one row, the ✓ meta line drops underneath */
+      .hero .cta-row .cta-qr{ order:1; margin-left:0; }
+      .hero .cta-row .cta-meta{ order:2; flex-basis:100%; margin-top:-6px; }
+    }
   </style>
 
   <!-- Vercel insights -->
@@ -199,7 +232,7 @@
       <a href="/guides">guides</a>
       <a href="/updates">updates</a>
     </nav>
-    <a class="top-cta" href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">
+    <a class="top-cta" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=landing_top&amp;mt=8">
       <span>↓</span> get the app
     </a>
   </div>
@@ -219,7 +252,7 @@
         Text-only conversations, paired by shared interests. Earn rank with every good talk. <strong>No photos. No followers. No noise.</strong>
       </p>
       <div class="cta-row">
-        <a class="btn-app" href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">
+        <a class="btn-app" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=landing_hero&amp;mt=8">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.93 2.39-4.34 2.5-4.41-1.36-1.99-3.48-2.27-4.24-2.3-1.81-.18-3.53 1.06-4.45 1.06-.93 0-2.34-1.04-3.85-1.01-1.98.03-3.81 1.15-4.83 2.91-2.06 3.57-.53 8.85 1.49 11.76.99 1.42 2.16 3.01 3.7 2.96 1.49-.06 2.05-.96 3.85-.96 1.8 0 2.31.96 3.88.93 1.6-.03 2.62-1.45 3.6-2.88 1.13-1.65 1.6-3.25 1.63-3.33-.04-.02-3.12-1.2-3.15-4.73zM14.1 3.5c.83-1.01 1.39-2.41 1.24-3.81-1.2.05-2.65.8-3.5 1.8-.77.89-1.44 2.32-1.26 3.69 1.33.1 2.69-.68 3.52-1.68z"/></svg>
           <span>
             <span class="ap-sub">Download on the</span>
@@ -230,6 +263,10 @@
           <div><span class="ok">✓</span> free · no account required</div>
           <div><span class="ok">✓</span> moderated · report &amp; block in one tap</div>
         </div>
+        <a class="cta-qr" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=landing_qr&amp;mt=8">
+          <img src="/img/qr-appstore.svg" width="84" height="84" alt="QR code: stdout.chat on the App Store" decoding="async">
+          <span>scan with iPhone</span>
+        </a>
       </div>
 
       <a class="promo-line" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6760369542&amp;code=MOTD" onclick="window.va && window.va('event',{name:'motd_redeem_click'})">
@@ -712,13 +749,19 @@
     <div class="pre">// ready when you are</div>
     <h2>just open it. <em>start talking.</em></h2>
     <p class="sub">Free · iOS · no account required · community-moderated</p>
-    <a class="btn-app" href="https://apps.apple.com/app/stdout-chat/id6760369542" onclick="window.va && window.va('event',{name:'appstore_click'})">
+    <div class="cta-row">
+    <a class="btn-app" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=landing_final&amp;mt=8">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.93 2.39-4.34 2.5-4.41-1.36-1.99-3.48-2.27-4.24-2.3-1.81-.18-3.53 1.06-4.45 1.06-.93 0-2.34-1.04-3.85-1.01-1.98.03-3.81 1.15-4.83 2.91-2.06 3.57-.53 8.85 1.49 11.76.99 1.42 2.16 3.01 3.7 2.96 1.49-.06 2.05-.96 3.85-.96 1.8 0 2.31.96 3.88.93 1.6-.03 2.62-1.45 3.6-2.88 1.13-1.65 1.6-3.25 1.63-3.33-.04-.02-3.12-1.2-3.15-4.73zM14.1 3.5c.83-1.01 1.39-2.41 1.24-3.81-1.2.05-2.65.8-3.5 1.8-.77.89-1.44 2.32-1.26 3.69 1.33.1 2.69-.68 3.52-1.68z"/></svg>
       <span>
         <span class="ap-sub">Download on the</span>
         <span class="ap-main">App Store</span>
       </span>
     </a>
+      <a class="cta-qr" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=landing_qr&amp;mt=8">
+          <img src="/img/qr-appstore.svg" width="84" height="84" alt="QR code: stdout.chat on the App Store" loading="lazy" decoding="async">
+          <span>scan with iPhone</span>
+        </a>
+    </div>
     <div>
       <a class="promo-line" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6760369542&amp;code=MOTD" onclick="window.va && window.va('event',{name:'motd_redeem_click'})">
         <span class="pl-prompt">$</span> redeem <span class="pl-code">MOTD</span> → +100 credits
