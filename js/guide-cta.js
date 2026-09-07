@@ -55,7 +55,7 @@
   document.body.appendChild(bar);
 
   // ---- state ----
-  var shown = false, dismissed = false, ticking = false;
+  var shown = false, dismissed = false, ticking = false, calloutVisible = false;
 
   function scrollTop() { return window.pageYOffset || document.documentElement.scrollTop || 0; }
   function progress() {
@@ -63,13 +63,20 @@
     var h = article.offsetHeight || 1;
     return (scrollTop() + window.innerHeight - top) / h;
   }
+  // single place that decides visibility: shown AND the end-of-article callout is off-screen.
+  // (Deep links straight to #try used to race the IntersectionObserver's first callback.)
+  function render() {
+    if (!shown || dismissed) return;
+    if (calloutVisible) bar.classList.remove('is-in');
+    else bar.classList.add('is-in');
+  }
   function show() {
     if (shown || dismissed) return;
     shown = true;
     document.body.classList.add('has-guide-sticky');
     window.removeEventListener('scroll', onScroll);
     // one frame so the transform transition actually runs
-    window.requestAnimationFrame(function () { bar.classList.add('is-in'); });
+    window.requestAnimationFrame(render);
   }
   function onScroll() {
     if (ticking) return;
@@ -92,9 +99,8 @@
   var callout = document.querySelector('.doc .callout');
   if (callout && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      if (!shown || dismissed) return;
-      if (entries[0].isIntersecting) bar.classList.remove('is-in');
-      else bar.classList.add('is-in');
+      calloutVisible = entries[entries.length - 1].isIntersecting;
+      render();
     }).observe(callout);
   }
 
