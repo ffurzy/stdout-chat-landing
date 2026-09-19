@@ -27,7 +27,8 @@
     { "source": "/chat-without-showing-face",        "destination": "/chat-without-showing-face.html" },
     { "source": "/conversation-starters-for-texting","destination": "/conversation-starters-for-texting.html" },
     { "source": "/support",        "destination": "/support.html" },
-    { "source": "/i/:code",        "destination": "/i.html" }
+    { "source": "/i/:code",        "destination": "/i.html" },
+    { "source": "/void",           "destination": "https://api.stdout.chat/void" }
   ],
   "headers": [
     {
@@ -52,6 +53,12 @@
       "source": "/:path*.:ext(png|svg|jpg|jpeg|webp|ico|woff|woff2)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/void",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     },
     {

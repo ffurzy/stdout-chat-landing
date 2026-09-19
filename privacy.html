@@ -85,9 +85,9 @@
     <h1 class="page-title">private.<br/>ephemeral.<br/><span class="green">text only.</span></h1>
     <p class="page-sub">We collect as little as possible. We do not attempt to identify you. Messages are not stored after a session ends.</p>
     <div class="page-meta">
-      <span>last updated <b>March 17, 2026</b></span>
+      <span>last updated <b>September 19, 2026</b></span>
       <span>applies to <code>stdout.chat</code> iOS &amp; web</span>
-      <span>version <b>2.0</b></span>
+      <span>version <b>2.1</b></span>
     </div>
   </header>
 
@@ -259,6 +259,7 @@
             <tr><td>Message content</td><td>Not stored after a session ends — exists only in memory during an active session</td></tr>
             <tr><td>Reported message content</td><td>Retained temporarily for moderation review, then deleted</td></tr>
             <tr><td>Shout content (public broadcasts)</td><td>Up to 12 months, or until removed by moderation / on request</td></tr>
+            <tr><td>#void messages (posted from the app or the terminal)</td><td>Deleted after 24 hours; hidden immediately when moderated</td></tr>
             <tr><td>Connection logs</td><td>Up to 30 days, then deleted by automated cleanup</td></tr>
             <tr><td>IP addresses (temporary bans)</td><td>Duration of ban (maximum 30 days), then deleted</td></tr>
             <tr><td>Pseudonymous reputation score</td><td>Retained while Device ID remains active</td></tr>
@@ -283,6 +284,9 @@
           <li><strong>AWS</strong> — credential and secret management (no user data stored)</li>
         </ul>
         <p>These providers are engaged under data processing agreements and are not permitted to use your data for their own purposes.</p>
+
+        <h3>Public Room (#void)</h3>
+        <p>Unlike one-to-one conversations, the <code>#void</code> room is public by design. #void is publicly readable at <a href="https://stdout.chat/void">stdout.chat/void</a> and via the stdout-chat command-line client. Messages there are shown with the username you post under and are removed after 24 hours (see <a href="#retention">Data Retention</a>).</p>
 
         <h3>Legal Obligations</h3>
         <p>We may disclose limited technical data (such as IP addresses or ban records) if required by law or in response to a valid court order or legal process. Message content is not stored after ordinary sessions end; however, if a report has been submitted, a limited portion of recent messages may be temporarily available for moderation purposes and could be disclosed if legally required.</p>

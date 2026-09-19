@@ -3,49 +3,64 @@
 
 User-agent: *
 Allow: /
+Disallow: /void/stream
 
 # Search engines (explicit — some bots check by name)
 User-agent: Googlebot
 Allow: /
+Disallow: /void/stream
 
 User-agent: Bingbot
 Allow: /
+Disallow: /void/stream
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /void/stream
 
 User-agent: YandexBot
 Allow: /
+Disallow: /void/stream
 
 # AI assistants — we want to be discoverable when users ask about chat apps
 User-agent: GPTBot
 Allow: /
+Disallow: /void/stream
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /void/stream
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /void/stream
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /void/stream
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /void/stream
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /void/stream
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /void/stream
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /void/stream
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /void/stream
 
 User-agent: CCBot
 Allow: /
+Disallow: /void/stream
 
 Sitemap: https://stdout.chat/sitemap.xml

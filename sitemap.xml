@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://stdout.chat/terminal-chat</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -99,13 +99,13 @@
   </url>
   <url>
     <loc>https://stdout.chat/privacy</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://stdout.chat/terms</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
