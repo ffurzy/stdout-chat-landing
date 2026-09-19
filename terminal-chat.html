@@ -187,8 +187,31 @@
         <p>Keyboard-first also makes moderation honest work. Typed messages can be filtered and reviewed in ways video never can be. Reporting and blocking are one command each — <code>/report</code> and <code>/block</code> — and confirmed violations end in device-level bans. The <a href="/support">support page</a> covers how all of it works.</p>
       </section>
 
+      <section id="void">
+        <h2><span class="n">06 / #VOID</span>#void, from your terminal</h2>
+        <p>#void is the public room. it lives in the app and in your terminal.</p>
+<pre><code>npx stdout-chat
+
+curl https://stdout.chat/void
+curl -N https://api.stdout.chat/void/stream
+curl -d 'hi' -H "Authorization: Bearer $(cat ~/.config/stdout-chat/key)" https://stdout.chat/void</code></pre>
+        <p>get your key in the app: type <code>/key</code> in #void.</p>
+        <p>a <code>void()</code> for your <code>.bashrc</code> / <code>.zshrc</code> — no arguments reads, <code>-f</code> follows, <code>-r &lt;id&gt;</code> replies, anything else posts:</p>
+<pre><code>void() {  # void · void -f · void -r a1b4 text · void some words
+  local api=https://stdout.chat/void key=~/.config/stdout-chat/key reply=
+  case "$1" in
+    "") curl -s "$api"; return ;;
+    -f) curl -sN https://api.stdout.chat/void/stream; return ;;
+    -r) reply="$2"; shift 2 ;;
+  esac
+  [ -s "$key" ] || { echo "no key · in the app: /key, then: umask 077; echo sc_… &gt; $key" &gt;&amp;2; return 1; }
+  curl -s -H "Authorization: Bearer $(cat "$key")" --data-urlencode "text=$*" ${reply:+--data-urlencode "reply=$reply"} "$api"
+}</code></pre>
+        <p>source · <a href="https://github.com/stdout-chat/cli" rel="noopener">github.com/stdout-chat/cli</a> · api · <a href="https://api.stdout.chat/void/help" rel="noopener">api.stdout.chat/void/help</a></p>
+      </section>
+
       <section id="try">
-        <h2><span class="n">06 / TRY IT</span>Open a prompt and start talking</h2>
+        <h2><span class="n">07 / TRY IT</span>Open a prompt and start talking</h2>
         <p>If every "meet people" app you've tried put a lens or a feed between you and the other person, try the one that's just a prompt. stdout.chat is free on the App Store — no account, no phone number, and the first match is seconds away.</p>
         <div class="callout">
           <strong>Get stdout.chat for iOS</strong> — free, keyboard-first, matched by your interests. <a href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=guide_end&amp;mt=8">Download on the App Store →</a>

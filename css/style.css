@@ -274,6 +274,19 @@ footer{
   padding: 2px 8px; border-radius: 4px;
   font-size: 14px;
 }
+.doc pre{
+  font-family: var(--mono);
+  font-size: 13.5px; line-height: 1.6;
+  background: var(--bg-2); color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 0 0 22px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  tab-size: 2;
+}
+.doc pre code{ background: none; color: inherit; padding: 0; border-radius: 0; font-size: inherit; white-space: pre; }
 .doc a{ border-bottom: 1px dashed currentColor; padding-bottom:1px; }
 .doc a:hover{ opacity: 0.8; }
 .doc .callout{
