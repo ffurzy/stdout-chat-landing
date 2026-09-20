@@ -1,5 +1,33 @@
 [
   {
+    "version": "1.5.0",
+    "date": "2026-09-18",
+    "title": "the wall got a pulse.",
+    "tags": [
+      "new"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "the wall got a pulse. react to any message with a tap-and-hold. see who rules #void this week — crown and medals next to their name. the room now tells you where you stand: you #7, 3 pts to #6. pick up where you left off — a line marks what's new since your last visit. plus small fixes. keep talking."
+      }
+    ]
+  },
+  {
+    "version": "1.4.3",
+    "date": "2026-09-07",
+    "title": "update installed.",
+    "tags": [
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "imp",
+        "text": "update installed. small improvements and fixes. keep talking."
+      }
+    ]
+  },
+  {
     "version": "1.4.2",
     "date": "2026-08-22",
     "title": "update installed.",
