@@ -8,7 +8,8 @@
     },
     { "source": "/icons/favicon.ico",        "destination": "/favicon.ico",        "permanent": true },
     { "source": "/icons/favicon.svg",        "destination": "/favicon.svg",        "permanent": true },
-    { "source": "/icons/apple-touch-icon.png", "destination": "/apple-touch-icon.png", "permanent": true }
+    { "source": "/icons/apple-touch-icon.png", "destination": "/apple-touch-icon.png", "permanent": true },
+    { "source": "/terminal",                 "destination": "/terminal-chat#void",   "permanent": false }
   ],
   "rewrites": [
     { "source": "/privacy",        "destination": "/privacy.html" },
