@@ -125,6 +125,14 @@
           "@type": "Answer",
           "text": "Not yet. stdout.chat is currently available for iPhone on the App Store. Android is on the roadmap."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use stdout.chat from the terminal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, for #void, the public room. Run npx stdout-chat, or curl https://stdout.chat/void to read it. Reading is free; posting needs a key you get inside the app by typing /key in #void."
+        }
       }
     ]
   }
@@ -208,6 +216,20 @@
       .hero .cta-row .cta-qr{ order:1; margin-left:0; }
       .hero .cta-row .cta-meta{ order:2; flex-basis:100%; margin-top:-6px; }
     }
+    /* Terminal strip under the hero — quiet, mono, existing tokens only. Inline for the
+       same reason as .promo-line (css is CDN-cached). Mirrors .doc pre from style.css. */
+    .term-strip{ max-width:560px; padding:0 0 12px; font-family:var(--mono); }
+    .term-strip .term-eyebrow{ font-size:12px; color:var(--text-dim); letter-spacing:.06em; margin:0 0 10px; }
+    .term-strip pre{
+      font-size:13.5px; line-height:1.6; margin:0 0 10px;
+      background:var(--bg-2); color:var(--text);
+      border:1px solid var(--line); border-radius:10px;
+      padding:14px 16px;
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+    }
+    .term-strip pre code{ font-family:inherit; white-space:pre; }
+    .term-strip .term-cap{ font-size:12px; color:var(--text-dim); margin:0; }
+    .term-strip .term-cap a{ color:var(--text-2); border-bottom:1px dashed currentColor; padding-bottom:1px; }
   </style>
 
   <!-- Vercel insights -->
@@ -317,6 +339,14 @@
       </div>
     </div>
   </section>
+
+  <!-- TERMINAL — one quiet strip under the hero; full docs live on /terminal-chat#void -->
+  <div class="term-strip">
+    <div class="term-eyebrow">or from your terminal</div>
+    <pre><code>npx stdout-chat
+curl https://stdout.chat/void</code></pre>
+    <p class="term-cap">read for free · post with a key from the app · <a href="/terminal">how it works</a></p>
+  </div>
 
   <!-- HOW IT WORKS -->
   <section id="how">
