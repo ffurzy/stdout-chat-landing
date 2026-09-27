@@ -18,7 +18,7 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 
 - [Home](https://stdout.chat/): product overview, features, how it works, rank system, themes
 - [Text-only chat](https://stdout.chat/text-only-chat): what text-only chat is and why no-camera conversations work better
-- [Terminal chat](https://stdout.chat/terminal-chat): the keyboard-first, command-line angle — monospace UI, slash commands
+- [Terminal chat](https://stdout.chat/terminal-chat): the keyboard-first, command-line angle — monospace UI, slash commands, and #void, the public room you can read with `curl https://stdout.chat/void` or join with `npx stdout-chat`
 - [Updates](https://stdout.chat/updates): release notes and changelog
 - [Support](https://stdout.chat/support): help articles, FAQ, contact info
 - [Privacy](https://stdout.chat/privacy): privacy policy, data handling
@@ -27,14 +27,16 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 ## Guides
 
 - [All guides](https://stdout.chat/guides): index of every guide below
-- [Omegle alternatives for text chat](https://stdout.chat/omegle-alternatives-text-only): honest list of text-first alternatives now that Omegle is gone
-- [Anonymous chat apps without a phone number](https://stdout.chat/anonymous-chat-no-phone-number): which apps really need no registration, and what stdout.chat collects (nothing)
-- [Talk to strangers online without video](https://stdout.chat/talk-to-strangers-without-video): how to meet new people in text, safely
-- [Best text-only chat apps](https://stdout.chat/best-text-chat-apps): the current landscape of text-first chat apps compared
-- [Modern pen pal apps](https://stdout.chat/pen-pal-apps): slow text friendships, Slowly-style apps compared
-- [Chat apps for people who miss IRC](https://stdout.chat/irc-style-chat): IRC nostalgia essay — what replaced it and what didn't
-- [Meet people without showing your face](https://stdout.chat/chat-without-showing-face): social-anxiety-friendly ways to talk to new people
-- [Conversation starters for texting](https://stdout.chat/conversation-starters-for-texting): openers that work in interest-matched text chat
+- [Omegle alternatives for text chat only](https://stdout.chat/omegle-alternatives-text-only): text-first alternatives verified September 2026, clones named, what "unmoderated" really gets you
+- [Whisperly alternatives](https://stdout.chat/whisperly-alternatives): text-only and no-video alternatives to Whisperly; Chatous flagged, StrangerLine explained
+- [Talk to strangers without video](https://stdout.chat/talk-to-strangers-without-video): text-only apps and sites compared, then how to do it well
+- [Chat with interests](https://stdout.chat/chat-with-interests): apps and text-only rooms that match people by shared interests
+- [Anonymous chat apps with no phone number or sign-up](https://stdout.chat/anonymous-chat-no-phone-number): what each app really asks for at sign-up; stdout.chat collects nothing
+- [Chat without showing your face](https://stdout.chat/chat-without-showing-face): five camera-free apps compared for people who find video too much
+- [Best pen pal apps in 2026](https://stdout.chat/pen-pal-apps): Slowly, Bottled, Lettre, Postcrossing, InterPals reviewed; where real-time text fits
+- [Pen pal app: free options compared](https://stdout.chat/pen-pal-app): nine pen pal apps in one table — free or not, platform, matching, reply speed
+- [IRC-style chat in 2026](https://stdout.chat/irc-style-chat): what the old text rooms got right, where the survivors went, and a room you can join from a terminal
+- [Conversation starters for texting someone new](https://stdout.chat/conversation-starters-for-texting): 90 openers sorted by shared interest
 
 ## App Store
 
