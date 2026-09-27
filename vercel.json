@@ -9,7 +9,8 @@
     { "source": "/icons/favicon.ico",        "destination": "/favicon.ico",        "permanent": true },
     { "source": "/icons/favicon.svg",        "destination": "/favicon.svg",        "permanent": true },
     { "source": "/icons/apple-touch-icon.png", "destination": "/apple-touch-icon.png", "permanent": true },
-    { "source": "/terminal",                 "destination": "/terminal-chat#void",   "permanent": false }
+    { "source": "/terminal",                 "destination": "/terminal-chat#void",   "permanent": false },
+    { "source": "/best-text-chat-apps",       "destination": "/chat-with-interests",  "permanent": true }
   ],
   "rewrites": [
     { "source": "/privacy",        "destination": "/privacy.html" },
@@ -22,7 +23,9 @@
     { "source": "/omegle-alternatives-text-only",    "destination": "/omegle-alternatives-text-only.html" },
     { "source": "/anonymous-chat-no-phone-number",   "destination": "/anonymous-chat-no-phone-number.html" },
     { "source": "/talk-to-strangers-without-video",  "destination": "/talk-to-strangers-without-video.html" },
-    { "source": "/best-text-chat-apps",              "destination": "/best-text-chat-apps.html" },
+    { "source": "/chat-with-interests",              "destination": "/chat-with-interests.html" },
+    { "source": "/whisperly-alternatives",           "destination": "/whisperly-alternatives.html" },
+    { "source": "/pen-pal-app",                      "destination": "/pen-pal-app.html" },
     { "source": "/pen-pal-apps",                     "destination": "/pen-pal-apps.html" },
     { "source": "/irc-style-chat",                   "destination": "/irc-style-chat.html" },
     { "source": "/chat-without-showing-face",        "destination": "/chat-without-showing-face.html" },
