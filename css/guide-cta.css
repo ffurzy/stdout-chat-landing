@@ -113,3 +113,52 @@
 @media (prefers-reduced-motion:reduce){
   .guide-sticky, .guide-sticky.is-in, .doc .app-card-btn{ transition:none; }
 }
+
+/* ---------- 3. Desktop: QR beside the button + terminal line (2026-09-27) ----------
+   A third of guide impressions are desktop, where the App Store button is a dead end.
+   Markup ships with style="display:none" so a CDN-stale copy of this file changes nothing;
+   only the fresh rules below reveal it, and only on pointer devices. Asset: /img/qr-guide.svg (ct=guide_qr). */
+@media (hover:hover) and (pointer:fine) and (min-width:900px){
+  .doc .app-card{ grid-template-columns:auto 1fr auto auto; }
+  .doc .app-card-qr{
+    display:flex !important; position:relative; isolation:isolate;
+    flex-direction:column; align-items:center; gap:7px;
+    padding:9px 9px 8px; margin-left:-4px;
+    border-bottom:none; text-decoration:none; opacity:1;
+  }
+  .doc .app-card-qr::before, .doc .app-card-qr::after{ content:""; position:absolute; z-index:-1; transition:background .18s ease; }
+  .doc .app-card-qr::before{
+    inset:0; background:var(--line-2);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  }
+  .doc .app-card-qr::after{
+    inset:1px; background:var(--bg);
+    clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+  }
+  .doc .app-card-qr:hover::before, .doc .app-card-qr:focus-visible::before{ background:var(--accent); }
+  .doc .app-card-qr img{ display:block; width:84px; height:84px; background:#fff; border:0; border-radius:0; }
+  .doc .app-card-qr span{
+    font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--text-dim); white-space:nowrap;
+  }
+  .doc .app-card-qr:hover span{ color:var(--accent); }
+  .doc .app-card-term{
+    display:block !important; margin:10px 0 0;
+    font-family:var(--mono); font-size:12px; color:var(--text-dim);
+  }
+  .doc .app-card-term code{ color:var(--text); }
+  .doc .app-card-term a{ color:var(--text-dim); }
+  .doc .app-card-term a:hover{ color:var(--accent); }
+
+  .doc .callout::after{ content:""; display:block; clear:both; }
+  .doc .callout-qr{
+    display:flex !important; float:right; margin:-4px 0 4px 20px;
+    flex-direction:column; align-items:center; gap:5px;
+    border-bottom:none; text-decoration:none; opacity:1;
+  }
+  .doc .callout-qr img{ display:block; width:72px; height:72px; background:#fff; padding:4px; border:1px solid var(--line-2); border-radius:0; }
+  .doc .callout-qr span{
+    font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim); white-space:nowrap;
+  }
+  .doc .callout-qr:hover span{ color:var(--accent); }
+}
