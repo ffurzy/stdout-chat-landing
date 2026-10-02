@@ -1,6 +1,6 @@
 Fonts in this folder are self-hosted copies of open-source typefaces, served under the SIL Open Font License 1.1.
 
-geist-latin.woff2          Geist, by Vercel — https://github.com/vercel/geist-font (OFL-1.1)
-jetbrains-mono-latin.woff2 JetBrains Mono, by JetBrains — https://github.com/JetBrains/JetBrainsMono (OFL-1.1)
+geist-var.woff2            Geist, by Vercel — https://github.com/vercel/geist-font (OFL-1.1)
+jetbrains-mono-var.woff2   JetBrains Mono, by JetBrains — https://github.com/JetBrains/JetBrainsMono (OFL-1.1)
 
 Both files are the latin subsets of the variable fonts as distributed by Google Fonts (fonts.gstatic.com), downloaded 2026-10-01.
