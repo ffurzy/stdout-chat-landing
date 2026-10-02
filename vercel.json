@@ -32,6 +32,7 @@
     { "source": "/conversation-starters-for-texting","destination": "/conversation-starters-for-texting.html" },
     { "source": "/support",        "destination": "/support.html" },
     { "source": "/i/:code",        "destination": "/i.html" },
+    { "source": "/void", "has": [{ "type": "header", "key": "accept", "value": ".*text/html.*" }], "destination": "/void.html" },
     { "source": "/void",           "destination": "https://api.stdout.chat/void" }
   ],
   "headers": [
@@ -61,6 +62,7 @@
     },
     {
       "source": "/void",
+      "missing": [{ "type": "header", "key": "accept", "value": ".*text/html.*" }],
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]

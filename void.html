@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>try{var t=localStorage.getItem('stdout-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>#void — the public text-only room, live in your browser | stdout.chat</title>
+  <meta name="description" content="Read #void live: stdout.chat's one public text-only room, where lines dissolve after 24 hours. No account to read, no camera anywhere. Post from the iPhone app or from your terminal with npx stdout-chat." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="#void — the public text-only room, live in your browser" />
+  <meta property="og:description" content="One room. Lines dissolve after 24 hours. Read it here, in your terminal, or post from the iPhone app." />
+  <meta property="og:url" content="https://stdout.chat/void" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://stdout.chat/img/og/void.png" />
+  <meta property="og:image:alt" content="one room. 24 hours. then it's gone. — stdout.chat #void" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stdout.chat/img/og/void.png" />
+  <meta property="og:image:type" content="image/png" />
+
+  <!-- SEO -->
+  <meta name="apple-itunes-app" content="app-id=6760369542">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://stdout.chat/void">
+  <link rel="preconnect" href="https://api.stdout.chat">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preload" href="/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/jetbrains-mono-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/type.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/redesign.css">
+  <link rel="stylesheet" href="/css/guide-cta.css">
+
+  <style>
+    /* #void feed — inline on purpose: css files sit in the CDN cache for hours after a deploy */
+    .vf{position:relative;isolation:isolate;margin:36px 0 10px;font-family:var(--mono);font-size:14px;line-height:1.55;color:var(--text-2)}
+    .vf::before,.vf::after{content:"";position:absolute;z-index:-1}
+    .vf::before{inset:0;background:var(--line-2);clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px)}
+    .vf::after{inset:1px;background:var(--bg-2);clip-path:polygon(11px 0,100% 0,100% calc(100% - 11px),calc(100% - 11px) 100%,0 100%,0 11px)}
+    .vf-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:14px 18px 10px;border-bottom:1px solid var(--line);font-size:12px;color:var(--text-dim)}
+    .vf-head b{color:var(--text);font-weight:600}
+    .vf-status::before{content:"● ";color:var(--text-dim)}
+    .vf-status.is-live::before{color:var(--accent)}
+    .vf-status.is-wait::before{color:#e3b341}
+    .vf-status.is-off::before{color:var(--text-dim)}
+    .vf-topic{padding:10px 18px 0;font-size:12px;color:var(--text-dim)}
+    .vf-box{max-height:62vh;overflow-y:auto;padding:10px 18px 12px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+    .vl{display:grid;grid-template-columns:44px minmax(72px,auto) 1fr;column-gap:12px;align-items:baseline;padding:4px 0;border-bottom:1px dashed rgba(127,127,127,.12)}
+    .vl:last-child{border-bottom:0}
+    .vl-t{color:var(--text-dim);font-size:11px}
+    .vl-n{color:var(--accent);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+    .vl-x{overflow-wrap:anywhere;color:var(--text)}
+    .vl-q{display:block;color:var(--text-dim);font-size:12px}
+    .vl-rx{grid-column:3;display:flex;gap:10px;font-size:11px;color:var(--text-dim)}
+    .vf-quiet,.vf-typing{padding:8px 18px 12px;font-size:12px;color:var(--text-dim)}
+    .vf-typing{padding-top:0}
+    .vf-foot{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:12px 18px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--text-dim)}
+    .vf-foot code{color:var(--text)}
+    @media (max-width:640px){.vl{grid-template-columns:40px 1fr;row-gap:2px}.vl-x,.vl-rx{grid-column:1 / -1}.vl-n{max-width:none}.vf-box{max-height:none}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "stdout.chat",
+        "item": "https://stdout.chat/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "#void",
+        "item": "https://stdout.chat/void"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I post in #void from the browser?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not yet — the browser page is read-only. Posting happens from the stdout.chat iPhone app, or from a terminal with npx stdout-chat using a key you issue inside the app with /key. Reading needs nothing: no account, no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is #void anonymous?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You appear as the nickname you chose in the app plus a short tag that only distinguishes two people who picked the same name. There are no profiles, no accounts and no history: every line dissolves 24 hours after it was posted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What replaced Omegle's spy mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing one-to-one, but #void is the closest thing in text: one public room where you drop a line and strangers answer it, readable by anyone from a browser or a terminal. The 1:1 part — being pulled into a private chat — happens in the app, by invitation from a line you posted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a terminal version?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. curl https://stdout.chat/void prints the last 24 hours as plain text; npx stdout-chat opens the room in your shell with a prompt, nicknames and slash commands. Both need nothing but Node or curl."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "#void — the public text-only room, live",
+    "url": "https://stdout.chat/void",
+    "description": "Read #void live: stdout.chat's one public text-only room, where lines dissolve after 24 hours. No account to read, no camera anywhere. Post from the iPhone app or from your terminal with npx stdout-chat.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "stdout.chat",
+      "url": "https://stdout.chat/"
+    },
+    "dateModified": "2026-10-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "stdout.chat",
+      "url": "https://stdout.chat/"
+    }
+  }
+  </script>
+  <!-- Vercel insights -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- TOP BAR (direct child of <body> so sticky spans the whole page) -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">
+      <span class="hi">hi</span>
+      <span>stdout.chat</span>
+      <span class="brand-count" title="identities created — no sign-up, ever"><b>497</b> joined</span>
+    </a>
+    <nav class="top-nav">
+      <a href="/#how">how it works</a>
+      <a href="/#features">features</a>
+      <a href="/#ranks">ranks</a>
+      <a href="/#themes">themes</a>
+      <a href="/guides">guides</a>
+      <a href="/updates">updates</a>
+    </nav>
+    <a class="top-cta" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=void_top&amp;mt=8">↓ get the app</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="page-head">
+    <div class="page-eyebrow">// #VOID / LIVE</div>
+    <h1 class="page-title">one room.<br/><span class="green">24 hours.</span><br/><em>then it's gone.</em></h1>
+    <p class="page-sub">#void is stdout.chat's one public room: a text-only wall where strangers drop a line and other strangers answer, and every line dissolves a day later. This page reads it live. Posting happens from the app — or from your terminal.</p>
+    <div class="page-meta">
+      <span>read <b>free · no account</b></span>
+      <span>write <b>iPhone app · terminal</b></span>
+      <span>memory <b>24 h</b></span>
+    </div>
+  </header>
+  <div id="main" class="wrap-narrow" style="padding-left:0; padding-right:0;">
+    <article class="doc" style="padding: 24px 0 40px;">
+
+      <section id="live" aria-label="#void, live">
+        <div class="vf">
+          <div class="vf-head">
+            <b>#void</b>
+            <span id="vf-status" class="vf-status is-wait">loading the last 24 hours…</span>
+            <span id="vf-meta"></span>
+          </div>
+          <div id="vf-topic" class="vf-topic" hidden></div>
+          <div class="vf-box"><div id="vf-lines"></div></div>
+          <div id="vf-quiet" class="vf-quiet" hidden></div>
+          <div id="vf-typing" class="vf-typing" hidden></div>
+          <div class="vf-foot">
+            <span>newest at the bottom · dissolves in 24h</span>
+            <span>terminal: <code>npx stdout-chat</code></span>
+            <span>plain text: <code>curl https://stdout.chat/void</code></span>
+          </div>
+        </div>
+        <noscript><p class="vf-quiet">The live feed needs JavaScript. Read the room as plain text instead: <code>curl https://stdout.chat/void</code></p></noscript>
+      </section>
+
+      <aside class="app-card" aria-label="Post in #void from the stdout.chat app">
+        <img class="app-card-icon" src="/apple-touch-icon.png" width="56" height="56" alt="" loading="lazy" decoding="async">
+        <div class="app-card-body">
+          <div class="app-card-name">stdout.chat <span class="app-card-plat">iPhone · iOS 16+</span></div>
+          <p class="app-card-line">Post here from your iPhone — and get pulled into a private chat when someone answers your line.</p>
+          <ul class="app-card-checks"><li>free</li><li>no account</li><li>no camera</li></ul>
+          <p class="app-card-term" style="display:none">on a Mac? <code>npx stdout-chat</code> opens this room in your terminal · <a href="/terminal-chat#void">how it works</a></p>
+        </div>
+        <a class="app-card-btn" data-va="void_web_cta" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=void_web&amp;mt=8">Download on the App Store →</a>
+        <a class="app-card-qr" style="display:none" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=void_qr&amp;mt=8">
+          <img src="/img/qr-void.svg" width="84" height="84" alt="QR code: stdout.chat on the App Store" loading="lazy" decoding="async">
+          <span>scan with iPhone</span>
+        </a>
+      </aside>
+
+      <section id="what">
+        <h2><span class="n">01 / THE ROOM</span>What #void is</h2>
+        <p>Most chat apps give you a feed. stdout.chat gives you one room. #void is public, text-only and shared by everyone in the app at once: you drop a line, somebody you've never met answers it, and twenty-four hours later both lines are gone. No profiles, no followers, no archive — a nickname and a four-character tag are the whole identity, and the tag only exists so two people who picked the same name can be told apart.</p>
+        <p>It exists because the hardest part of a one-on-one chat app with a small crowd is being there at the same second as somebody else. A room doesn't need that. Lines wait a day; a reply to yours reaches you as a push; and an answer that turns into a conversation becomes a <a href="/text-only-chat">private text chat</a> with one tap. The room is the front door, the 1:1 is the house.</p>
+      </section>
+
+      <section id="doors">
+        <h2><span class="n">02 / THREE DOORS</span>Browser, terminal, iPhone</h2>
+        <ul>
+          <li><strong>Browser</strong> — this page. Read-only, live, nothing to install, nothing to sign up for. The feed above updates as lines land.</li>
+          <li><strong>Terminal</strong> — <code>curl https://stdout.chat/void</code> prints the last 24 hours as plain text; <code>npx stdout-chat</code> opens the room with a prompt, nicknames and slash commands. Posting from the shell needs a key, which you issue inside the app by typing <code>/key</code> in #void. Details on the <a href="/terminal-chat#void">terminal page</a>.</li>
+          <li><strong>iPhone</strong> — the stdout.chat app is where lines are written, where replies and mentions reach you as notifications, and where a line can turn into a private chat. Free, <a href="/anonymous-chat-no-phone-number">no account, no phone number</a>.</li>
+        </ul>
+      </section>
+
+      <section id="rules">
+        <h2><span class="n">03 / HOUSE RULES</span>Short, enforced</h2>
+        <ul>
+          <li><strong>18+.</strong> The app gates age; the room is for adults.</li>
+          <li><strong>One tap to report, one to block.</strong> Moderation acts on reports, not on vocabulary; a confirmed violation ends in a device-level ban that a new tab can't reset.</li>
+          <li><strong>Nothing personal.</strong> No numbers, addresses or socials in the room — the platform can't leak what you never typed, and neither can the strangers reading this page.</li>
+          <li><strong>Lines dissolve.</strong> 24 hours, then gone from the room and from the servers. Screenshots are on you.</li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2><span class="n">04 / FAQ</span>Questions people actually ask</h2>
+        <p><strong>Can I post in #void from the browser?</strong><br/>Not yet — the browser page is read-only. Posting happens from the stdout.chat iPhone app, or from a terminal with npx stdout-chat using a key you issue inside the app with /key. Reading needs nothing: no account, no sign-up.</p>
+        <p><strong>Is #void anonymous?</strong><br/>You appear as the nickname you chose in the app plus a short tag that only distinguishes two people who picked the same name. There are no profiles, no accounts and no history: every line dissolves 24 hours after it was posted.</p>
+        <p><strong>What replaced Omegle's spy mode?</strong><br/>Nothing one-to-one, but #void is the closest thing in text: one public room where you drop a line and strangers answer it, readable by anyone from a browser or a terminal. The 1:1 part — being pulled into a private chat — happens in the app, by invitation from a line you posted.</p>
+        <p><strong>Is there a terminal version?</strong><br/>Yes. curl https://stdout.chat/void prints the last 24 hours as plain text; npx stdout-chat opens the room in your shell with a prompt, nicknames and slash commands. Both need nothing but Node or curl.</p>
+      </section>
+
+      <section id="try">
+        <h2><span class="n">05 / TRY IT</span>Say something into the void</h2>
+        <p>Reading is the easy part. The room gets better with every line that's actually answered — and the app is the only place a line can be written.</p>
+        <div class="callout">
+          <a class="callout-qr" style="display:none" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=void_qr&amp;mt=8"><img src="/img/qr-void.svg" width="72" height="72" alt="QR code: stdout.chat on the App Store" loading="lazy" decoding="async"><span>scan with iPhone</span></a>
+          <strong>Get stdout.chat for iOS</strong> — free, text-only, no sign-up. Post in #void, get a push when someone answers. <a data-va="void_web_cta" href="https://apps.apple.com/app/apple-store/id6760369542?pt=128643915&amp;ct=void_end&amp;mt=8">Download on the App Store →</a>
+        </div>
+      </section>
+
+      <section id="related">
+        <h2><span class="n">// RELATED</span>Keep reading</h2>
+        <ul>
+          <li><a href="/terminal-chat"><strong>Terminal Chat</strong></a> — the command-line angle, and #void from your shell.</li>
+          <li><a href="/omegle-alternatives-text-only"><strong>Omegle Alternatives for Text Chat Only</strong></a> — verified Sept 2026, clones named.</li>
+          <li><a href="/irc-style-chat"><strong>IRC-Style Chat in 2026</strong></a> — what the old text rooms got right, and where they went.</li>
+        </ul>
+      </section>
+
+    </article>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="who">
+        <span class="hi">hi</span>
+        <span>stdout.chat — text chat for real conversations</span>
+      </div>
+      <div class="links">
+        <a href="/text-only-chat">text-only chat</a>
+        <a href="/terminal-chat">terminal chat</a>
+        <a href="/guides">guides</a>
+        <a href="/privacy">privacy</a>
+        <a href="/terms">terms</a>
+        <a href="/updates">updates</a>
+        <a href="/support">support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="/js/topbar-count.js"></script>
+<script defer src="/js/guide-cta.js"></script>
+<script defer src="/js/void-web.js"></script>
+</body>
+</html>
