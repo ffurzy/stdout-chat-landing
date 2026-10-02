@@ -18,6 +18,7 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 
 - [Home](https://stdout.chat/): product overview, features, how it works, rank system, themes
 - [Text-only chat](https://stdout.chat/text-only-chat): what text-only chat is and why no-camera conversations work better
+- [#void, live](https://stdout.chat/void): the public text-only room, read-only in the browser; lines dissolve after 24 hours; post from the iPhone app or the terminal
 - [Terminal chat](https://stdout.chat/terminal-chat): the keyboard-first, command-line angle — monospace UI, slash commands, and #void, the public room you can read with `curl https://stdout.chat/void` or join with `npx stdout-chat`
 - [Updates](https://stdout.chat/updates): release notes and changelog
 - [Support](https://stdout.chat/support): help articles, FAQ, contact info
