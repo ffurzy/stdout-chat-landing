@@ -32,8 +32,9 @@
     { "source": "/conversation-starters-for-texting","destination": "/conversation-starters-for-texting.html" },
     { "source": "/support",        "destination": "/support.html" },
     { "source": "/i/:code",        "destination": "/i.html" },
-    { "source": "/void", "has": [{ "type": "header", "key": "accept", "value": ".*text/html.*" }], "destination": "/void.html" },
-    { "source": "/void",           "destination": "https://api.stdout.chat/void" }
+    { "source": "/void", "has": [{ "type": "header", "key": "accept", "value": "^(application/json|text/plain).*" }], "destination": "https://api.stdout.chat/void" },
+    { "source": "/void", "has": [{ "type": "header", "key": "user-agent", "value": "^(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl)" }], "destination": "https://api.stdout.chat/void" },
+    { "source": "/void",           "destination": "/void.html" }
   ],
   "headers": [
     {
@@ -62,7 +63,14 @@
     },
     {
       "source": "/void",
-      "missing": [{ "type": "header", "key": "accept", "value": ".*text/html.*" }],
+      "has": [{ "type": "header", "key": "accept", "value": "^(application/json|text/plain).*" }],
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/void",
+      "has": [{ "type": "header", "key": "user-agent", "value": "^(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl)" }],
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]
