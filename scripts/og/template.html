@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<style>
+  @font-face{font-family:'Geist';font-weight:400 800;font-display:block;src:url(../../fonts/geist-var.woff2) format('woff2')}
+  @font-face{font-family:'JetBrains Mono';font-weight:400 700;font-display:block;src:url(../../fonts/jetbrains-mono-var.woff2) format('woff2')}
+  html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#07090a}
+  body{position:relative;font-family:'Geist',system-ui,sans-serif;color:#d8f0de}
+  .glow{position:absolute;right:-180px;top:-220px;width:720px;height:720px;border-radius:50%;
+        background:radial-gradient(closest-side,rgba(0,255,122,.16),rgba(0,255,122,0) 70%)}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(42,61,50,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(42,61,50,.22) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.15))}
+  .frame{position:absolute;inset:0;padding:64px 72px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:22px;letter-spacing:.12em;color:#00ff7a}
+  .title{font-weight:800;font-size:92px;line-height:.98;letter-spacing:-.035em;margin:0;max-width:1000px;text-wrap:balance}
+  .title .green{color:#00ff7a}.title em{font-style:italic;color:#a8c4ae}
+  .foot{display:flex;align-items:center;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:22px;color:#7d9689}
+  .brand{display:flex;align-items:center;gap:14px;color:#d8f0de;font-weight:600}
+  .hi{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9px;background:#00ff7a;color:#000;font-weight:700;font-size:20px}
+  .sub{max-width:760px}
+</style></head>
+<body>
+  <div class="glow"></div><div class="grid"></div>
+  <div class="frame">
+    <div class="eyebrow">{{eyebrow}}</div>
+    <h1 class="title">{{title}}</h1>
+    <div class="foot"><span class="brand"><span class="hi">hi</span>stdout.chat</span><span class="sub">{{sub}}</span></div>
+  </div>
+</body></html>
