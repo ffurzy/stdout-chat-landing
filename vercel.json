@@ -33,7 +33,7 @@
     { "source": "/support",        "destination": "/support.html" },
     { "source": "/i/:code",        "destination": "/i.html" },
     { "source": "/void", "has": [{ "type": "header", "key": "accept", "value": "^(application/json|text/plain).*" }], "destination": "https://api.stdout.chat/void" },
-    { "source": "/void", "has": [{ "type": "header", "key": "user-agent", "value": "^(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl)" }], "destination": "https://api.stdout.chat/void" },
+    { "source": "/void", "has": [{ "type": "header", "key": "user-agent", "value": "(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl).*" }], "destination": "https://api.stdout.chat/void" },
     { "source": "/void",           "destination": "/void.html" }
   ],
   "headers": [
@@ -70,7 +70,7 @@
     },
     {
       "source": "/void",
-      "has": [{ "type": "header", "key": "user-agent", "value": "^(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl)" }],
+      "has": [{ "type": "header", "key": "user-agent", "value": "(curl|Wget|HTTPie|stdout-chat|python-requests|Go-http-client|libcurl).*" }],
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex" }
       ]
