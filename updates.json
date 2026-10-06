@@ -1,5 +1,36 @@
 [
   {
+    "version": "1.6.0",
+    "date": "2026-10-05",
+    "title": "the room is the front door.",
+    "tags": [
+      "new",
+      "fix"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "the room is the front door. hold a line in #void to invite its author to a private chat - or type /dm nick. they get a push and 10 minutes to answer."
+      },
+      {
+        "category": "new",
+        "text": "see who's typing, right in the header."
+      },
+      {
+        "category": "new",
+        "text": "an empty search drops you into #void while it keeps looking."
+      },
+      {
+        "category": "new",
+        "text": "#void has a terminal door: npx stdout-chat."
+      },
+      {
+        "category": "fix",
+        "text": "the bio field no longer hides under the keyboard."
+      }
+    ]
+  },
+  {
     "version": "1.5.0",
     "date": "2026-09-18",
     "title": "the wall got a pulse.",
