@@ -188,10 +188,10 @@ footer{
   font-family:var(--mono); font-size:13px; color:var(--text-dim);
   margin-top: 80px;
 }
-.foot-row{ display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+.foot-row{ display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap; }
 .foot-row a{ color:inherit; }
 .foot-row a:hover{ color:var(--text); opacity:1; }
-.foot-row .links{ display:flex; gap:24px; flex-wrap:wrap; }
+.foot-row .links{ display:flex; gap:20px; flex-wrap:wrap; }
 .foot-row .who{ display:flex; align-items:center; gap:10px; }
 .foot-row .who .dot{ width:7px; height:7px; background:var(--accent); border-radius:50%; }
 
