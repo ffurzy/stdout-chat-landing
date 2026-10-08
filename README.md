@@ -44,4 +44,4 @@ npx serve .
 
 ## Deployment
 
-Vercel builds and deploys every push to `master`. There is no build command; the repository root is served as-is with the rules from `vercel.json`.
+Vercel builds and deploys every push to `main`. There is no build command; the repository root is served as-is with the rules from `vercel.json`.
