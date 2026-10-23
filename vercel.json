@@ -6,6 +6,8 @@
       "destination": "https://stdout.chat/:path*",
       "permanent": true
     },
+    { "source": "/index.html",               "destination": "/",                   "permanent": true },
+    { "source": "/:path(.+)\\.html",          "destination": "/:path",              "permanent": true },
     { "source": "/icons/favicon.ico",        "destination": "/favicon.ico",        "permanent": true },
     { "source": "/icons/favicon.svg",        "destination": "/favicon.svg",        "permanent": true },
     { "source": "/icons/apple-touch-icon.png", "destination": "/apple-touch-icon.png", "permanent": true },
