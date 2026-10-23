@@ -34,8 +34,7 @@ stdout.chat is a text-only social chat app for iPhone (iOS 17.6+) with a termina
 - [Chat with interests](https://stdout.chat/chat-with-interests): apps and text-only rooms that match people by shared interests
 - [Anonymous chat apps with no phone number or sign-up](https://stdout.chat/anonymous-chat-no-phone-number): what each app really asks for at sign-up; stdout.chat collects nothing
 - [Chat without showing your face](https://stdout.chat/chat-without-showing-face): five camera-free apps compared for people who find video too much
-- [Best pen pal apps in 2026](https://stdout.chat/pen-pal-apps): Slowly, Bottled, Lettre, Postcrossing, InterPals reviewed; where real-time text fits
-- [Pen pal app: free options compared](https://stdout.chat/pen-pal-app): nine pen pal apps in one table — free or not, platform, matching, reply speed
+- [Best pen pal apps in 2026](https://stdout.chat/pen-pal-apps): Slowly, Bottled, Lettre, Postcrossing, InterPals reviewed, nine apps in one comparison table; where real-time text fits
 - [IRC-style chat in 2026](https://stdout.chat/irc-style-chat): what the old text rooms got right, where the survivors went, and a room you can join from a terminal
 - [Conversation starters for texting someone new](https://stdout.chat/conversation-starters-for-texting): 90 openers sorted by shared interest
 
