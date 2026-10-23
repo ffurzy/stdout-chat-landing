@@ -2,7 +2,7 @@
 
 > Anonymous text chat for real conversations. Matched by interests, ranked by conversation quality. iOS-first, free download, no signup required.
 
-stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paired with strangers based on shared interests, not random. Every conversation receives a quality grade (S, A, B, C) that contributes to a 16-tier ranking system (NEW → LEGEND).
+stdout.chat is a text-only social chat app for iPhone (iOS 17.6+) with a terminal client (`npx stdout-chat`). Users are paired with strangers based on shared interests, not random. Every conversation receives a quality grade (S, A, B, C) that contributes to a 16-tier ranking system (NEW → LEGEND).
 
 ## Core principles
 
@@ -34,19 +34,18 @@ stdout.chat is a text-only social chat app for iPhone (iOS 16+). Users are paire
 - [Chat with interests](https://stdout.chat/chat-with-interests): apps and text-only rooms that match people by shared interests
 - [Anonymous chat apps with no phone number or sign-up](https://stdout.chat/anonymous-chat-no-phone-number): what each app really asks for at sign-up; stdout.chat collects nothing
 - [Chat without showing your face](https://stdout.chat/chat-without-showing-face): five camera-free apps compared for people who find video too much
-- [Best pen pal apps in 2026](https://stdout.chat/pen-pal-apps): Slowly, Bottled, Lettre, Postcrossing, InterPals reviewed; where real-time text fits
-- [Pen pal app: free options compared](https://stdout.chat/pen-pal-app): nine pen pal apps in one table — free or not, platform, matching, reply speed
+- [Best pen pal apps in 2026](https://stdout.chat/pen-pal-apps): Slowly, Bottled, Lettre, Postcrossing, InterPals reviewed, nine apps in one comparison table; where real-time text fits
 - [IRC-style chat in 2026](https://stdout.chat/irc-style-chat): what the old text rooms got right, where the survivors went, and a room you can join from a terminal
 - [Conversation starters for texting someone new](https://stdout.chat/conversation-starters-for-texting): 90 openers sorted by shared interest
 
 ## App Store
 
-- [Download stdout.chat on the App Store](https://apps.apple.com/app/stdout-chat/id6760369542) — free, iOS 16+, age 18+
+- [Download stdout.chat on the App Store](https://apps.apple.com/app/stdout-chat/id6760369542) — free, iOS 17.6+, age 18+
 
 ## Notable facts
 
 - **Category**: Social Networking
-- **Platform**: iOS only (16.0+); no Android, no web client
+- **Platform**: iOS app (17.6+) plus a terminal client (`npx stdout-chat`); #void is readable in any browser at https://stdout.chat/void; no Android app
 - **Languages**: English (only)
 - **Monetization**: free download; optional in-app purchases for cosmetic themes (no pay-to-win, no chat restrictions on free tier)
 - **Founded**: 2026

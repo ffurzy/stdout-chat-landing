@@ -6,10 +6,13 @@
       "destination": "https://stdout.chat/:path*",
       "permanent": true
     },
+    { "source": "/index.html",               "destination": "/",                   "permanent": true },
+    { "source": "/:path(.+)\\.html",          "destination": "/:path",              "permanent": true },
     { "source": "/icons/favicon.ico",        "destination": "/favicon.ico",        "permanent": true },
     { "source": "/icons/favicon.svg",        "destination": "/favicon.svg",        "permanent": true },
     { "source": "/icons/apple-touch-icon.png", "destination": "/apple-touch-icon.png", "permanent": true },
     { "source": "/terminal",                 "destination": "/terminal-chat#void",   "permanent": false },
+    { "source": "/pen-pal-app",               "destination": "/pen-pal-apps",       "permanent": true },
     { "source": "/best-text-chat-apps",       "destination": "/chat-with-interests",  "permanent": true }
   ],
   "rewrites": [
@@ -25,7 +28,6 @@
     { "source": "/talk-to-strangers-without-video",  "destination": "/talk-to-strangers-without-video.html" },
     { "source": "/chat-with-interests",              "destination": "/chat-with-interests.html" },
     { "source": "/whisperly-alternatives",           "destination": "/whisperly-alternatives.html" },
-    { "source": "/pen-pal-app",                      "destination": "/pen-pal-app.html" },
     { "source": "/pen-pal-apps",                     "destination": "/pen-pal-apps.html" },
     { "source": "/irc-style-chat",                   "destination": "/irc-style-chat.html" },
     { "source": "/chat-without-showing-face",        "destination": "/chat-without-showing-face.html" },
