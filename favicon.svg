@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<polygon points="12,9 62,9 62,44 51,55 2,55 2,20" fill="#00ff41"></polygon>
-<text x="32" y="35" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,Menlo,&#39;Courier New&#39;,monospace" font-weight="700" font-size="34" fill="#000">hi</text>
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4dff7a"/><stop offset="1" stop-color="#00e63b"/></linearGradient></defs>
+<rect width="64" height="64" fill="#000"/>
+<path d="M18.9 13.25H45.1Q55.75 13.25 55.75 23.9V37.6Q55.75 48.25 45.1 48.25H29.4L18.75 56.25V48.25Q8.25 48.25 8.25 37.6V23.9Q8.25 13.25 18.9 13.25Z" fill="url(#g)"/>
+<text x="32" y="30.75" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,Menlo,'Courier New',monospace" font-weight="800" font-size="25" fill="#000">hi</text>
 </svg>

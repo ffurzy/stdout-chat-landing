@@ -14,7 +14,8 @@
   .title .green{color:#00ff7a}.title em{font-style:italic;color:#a8c4ae}
   .foot{display:flex;align-items:center;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:22px;color:#7d9689}
   .brand{display:flex;align-items:center;gap:14px;color:#d8f0de;font-weight:600}
-  .hi{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:9px;background:#00ff7a;color:#000;font-weight:700;font-size:20px}
+  .hi{position:relative;display:inline-flex;align-items:center;justify-content:center;width:46px;height:40px;border-radius:10px;background:linear-gradient(#4dff7a,#00e63b);color:#000;font-weight:800;font-size:20px;font-family:'JetBrains Mono',monospace}
+  .hi::after{content:"";position:absolute;left:9px;bottom:-9px;border-left:10px solid #00e63b;border-bottom:9px solid transparent}
   .sub{max-width:760px}
 </style></head>
 <body>

@@ -9,10 +9,15 @@
    ========================================================= */
 .brand{ filter: drop-shadow(0 0 10px var(--accent-glow)); }
 .hi{
-  font-family:var(--mono); font-weight:700; font-size:13px; line-height:1;
-  background:var(--accent); color:#000;
-  padding:4px 8px 5px;
-  clip-path: polygon(4px 0, 100% 0, 100% calc(100% - 4px), calc(100% - 4px) 100%, 0 100%, 0 4px);
+  position:relative; display:inline-block;
+  font-family:var(--mono); font-weight:800; font-size:13px; line-height:1;
+  background:linear-gradient(#4dff7a,#00e63b); color:#000;
+  padding:4px 8px 5px; border-radius:6px;
+}
+/* the bubble's tail — same mark as the app icon */
+.hi::after{
+  content:""; position:absolute; left:5px; bottom:-4px;
+  border-left:5px solid #00e63b; border-right:0; border-bottom:4px solid transparent;
 }
 .foot-row .who .hi{ font-size:11px; padding:3px 6px 4px; }
 
