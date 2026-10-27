@@ -1,5 +1,44 @@
 [
   {
+    "version": "1.7.0",
+    "date": "2026-10-26",
+    "title": "long-press any line in #void: react, reply, tip, mute, report.",
+    "tags": [
+      "new",
+      "fix"
+    ],
+    "items": [
+      {
+        "category": "new",
+        "text": "long-press any line in #void: react, reply, tip, mute, report. one menu, under your finger."
+      },
+      {
+        "category": "new",
+        "text": "tip: hold a line, send 10 credits to its author. they also get +1 pt on the weekly board. one tip per line, 20 a day."
+      },
+      {
+        "category": "new",
+        "text": "tap a nick to run /whois on them: profile, interests, and an invite to a private chat."
+      },
+      {
+        "category": "new",
+        "text": "missions now run in #void: reply to 2 lines, collect 3 reactions, /whois 3 people. 5 to 10 credits each, reset daily."
+      },
+      {
+        "category": "new",
+        "text": "scrolled up? a pill counts the lines that landed below. tap it to jump to the bottom."
+      },
+      {
+        "category": "new",
+        "text": "streak reminder: opt-in push at 22:00 utc, sent only on the day your streak would expire. toggle it in settings."
+      },
+      {
+        "category": "fix",
+        "text": "#void no longer stalls on the first touch after the keyboard opens. autocorrect is back in the input."
+      }
+    ]
+  },
+  {
     "version": "1.6.0",
     "date": "2026-10-05",
     "title": "the room is the front door.",
