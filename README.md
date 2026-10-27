@@ -27,6 +27,8 @@ No framework, no build step for the pages themselves. Every page is hand-written
 
 **Release notes.** `updates.html` is generated. The GitHub Actions workflow in `.github/workflows/updates.yml` is triggered by a `repository_dispatch` from the iOS repository whenever its `CHANGELOG.md` changes. It parses the "What's New" sections into `updates.json` (`scripts/build-updates.js`), re-renders the data-driven blocks between the `BUILD` markers in `updates.html` (`scripts/render-updates.js`), bumps the `/updates` entry in `sitemap.xml` and commits the result.
 
+**Icon.** The "hi" bubble (favicon, touch icon, PWA icons, the header badge, the OG footer) is the app icon; its master is `design/app-icon.svg` in the iOS repository, rendered to 1024 px with headless Chrome and scaled down with `sips`. Change it there first, then regenerate the files here.
+
 **Open Graph images.** `scripts/og/render.mjs` renders a 1200×630 PNG for every entry in `scripts/og/pages.json` with headless Chrome, using the page's own heading and the self-hosted fonts. Run it after adding or renaming a page:
 
 ```sh
