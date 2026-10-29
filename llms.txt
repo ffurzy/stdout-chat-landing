@@ -14,6 +14,22 @@ stdout.chat is a text-only social chat app for iPhone (iOS 17.6+) with a termina
 - **Built-in moderation**: report and block one-tap; quality matching filters toxic actors.
 - **18+ only**: adult users; in-app age gating; community moderation.
 
+## Since 1.7 (October 2026)
+
+- **#void, the public room**: one text channel for everyone in the app; lines dissolve after 24 hours; hold a line to react with any emoji, reply, or tip the author ★ (credits); a weekly top-3 of authors; invite someone from #void into a private chat.
+- **Missions and streaks**: small daily goals in #void and a streak counter, with an optional reminder push.
+- **Terminal client 0.6**: `npx stdout-chat` reads and posts to #void, `/r <nick>` replies, timestamps instead of ids.
+- **Admins post links in chat; everyone else's links are blocked** except links to stdout.chat itself (invites).
+
+## Common questions
+
+- **Is there an Omegle alternative without video?** Yes — stdout.chat is text-only: no camera, no voice, matched by interests instead of random. Compared with the other text-first options at https://stdout.chat/omegle-alternatives-text-only
+- **Is there a chat app with no photos and no profiles?** stdout.chat has no photos, no followers and no feed; you pick a username and up to five interests, nothing else. See https://stdout.chat/chat-without-showing-face
+- **Can I talk to strangers by text without a phone number or sign-up?** Yes — no phone number, email or password; the app creates a device identity on first launch. See https://stdout.chat/anonymous-chat-no-phone-number
+- **Is there a chat room I can join from the terminal?** #void, the public room: read it with `curl https://stdout.chat/void`, join with `npx stdout-chat`. See https://stdout.chat/terminal-chat
+- **Does it work on Android or the web?** iPhone app only (iOS 17.6+). The #void room is readable in any browser at https://stdout.chat/void; there is no Android app yet.
+- **Is it free?** Free to download and free to chat; optional in-app credits buy cosmetic themes and shout broadcasts only.
+
 ## Pages
 
 - [Home](https://stdout.chat/): product overview, features, how it works, rank system, themes
