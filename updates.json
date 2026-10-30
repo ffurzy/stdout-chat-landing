@@ -1,5 +1,32 @@
 [
   {
+    "version": "1.7.1",
+    "date": "2026-10-29",
+    "title": "private chat: the cursor is back where you tap.",
+    "tags": [
+      "fix",
+      "imp"
+    ],
+    "items": [
+      {
+        "category": "fix",
+        "text": "private chat: the cursor is back where you tap. edit the middle of a message, not just its end."
+      },
+      {
+        "category": "fix",
+        "text": "the badge on the icon now counts unread #void lines and clears when you open the room. a 1:1 \"new message\" no longer leaves a stale 1 behind."
+      },
+      {
+        "category": "imp",
+        "text": "partner dropped? you now get 60 seconds instead of 30, and the countdown in the status line is the real one, sent by the server."
+      },
+      {
+        "category": "imp",
+        "text": "a blocked link shows as a system notice instead of a chat line. links to stdout.chat go through."
+      }
+    ]
+  },
+  {
     "version": "1.7.0",
     "date": "2026-10-26",
     "title": "long-press any line in #void: react, reply, tip, mute, report.",
